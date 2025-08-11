@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 
-const ModernPortfolio = () => {
+const Header = () => {
   const [isLoaded, setIsLoaded] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     // Simple loading animation without WebGL
@@ -11,6 +12,10 @@ const ModernPortfolio = () => {
 
     return () => clearTimeout(timer);
   }, []);
+
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
 
   return (
     <div className="relative min-h-screen bg-gradient-to-br from-gray-900 via-purple-900 to-gray-900 overflow-hidden">
@@ -72,13 +77,13 @@ const ModernPortfolio = () => {
               <div className="flex items-center justify-between">
                 {/* Logo */}
                 <div className="group cursor-pointer">
-                  <h1 className="text-2xl font-bold bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent hover:from-pink-400 hover:via-cyan-400 hover:to-purple-400 transition-all duration-500">
+                  <h1 className="text-xl md:text-2xl font-bold bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent hover:from-pink-400 hover:via-cyan-400 hover:to-purple-400 transition-all duration-500">
                     Rohan Raka
                   </h1>
                   <div className="w-0 group-hover:w-full h-0.5 bg-gradient-to-r from-cyan-400 to-purple-400 transition-all duration-500" />
                 </div>
 
-                {/* Navigation Links */}
+                {/* Desktop Navigation Links */}
                 <div className="hidden md:flex items-center space-x-8">
                   {['My Institute', 'Gallery', 'Blogs', 'Contact Me'].map((item, index) => (
                     <div key={item} className={`group cursor-pointer transform transition-all duration-500 hover:scale-110 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'}`} style={{ transitionDelay: `${index * 100}ms` }}>
@@ -90,12 +95,63 @@ const ModernPortfolio = () => {
                   ))}
                 </div>
 
-                {/* Login Button */}
-                <div className={`transform transition-all duration-700 ${isLoaded ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'}`}>
+                {/* Desktop Login Button */}
+                <div className={`hidden md:block transform transition-all duration-700 ${isLoaded ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'}`}>
                   <button className="group relative px-6 py-2.5 bg-gradient-to-r from-green-500 to-emerald-600 rounded-xl font-semibold text-white shadow-lg hover:shadow-green-500/25 transform hover:scale-105 transition-all duration-300 overflow-hidden">
                     <div className="absolute inset-0 bg-gradient-to-r from-emerald-600 to-green-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                     <span className="relative">Login</span>
                   </button>
+                </div>
+
+                {/* Mobile Hamburger Menu Button */}
+                <div className="md:hidden">
+                  <button
+                    onClick={toggleMobileMenu}
+                    className="group relative w-10 h-10 bg-gradient-to-r from-cyan-500/20 to-purple-500/20 backdrop-blur-sm border border-cyan-500/30 rounded-xl flex flex-col items-center justify-center space-y-1.5 hover:from-cyan-500/30 hover:to-purple-500/30 transition-all duration-300"
+                  >
+                    <div className={`w-5 h-0.5 bg-gradient-to-r from-cyan-400 to-purple-400 rounded-full transition-all duration-300 ${isMobileMenuOpen ? 'rotate-45 translate-y-2' : ''}`} />
+                    <div className={`w-5 h-0.5 bg-gradient-to-r from-purple-400 to-pink-400 rounded-full transition-all duration-300 ${isMobileMenuOpen ? 'opacity-0' : ''}`} />
+                    <div className={`w-5 h-0.5 bg-gradient-to-r from-pink-400 to-cyan-400 rounded-full transition-all duration-300 ${isMobileMenuOpen ? '-rotate-45 -translate-y-2' : ''}`} />
+                  </button>
+                </div>
+              </div>
+
+              {/* Mobile Menu */}
+              <div className={`md:hidden overflow-hidden transition-all duration-500 ease-in-out ${isMobileMenuOpen ? 'max-h-96 opacity-100 mt-6' : 'max-h-0 opacity-0 mt-0'}`}>
+                <div className="pt-4 pb-2 space-y-4">
+                  {/* Mobile Navigation Links */}
+                  <div className="space-y-3">
+                    {['My Institute', 'Gallery', 'Blogs', 'Contact Me'].map((item, index) => (
+                      <div
+                        key={item}
+                        className={`transform transition-all duration-500 ${isMobileMenuOpen ? 'translate-x-0 opacity-100' : '-translate-x-4 opacity-0'}`}
+                        style={{ transitionDelay: `${index * 100}ms` }}
+                      >
+                        <a
+                          href="#"
+                          className="block px-4 py-3 text-white/80 hover:text-white font-medium bg-gradient-to-r from-white/5 to-white/10 hover:from-cyan-500/10 hover:to-purple-500/10 border border-white/10 hover:border-cyan-500/30 rounded-xl backdrop-blur-sm transition-all duration-300 group"
+                        >
+                          <span className="relative">
+                            {item}
+                            <div className="absolute -bottom-1 left-0 w-0 group-hover:w-full h-0.5 bg-gradient-to-r from-cyan-400 to-purple-400 transition-all duration-300" />
+                          </span>
+                        </a>
+                      </div>
+                    ))}
+                  </div>
+
+                  {/* Mobile Login Button */}
+                  <div className={`pt-2 transform transition-all duration-500 ${isMobileMenuOpen ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'}`} style={{ transitionDelay: '400ms' }}>
+                    <button className="w-full group relative px-6 py-3 bg-gradient-to-r from-green-500 to-emerald-600 rounded-xl font-semibold text-white shadow-lg hover:shadow-green-500/25 transform hover:scale-105 transition-all duration-300 overflow-hidden">
+                      <div className="absolute inset-0 bg-gradient-to-r from-emerald-600 to-green-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                      <span className="relative flex items-center justify-center gap-2">
+                        Login
+                        <svg className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1" />
+                        </svg>
+                      </span>
+                    </button>
+                  </div>
                 </div>
               </div>
             </div>
@@ -106,7 +162,43 @@ const ModernPortfolio = () => {
       {/* Hero Section */}
       <main className="relative z-10 flex items-center justify-center min-h-screen px-4">
         <div className="max-w-7xl mx-auto">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
+          {/* Mobile Profile Image - Shows only on mobile */}
+          <div className={`md:hidden mb-8 flex justify-center transform transition-all duration-1000 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+            <div className="relative">
+              {/* Floating Elements Around Mobile Profile */}
+              <div className="absolute -top-6 -left-6 w-12 h-12 bg-gradient-to-r from-cyan-400/20 to-purple-400/20 rounded-xl backdrop-blur-sm border border-cyan-400/30 animate-float" />
+              <div className="absolute -bottom-6 -right-6 w-10 h-10 bg-gradient-to-r from-green-400/20 to-cyan-400/20 rounded-full backdrop-blur-sm border border-green-400/30 animate-bounce" />
+
+              {/* Mobile Profile Container */}
+              <div className="relative backdrop-blur-2xl bg-gradient-to-br from-white/10 to-white/5 border border-white/20 rounded-2xl p-4 shadow-2xl">
+                <div className="relative w-32 h-40 mx-auto">
+                  <div className="absolute inset-0 bg-gradient-to-br from-cyan-400/20 via-purple-400/20 to-green-400/20 rounded-xl blur-2xl" />
+                  <div className="relative w-full h-full bg-gradient-to-br from-gray-800 via-gray-700 to-gray-800 rounded-xl border border-white/20 flex items-center justify-center overflow-hidden">
+                    {/* Sample Profile Image */}
+                    <img
+                      src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=500&fit=crop&crop=face"
+                      alt="Rohan Raka"
+                      className="w-full h-full object-cover rounded-xl"
+                    />
+
+                    {/* Gradient Overlay */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent rounded-xl" />
+                  </div>
+                </div>
+
+                {/* Mobile Profile Info */}
+                <div className="mt-3 text-center">
+                  <h3 className="text-sm font-bold text-white">Nursing Student</h3>
+                  <p className="text-xs text-cyan-400">Pabna Ideal Nursing College</p>
+                </div>
+              </div>
+
+              {/* Mobile Decorative Elements */}
+              <div className="absolute -z-10 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-48 h-48 bg-gradient-to-r from-cyan-500/10 via-purple-500/10 to-green-500/10 rounded-full blur-2xl animate-pulse" />
+            </div>
+          </div>
+
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
 
             {/* Left Content */}
             <div className={`space-y-8 transform transition-all duration-1000 ${isLoaded ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-20'}`}>
@@ -124,7 +216,7 @@ const ModernPortfolio = () => {
 
               {/* Main Title */}
               <div className="space-y-4">
-                <h1 className="text-5xl md:text-7xl lg:text-8xl font-black leading-none">
+                <h1 className="text-4xl md:text-6xl lg:text-8xl font-black leading-none">
                   <span className="text-white">ROHAN </span>
                   <span className="bg-gradient-to-r from-green-400 via-cyan-400 to-purple-400 bg-clip-text text-transparent animate-pulse">
                     RAKA
@@ -136,25 +228,25 @@ const ModernPortfolio = () => {
 
               {/* Description */}
               <div className="backdrop-blur-xl bg-white/5 border border-white/10 rounded-2xl p-6 shadow-2xl">
-                <p className="text-lg md:text-xl text-gray-300 leading-relaxed">
+                <p className="text-base md:text-lg text-gray-300 leading-relaxed">
                   I'm studying at <span className="text-cyan-400 font-semibold">Pabna Ideal Nursing College</span>, one of the best nursing colleges in Bangladesh. Known for quality education, skilled faculty, and supportive environment, I feel proud to be preparing for a career in healthcare.
                 </p>
               </div>
 
               {/* CTA Button */}
-              <div className="flex flex-wrap gap-4">
+              <div className="flex flex-col sm:flex-row gap-4">
                 <button className="group relative px-8 py-4 bg-gradient-to-r from-green-500 via-cyan-500 to-purple-500 rounded-2xl font-bold text-white shadow-2xl hover:shadow-cyan-500/25 transform hover:scale-105 transition-all duration-300 overflow-hidden">
                   <div className="absolute inset-0 bg-gradient-to-r from-purple-500 via-cyan-500 to-green-500 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                  <span className="relative flex items-center gap-2">
+                  <span className="relative flex items-center justify-center gap-2">
                     Download Resume
                     <svg className="w-5 h-5 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a.997.997 0 01-1.414 0l-7-7A1.997 1.997 0 013 12V7a4 4 0 014-4z" />
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                     </svg>
                   </span>
                 </button>
 
                 <button className="group px-8 py-4 backdrop-blur-xl bg-white/10 border border-white/20 rounded-2xl font-semibold text-white hover:bg-white/20 transform hover:scale-105 transition-all duration-300">
-                  <span className="flex items-center gap-2">
+                  <span className="flex items-center justify-center gap-2">
                     Contact Me
                     <svg className="w-5 h-5 transform group-hover:rotate-12 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
@@ -164,8 +256,8 @@ const ModernPortfolio = () => {
               </div>
             </div>
 
-            {/* Right Content - 3D Profile Area */}
-            <div className={`relative transform transition-all duration-1000 delay-300 ${isLoaded ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-20'}`}>
+            {/* Right Content - Desktop Profile Area */}
+            <div className={`hidden lg:block relative transform transition-all duration-1000 delay-300 ${isLoaded ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-20'}`}>
               <div className="relative">
 
                 {/* Floating Elements Around Profile */}
@@ -176,27 +268,34 @@ const ModernPortfolio = () => {
                 {/* Main Profile Container */}
                 <div className="relative backdrop-blur-2xl bg-gradient-to-br from-white/10 to-white/5 border border-white/20 rounded-3xl p-8 shadow-2xl transform hover:scale-105 transition-all duration-500">
 
-                  {/* Profile Image Placeholder */}
+                  {/* Profile Image */}
                   <div className="relative w-80 h-96 mx-auto">
                     <div className="absolute inset-0 bg-gradient-to-br from-cyan-400/20 via-purple-400/20 to-green-400/20 rounded-2xl blur-3xl" />
                     <div className="relative w-full h-full bg-gradient-to-br from-gray-800 via-gray-700 to-gray-800 rounded-2xl border border-white/20 flex items-center justify-center overflow-hidden">
-                      {/* Professional Silhouette */}
-                      <div className="w-full h-full bg-gradient-to-b from-transparent via-blue-500/20 to-purple-500/30 flex items-end justify-center">
-                        <div className="w-48 h-72 bg-gradient-to-t from-gray-600 via-gray-700 to-gray-800 rounded-t-full opacity-60" />
-                      </div>
+                      {/* Professional Photo */}
+                      <img
+                        src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&h=700&fit=crop&crop=face"
+                        alt="Rohan Raka - Professional Photo"
+                        className="w-full h-full object-cover rounded-2xl"
+                      />
 
-                      {/* Overlay Text */}
-                      <div className="absolute inset-0 flex items-center justify-center">
-                        <div className="text-center space-y-2">
-                          <div className="w-16 h-16 mx-auto bg-gradient-to-r from-cyan-400 to-purple-400 rounded-full flex items-center justify-center">
-                            <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-                            </svg>
+                      {/* Gradient Overlay */}
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent rounded-2xl" />
+
+                      {/* Professional Badge */}
+                      <div className="absolute bottom-4 left-4 right-4">
+                        <div className="backdrop-blur-xl bg-white/10 border border-white/20 rounded-xl p-3">
+                          <div className="flex items-center gap-3">
+                            <div className="w-10 h-10 bg-gradient-to-r from-cyan-400 to-purple-400 rounded-full flex items-center justify-center">
+                              <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                              </svg>
+                            </div>
+                            <div>
+                              <p className="text-white text-sm font-semibold">Verified Student</p>
+                              <p className="text-cyan-400 text-xs">Healthcare Professional</p>
+                            </div>
                           </div>
-                        
-
-<img src="https://i.ibb.co/0pBPRq6x/rohan-raka.png" alt="" />
-
                         </div>
                       </div>
                     </div>
@@ -268,4 +367,4 @@ const ModernPortfolio = () => {
   );
 };
 
-export default ModernPortfolio;
+export default Header;
