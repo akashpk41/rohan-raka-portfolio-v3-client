@@ -55,7 +55,7 @@ const TimelineSection = () => {
       timelineData.forEach((_, index) => {
         setTimeout(() => {
           setVisibleItems(prev => ({ ...prev, [`item-${index}`]: true }));
-        }, 1000 + (index * 200));
+        }, 500 + (index * 200));
       });
     }, 200);
     return () => clearTimeout(timer);
@@ -153,7 +153,7 @@ const TimelineSection = () => {
   }));
 
   return (
-    <section className="relative py-20 bg-gradient-to-br from-gray-900 via-purple-900 to-gray-900 overflow-hidden">
+    <section className="relative py-16 bg-gradient-to-br from-gray-900 via-purple-900 to-gray-900 overflow-hidden">
       {/* Premium Particle Effects */}
       <div className="absolute inset-0">
         {/* Large Floating Orbs */}
@@ -217,7 +217,7 @@ const TimelineSection = () => {
                 </svg>
               </div>
             </div>
-            <h2 className="text-4xl md:text-6xl font-black bg-gradient-to-r from-white via-cyan-200 to-purple-200 bg-clip-text text-transparent">
+            <h2 className="text-2xl md:text-6xl font-black bg-gradient-to-r from-white via-cyan-200 to-purple-200 bg-clip-text text-transparent">
               {titleScramble}
             </h2>
           </div>
@@ -254,7 +254,7 @@ const TimelineSection = () => {
                 <div className={`w-5/12 ${index % 2 === 0 ? 'text-right pr-8' : 'text-left pl-8'}`}>
                   <div className="group relative">
                     {/* Glowing border effect */}
-                    <div className={`absolute -inset-2 bg-gradient-to-r ${item.color.primary} rounded-3xl blur-xl opacity-0 group-hover:opacity-40 transition-all duration-500`} />
+                    <div className={`absolute -inset-2 bg-gradient-to-r ${item.color.primary} rounded-3xl blur-xl opacity-60 group-hover:opacity-60 transition-all duration-500`} />
 
                     {/* Main Card */}
                     <div className={`relative backdrop-blur-2xl bg-gradient-to-br ${item.color.secondary} border ${item.color.border} rounded-3xl p-8 shadow-2xl transform transition-all duration-500 group-hover:scale-105 ${
@@ -351,7 +351,7 @@ const TimelineSection = () => {
                 <div className="flex-1 min-w-0">
                   <div className="group relative">
                     {/* Glowing border effect */}
-                    <div className={`absolute -inset-2 bg-gradient-to-r ${item.color.primary} rounded-2xl blur-xl opacity-0 group-hover:opacity-40 transition-all duration-500`} />
+                    <div className={`absolute -inset-2 bg-gradient-to-r ${item.color.primary} rounded-2xl blur-xl opacity-50 group-hover:opacity-50 transition-all duration-500`} />
 
                     {/* Mobile Card - Larger and better spaced */}
                     <div className={`relative backdrop-blur-2xl bg-gradient-to-br ${item.color.secondary} border ${item.color.border} rounded-2xl p-6 shadow-2xl transform transition-all duration-500 group-hover:scale-105`}>
@@ -363,11 +363,11 @@ const TimelineSection = () => {
 
                       {/* Title */}
                       <h3 className="text-xl font-bold text-white mb-3 leading-tight">
-                        {itemScrambles[index].title}
+                      <span className="text-base filter drop-shadow-lg">{item.icon}</span>  {itemScrambles[index].title}
                       </h3>
 
                       {/* Description */}
-                      <p className="text-gray-300 text-base leading-relaxed group-hover:text-gray-200 transition-colors duration-300">
+                      <p className="text-gray-200 text-base leading-relaxed group-hover:text-gray-200 transition-colors duration-300">
                         {itemScrambles[index].description}
                       </p>
                     </div>

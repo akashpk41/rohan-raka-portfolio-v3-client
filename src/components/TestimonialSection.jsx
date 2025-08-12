@@ -213,7 +213,7 @@ const TestimonialSection = () => {
       id: 13,
       name: "Prabhas",
       role: "Tea Stall Friend",
-      avatar: "https://i.ibb.co.com/XxC27QCR/prabhas.jpg",
+      avatar: "https://i.ibb.co.com/845Db0m5/prabhas.jpg",
       message: "প্রতিদিন সন্ধ্যায় আড্ডা না দিলে তো দিনই শেষ হতো না!",
       position: "start",
       color: {
@@ -229,7 +229,7 @@ const TestimonialSection = () => {
       id: 14,
       name: "Ahnaf Tazwar",
       role: "Purai Shoitan",
-      avatar: "https://i.ibb.co.com/pvnDJxLY/ahnaf-tazwar.jpg",
+      avatar: "https://i.ibb.co.com/k2dkych2/ahnaf-tazwar.jpg",
       message:
         "চাটামটা একটু কম মারিস ভাই—হিরোইজম দেখালেই প্রভাস হওয়া যায় না! 😆 প্রভাস কবে তোর ফ্রেন্ড হইলি শুনি? ভালো হয়ে যাইস, না হলে 'বাহুবলী ৩' তোর লাইফেই শুট করে দিবো! 🎬 \"Ja Ga🤞\"",
       position: "end",
@@ -246,7 +246,7 @@ const TestimonialSection = () => {
   ];
 
   return (
-    <section className="relative py-20 bg-gradient-to-br from-gray-900 via-purple-900 to-gray-900 overflow-hidden">
+    <section className="relative py-16 bg-gradient-to-br from-gray-900 via-purple-900 to-gray-900 overflow-hidden">
       {/* Premium Background Effects */}
       <div className="absolute inset-0">
         {/* Large Gradient Orbs */}
@@ -411,7 +411,7 @@ const TestimonialSection = () => {
 
                     {/* Main Chat Bubble */}
                     <div
-                      className={`relative backdrop-blur-2xl bg-gradient-to-br ${testimonial.color.bubble} border ${testimonial.color.border} rounded-3xl px-6 py-4 shadow-2xl transform transition-all duration-500 group-hover:scale-105 shadow-xl`}
+                      className={`relative backdrop-blur-2xl bg-gradient-to-br ${testimonial.color.bubble} border ${testimonial.color.border} rounded-3xl px-6 py-4 shadow-2xl transform transition-all duration-500 group-hover:scale-105 cursor-pointer shadow-xl`}
                     >
                       {/* Message Text */}
                       <p className="text-gray-200 text-base leading-relaxed group-hover:text-gray-100 transition-colors duration-300">
@@ -477,7 +477,7 @@ const TestimonialSection = () => {
               </div>
             </div>
 
-            <p className="text-lg text-gray-300 leading-relaxed max-w-2xl mx-auto">
+            <p className="text-lg text-gray-100 leading-relaxed max-w-2xl mx-auto">
               "সবার মতামত তো আর এক লেখায় শেষ করা যাবে না! তবুও কিছু কথা চুপি
               চুপি শেয়ার করলাম। আসলে আপনাদের জানিয়ে দিয়েও কোনো লাভ নেই—আপনারা
               তো আগেই অনেক কিছু জানেন! 😉"
