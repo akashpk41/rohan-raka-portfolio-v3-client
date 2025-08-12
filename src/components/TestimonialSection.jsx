@@ -49,11 +49,13 @@ const TestimonialSection = () => {
       message:
         "A disciplined, respectful, and academically strong student with great potential to excel in the healthcare field.",
       position: "start",
+
       color: {
-        bubble: "from-pink-500/20 to-rose-500/20",
-        border: "border-pink-500/50",
-        glow: "from-pink-500 to-rose-500",
+        bubble: "from-yellow-500/20 to-amber-500/20",
+        border: "border-yellow-500/50",
+        glow: "from-yellow-500 to-amber-500",
       },
+
       link: "https://www.facebook.com/na.i.ma.955486",
       delay: 400,
     },
@@ -66,10 +68,11 @@ const TestimonialSection = () => {
         "A calm and courteous presence stands out — maintaining focus will lead to lasting success.",
       position: "end",
       color: {
-        bubble: "from-yellow-500/20 to-amber-500/20",
-        border: "border-yellow-500/50",
-        glow: "from-yellow-500 to-amber-500",
+        bubble: "from-pink-500/20 to-rose-500/20",
+        border: "border-pink-500/50",
+        glow: "from-pink-500 to-rose-500",
       },
+
       delay: 500,
     },
     {
@@ -128,11 +131,13 @@ const TestimonialSection = () => {
       message:
         "খালি প্রেম করিস... বই-পুস্তক মনে নেই একদম! মাথায় ঢোকে কিছু? 🙄 এইটা কয় নম্বর রে? তিন না চার? নাকি তুই নিজেই গুনতি ভুলে গেছিস! এইটাই আবার তোর 'রিয়েল লাভ'? 🤨 কিন্তু ভাইরে, একটু হলেও পড়াশোনার দিকে মন দে। তোর বড় বোন হিসেবে বকা দিই ঠিকই, কিন্তু চিন্তাও যে করি..❤️️",
       position: "end",
+
       color: {
-        bubble: "from-orange-500/20 to-red-500/20",
-        border: "border-orange-500/50",
-        glow: "from-orange-500 to-red-500",
+        bubble: "from-cyan-500/20 to-blue-500/20",
+        border: "border-cyan-500/50",
+        glow: "from-cyan-500 to-blue-500",
       },
+
       delay: 900,
     },
     {
@@ -143,13 +148,16 @@ const TestimonialSection = () => {
       message:
         "জীবনে সবচেয়ে কঠিন কাজগুলোর একটি হলো—সিদ্ধান্ত গ্রহণ। নার্সিং শুধু একটা পেশা নয়, এটা মানুষের সেবার সবচেয়ে পবিত্র মাধ্যম। হার্ডওয়ার্ক, ডেডিকেশন আর মন-প্রাণ দিয়ে ১০০% দিয়ে যা। ইনশাআল্লাহ, কষ্ট কখনো বৃথা যাবে না। লেগে থাক, থেমে যাস না! 🤍💉",
       position: "start",
+
       color: {
-        bubble: "from-fuchsia-500/20 to-pink-500/20",
-        border: "border-fuchsia-500/50",
-        glow: "from-fuchsia-500 to-pink-500",
+        bubble: "from-orange-500/20 to-red-500/20",
+        border: "border-orange-500/50",
+        glow: "from-orange-500 to-red-500",
       },
+
       link: "https://www.facebook.com/atapk41/",
       time: "Oct 2024",
+       online: true,
       delay: 1000,
     },
     {
@@ -192,10 +200,11 @@ const TestimonialSection = () => {
       message:
         "Tor bandopi pakhi take Dilei hbi, Tor bandopi pakhi k vabi kobu onno meyk kois k",
       position: "end",
+
       color: {
-        bubble: "from-cyan-500/20 to-blue-500/20",
-        border: "border-cyan-500/50",
-        glow: "from-cyan-500 to-blue-500",
+        bubble: "from-fuchsia-500/20 to-pink-500/20",
+        border: "border-fuchsia-500/50",
+        glow: "from-fuchsia-500 to-pink-500",
       },
       link: "https://www.facebook.com/ostanzid.khan",
       delay: 1300,
@@ -293,7 +302,7 @@ const TestimonialSection = () => {
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
           }`}
         >
-          <h2 className="text-4xl md:text-5xl font-black bg-gradient-to-r from-white via-cyan-200 to-purple-200 bg-clip-text text-transparent mb-6">
+          <h2 className="text-3xl md:text-5xl font-black bg-gradient-to-r from-white via-cyan-200 to-purple-200 bg-clip-text text-transparent mb-6">
             "Voices That Shaped My Journey"
           </h2>
           <div className="w-40 h-1 bg-gradient-to-r from-purple-500 via-pink-500 to-cyan-500 rounded-full mx-auto mb-8" />
@@ -339,7 +348,7 @@ const TestimonialSection = () => {
 
                   {/* Online Status Ring */}
                   {testimonial.online && (
-                    <div className="absolute -inset-1 bg-gradient-to-r from-green-400 to-emerald-500 rounded-full animate-pulse" />
+                    <div className="absolute -inset-1 bg-gradient-to-r from-blue-500 to-emerald-500 rounded-full animate-pulse" />
                   )}
 
                   {/* Avatar Image */}
@@ -353,7 +362,7 @@ const TestimonialSection = () => {
                       <img
                         src={testimonial.avatar}
                         alt={testimonial.name}
-                        className="w-12 h-12 rounded-full object-cover border-2 border-gray-700 transform transition-all duration-300 group-hover:scale-110 group-hover:rotate-6"
+                        className="w-14 h-14 rounded-full object-cover border-2 border-gray-700 transform transition-all duration-300 group-hover:scale-110 group-hover:rotate-6"
                       />
                     </a>
 
@@ -387,7 +396,7 @@ const TestimonialSection = () => {
                       {testimonial.role}
                     </span>
                     {testimonial.time && (
-                      <span className="text-xs text-gray-500">
+                      <span className="text-xs text-gray-200">
                         {testimonial.time}
                       </span>
                     )}
@@ -397,7 +406,7 @@ const TestimonialSection = () => {
                   <div className="group relative">
                     {/* Always glowing background effect */}
                     <div
-                      className={`absolute -inset-2 bg-gradient-to-r ${testimonial.color.glow} rounded-3xl blur-xl opacity-50 group-hover:opacity-60 transition-all duration-500`}
+                      className={`absolute -inset-2 bg-gradient-to-r ${testimonial.color.glow} rounded-3xl blur-xl opacity-50 group-hover:opacity-60 transition-all duration-5000`}
                     />
 
                     {/* Main Chat Bubble */}
@@ -461,9 +470,9 @@ const TestimonialSection = () => {
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
           }`}
         >
-          <div className="relative backdrop-blur-xl bg-gradient-to-br from-white/10 to-white/5 border border-white/20 rounded-3xl p-8 shadow-2xl">
+          <div className="relative backdrop-blur-xl bg-gradient-to-br from-white/10 to-white/5 border border-white/20 rounded-3xl px-6 pb-6 pt-12 shadow-2xl">
             <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-              <div className="w-8 h-8 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center">
+              <div className="w-14 h-14 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center">
                 <span className="text-white">💬</span>
               </div>
             </div>
