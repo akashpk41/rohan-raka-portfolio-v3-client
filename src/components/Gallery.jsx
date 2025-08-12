@@ -173,7 +173,7 @@ const Gallery = () => {
   return (
     <section
       id="gallery"
-      className="relative py-20 bg-gradient-to-br from-gray-900 via-purple-900 to-gray-900 overflow-hidden"
+      className="relative py-16 bg-gradient-to-br from-gray-900 via-purple-900 to-gray-900 overflow-hidden"
     >
       {/* Premium Background Effects */}
       <div className="absolute inset-0">
@@ -253,7 +253,7 @@ const Gallery = () => {
             <button
               key={category}
               onClick={() => setActiveCategory(category)}
-              className={`px-6 py-3 rounded-2xl font-semibold transition-all duration-300 transform hover:scale-105 ${
+              className={`px-4 cursor-pointer md:px-6 py-2 md:py-3 rounded-2xl font-semibold transition-all duration-300 transform hover:scale-105 ${
                 activeCategory === category
                   ? "bg-gradient-to-r from-green-500 to-cyan-500 text-white shadow-lg shadow-green-500/25"
                   : "backdrop-blur-xl bg-white/10 text-gray-300 border border-white/20 hover:bg-white/20"
@@ -290,7 +290,7 @@ const Gallery = () => {
 
                 {/* Main Card */}
                 <div
-                  className={`relative backdrop-blur-2xl bg-gradient-to-br ${image.color} border border-white/20 rounded-3xl overflow-hidden shadow-2xl transform transition-all duration-700 group-hover:scale-105 group-hover:rotate-y-12 cursor-pointer`}
+                  className={`relative cursor-pointer backdrop-blur-2xl bg-gradient-to-br ${image.color} border border-white/20 rounded-3xl overflow-hidden shadow-2xl transform transition-all duration-700 group-hover:scale-105 group-hover:rotate-y-12 cursor-pointer`}
                   onClick={() => openLightbox(image)}
                 >
                   {/* Image Container */}
@@ -373,7 +373,7 @@ const Gallery = () => {
 
       {/* Premium Lightbox Modal */}
       {selectedImage && (
-        <div className="fixed inset-0 bg-black/95 backdrop-blur-sm z-50 flex items-center justify-center p-4">
+        <div className="fixed inset-0 bg-black/30 backdrop-blur-sm z-50 flex items-center justify-center p-4">
           {/* Close Button */}
           <button
             onClick={closeLightbox}
@@ -397,7 +397,7 @@ const Gallery = () => {
           {/* Navigation Buttons */}
           <button
             onClick={prevImage}
-            className="absolute left-6 top-1/2 transform -translate-y-1/2 w-12 h-12 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center text-white hover:bg-white/30 transition-all duration-300"
+            className="absolute left-6 top-1/2 transform -translate-y-1/2 w-12 h-12 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center text-white hover:bg-white/30 transition-all duration-300 cursor-pointer"
           >
             <svg
               className="w-6 h-6"
@@ -416,7 +416,7 @@ const Gallery = () => {
 
           <button
             onClick={nextImage}
-            className="absolute right-6 top-1/2 transform -translate-y-1/2 w-12 h-12 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center text-white hover:bg-white/30 transition-all duration-300"
+            className="absolute right-6 top-1/2 transform -translate-y-1/2 w-12 h-12 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center text-white hover:bg-white/30 transition-all duration-300 cursor-pointer"
           >
             <svg
               className="w-6 h-6"

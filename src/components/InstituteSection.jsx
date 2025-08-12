@@ -130,7 +130,7 @@ const InstituteSection = () => {
               </h1>
 
               {/* Description */}
-              <p className="text-lg md:text-xl text-gray-300 leading-relaxed mb-8 max-w-3xl">
+              <p className="text-lg md:text-xl text-gray-200 leading-relaxed mb-8 max-w-3xl">
                 Pabna Ideal Nursing College is one of the top nursing colleges in Bangladesh, known for its quality education, skilled faculty, and strong clinical training. With modern facilities and a focus on both academic excellence and hands-on experience, it prepares students to become confident, compassionate healthcare professionals ready to serve locally and globally.
               </p>
 
@@ -188,7 +188,7 @@ const InstituteSection = () => {
                   <div className={`overflow-hidden transition-all duration-500 ease-in-out ${activeAccordion === item.id ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}`}>
                     <div className="px-6 pb-6">
                       <div className="w-full h-px bg-gradient-to-r from-transparent via-white/20 to-transparent mb-4" />
-                      <p className="text-gray-300 text-base md:text-lg leading-relaxed">
+                      <p className="text-white text-base md:text-lg leading-relaxed">
                         {item.content}
                       </p>
                     </div>
