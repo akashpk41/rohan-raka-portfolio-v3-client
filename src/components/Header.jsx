@@ -176,7 +176,7 @@ const Header = () => {
                   <div className="relative w-full h-full bg-gradient-to-br from-gray-800 via-gray-700 to-gray-800 rounded-xl border border-white/20 flex items-center justify-center overflow-hidden">
                     {/* Sample Profile Image */}
                     <img
-                      src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=500&fit=crop&crop=face"
+                      src="https://i.ibb.co.com/0pBPRq6x/rohan-raka.png"
                       alt="Rohan Raka"
                       className="w-full h-full object-cover rounded-xl"
                     />
@@ -274,7 +274,7 @@ const Header = () => {
                     <div className="relative w-full h-full bg-gradient-to-br from-gray-800 via-gray-700 to-gray-800 rounded-2xl border border-white/20 flex items-center justify-center overflow-hidden">
                       {/* Professional Photo */}
                       <img
-                        src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&h=700&fit=crop&crop=face"
+                        src="https://i.ibb.co.com/0pBPRq6x/rohan-raka.png"
                         alt="Rohan Raka - Professional Photo"
                         className="w-full h-full object-cover rounded-2xl"
                       />
