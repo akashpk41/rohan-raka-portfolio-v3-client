@@ -1,13 +1,69 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
+
+// React Scramble Effect Hook
+const useScrambleText = (text, isVisible = true, duration = 2000) => {
+  const [scrambledText, setScrambledText] = useState('');
+  const intervalRef = useRef(null);
+
+  useEffect(() => {
+    if (!isVisible || !text) return;
+
+    const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()';
+    let iteration = 0;
+
+    clearInterval(intervalRef.current);
+
+    intervalRef.current = setInterval(() => {
+      setScrambledText(prevText =>
+        text
+          .split('')
+          .map((char, index) => {
+            if (char === ' ') return ' ';
+            if (index < iteration) return text[index];
+            return chars[Math.floor(Math.random() * chars.length)];
+          })
+          .join('')
+      );
+
+      if (iteration >= text.length) {
+        clearInterval(intervalRef.current);
+      }
+
+      iteration += 1/3;
+    }, 30);
+
+    return () => clearInterval(intervalRef.current);
+  }, [text, isVisible, duration]);
+
+  return scrambledText || text;
+};
 
 const TimelineSection = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [hoveredItem, setHoveredItem] = useState(null);
+  const [visibleItems, setVisibleItems] = useState({});
 
   useEffect(() => {
-    const timer = setTimeout(() => setIsVisible(true), 200);
+    const timer = setTimeout(() => {
+      setIsVisible(true);
+      // Trigger scramble effect for title
+      setTimeout(() => {
+        setVisibleItems(prev => ({ ...prev, title: true }));
+      }, 500);
+
+      // Trigger scramble effect for each timeline item
+      timelineData.forEach((_, index) => {
+        setTimeout(() => {
+          setVisibleItems(prev => ({ ...prev, [`item-${index}`]: true }));
+        }, 1000 + (index * 200));
+      });
+    }, 200);
     return () => clearTimeout(timer);
   }, []);
+
+  // Scramble effects for different elements
+  const titleScramble = useScrambleText("My Life in Milestones", visibleItems.title);
+  const subtitleScramble = useScrambleText("The Story of My Growth", visibleItems.title);
 
   const timelineData = [
     {
@@ -90,6 +146,12 @@ const TimelineSection = () => {
     }
   ];
 
+  // Generate scramble effects for timeline items
+  const itemScrambles = timelineData.map((item, index) => ({
+    title: useScrambleText(item.title, visibleItems[`item-${index}`]),
+    description: useScrambleText(item.description, visibleItems[`item-${index}`], 1500)
+  }));
+
   return (
     <section className="relative py-20 bg-gradient-to-br from-gray-900 via-purple-900 to-gray-900 overflow-hidden">
       {/* Premium Particle Effects */}
@@ -156,33 +218,39 @@ const TimelineSection = () => {
               </div>
             </div>
             <h2 className="text-4xl md:text-6xl font-black bg-gradient-to-r from-white via-cyan-200 to-purple-200 bg-clip-text text-transparent">
-              My Life in Milestones
+              {titleScramble}
             </h2>
           </div>
           <div className="w-40 h-1 bg-gradient-to-r from-orange-500 via-pink-500 to-purple-500 rounded-full mx-auto mb-4" />
           <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-            The Story of My Growth
+            {subtitleScramble}
           </p>
         </div>
 
         {/* Premium Timeline */}
         <div className="relative">
-          {/* Central Timeline Line */}
-          <div className="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gradient-to-b from-cyan-500/50 via-purple-500/50 to-pink-500/50 rounded-full" />
+          {/* Central Timeline Line - Hidden on mobile */}
+          <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gradient-to-b from-cyan-500/50 via-purple-500/50 to-pink-500/50 rounded-full" />
+
+          {/* Mobile Timeline Line */}
+          <div className="md:hidden absolute left-8 top-0 w-1 h-full bg-gradient-to-b from-cyan-500/50 via-purple-500/50 to-pink-500/50 rounded-full" />
 
           {/* Timeline Items */}
-          <div className="space-y-16">
+          <div className="space-y-8 md:space-y-16">
             {timelineData.map((item, index) => (
               <div
                 key={index}
-                className={`relative flex items-center ${index % 2 === 0 ? 'flex-row' : 'flex-row-reverse'} transform transition-all duration-1000 ${
+                className={`relative ${
+                  // Desktop layout (alternating)
+                  `hidden md:flex items-center ${index % 2 === 0 ? 'flex-row' : 'flex-row-reverse'}`
+                } transform transition-all duration-1000 ${
                   isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-20'
                 }`}
                 style={{ transitionDelay: `${item.delay}ms` }}
                 onMouseEnter={() => setHoveredItem(index)}
                 onMouseLeave={() => setHoveredItem(null)}
               >
-                {/* Timeline Content */}
+                {/* Desktop Timeline Content */}
                 <div className={`w-5/12 ${index % 2 === 0 ? 'text-right pr-8' : 'text-left pl-8'}`}>
                   <div className="group relative">
                     {/* Glowing border effect */}
@@ -201,12 +269,12 @@ const TimelineSection = () => {
                       {/* Title */}
                       <h3 className={`text-2xl font-bold text-white mb-3 group-hover:${item.color.text} transition-colors duration-300`}>
                         <span className="mr-2">{item.icon}</span>
-                        {item.title}
+                        {itemScrambles[index].title}
                       </h3>
 
                       {/* Description */}
                       <p className="text-gray-300 text-lg leading-relaxed group-hover:text-gray-200 transition-colors duration-300">
-                        {item.description}
+                        {itemScrambles[index].description}
                       </p>
 
                       {/* Decorative Arrow */}
@@ -221,7 +289,7 @@ const TimelineSection = () => {
                   </div>
                 </div>
 
-                {/* Central Timeline Node */}
+                {/* Desktop Central Timeline Node */}
                 <div className="absolute left-1/2 transform -translate-x-1/2 z-20">
                   <div className={`relative w-16 h-16 bg-gradient-to-r ${item.color.primary} rounded-full flex items-center justify-center shadow-2xl border-4 border-gray-900 transform transition-all duration-300 ${
                     hoveredItem === index ? 'scale-125 rotate-12' : 'hover:scale-110'
@@ -247,6 +315,76 @@ const TimelineSection = () => {
                           left: `${20 + (i * 8)}%`,
                           top: `${10 + ((i * 15) % 80)}%`,
                           animationDelay: `${i * 0.1}s`,
+                          animationDuration: '1s'
+                        }}
+                      />
+                    ))}
+                  </div>
+                )}
+              </div>
+            ))}
+
+            {/* Mobile Timeline Layout */}
+            {timelineData.map((item, index) => (
+              <div
+                key={`mobile-${index}`}
+                className={`md:hidden relative flex items-start space-x-6 transform transition-all duration-1000 ${
+                  isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-20'
+                }`}
+                style={{ transitionDelay: `${item.delay}ms` }}
+                onMouseEnter={() => setHoveredItem(index)}
+                onMouseLeave={() => setHoveredItem(null)}
+              >
+                {/* Mobile Timeline Node */}
+                <div className="flex-shrink-0 relative">
+                  <div className={`relative w-16 h-16 bg-gradient-to-r ${item.color.primary} rounded-full flex items-center justify-center shadow-2xl border-4 border-gray-900 transform transition-all duration-300 ${
+                    hoveredItem === index ? 'scale-110 rotate-12' : ''
+                  }`}>
+                    <span className="text-2xl filter drop-shadow-lg">{item.icon}</span>
+
+                    {/* Pulsing Ring */}
+                    <div className={`absolute inset-0 rounded-full bg-gradient-to-r ${item.color.primary} animate-ping opacity-30`} />
+                  </div>
+                </div>
+
+                {/* Mobile Timeline Content */}
+                <div className="flex-1 min-w-0">
+                  <div className="group relative">
+                    {/* Glowing border effect */}
+                    <div className={`absolute -inset-2 bg-gradient-to-r ${item.color.primary} rounded-2xl blur-xl opacity-0 group-hover:opacity-40 transition-all duration-500`} />
+
+                    {/* Mobile Card - Larger and better spaced */}
+                    <div className={`relative backdrop-blur-2xl bg-gradient-to-br ${item.color.secondary} border ${item.color.border} rounded-2xl p-6 shadow-2xl transform transition-all duration-500 group-hover:scale-105`}>
+
+                      {/* Year Badge */}
+                      <div className={`inline-block px-4 py-2 bg-gradient-to-r ${item.color.primary} rounded-full mb-4 shadow-lg`}>
+                        <span className="text-white font-bold text-sm">{item.year}</span>
+                      </div>
+
+                      {/* Title */}
+                      <h3 className="text-xl font-bold text-white mb-3 leading-tight">
+                        {itemScrambles[index].title}
+                      </h3>
+
+                      {/* Description */}
+                      <p className="text-gray-300 text-base leading-relaxed group-hover:text-gray-200 transition-colors duration-300">
+                        {itemScrambles[index].description}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Mobile Floating Particles */}
+                {hoveredItem === index && (
+                  <div className="absolute inset-0 pointer-events-none overflow-hidden">
+                    {[...Array(8)].map((_, i) => (
+                      <div
+                        key={i}
+                        className={`absolute w-2 h-2 bg-gradient-to-r ${item.color.primary} rounded-full animate-ping`}
+                        style={{
+                          left: `${20 + (i * 10)}%`,
+                          top: `${10 + ((i * 20) % 80)}%`,
+                          animationDelay: `${i * 0.15}s`,
                           animationDuration: '1s'
                         }}
                       />
