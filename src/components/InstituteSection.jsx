@@ -32,7 +32,7 @@ const InstituteSection = () => {
   };
 
   return (
-    <section id="institute" className="relative py-16 bg-gradient-to-br from-gray-900 via-purple-900 to-gray-900 overflow-hidden">
+    <section id="institute"  className="relative  py-16 bg-gradient-to-br from-gray-900 via-purple-900 to-gray-900 overflow-hidden">
       {/* Background Effects - Same as other sections */}
       <div className="absolute inset-0">
         {/* Floating particles */}
@@ -99,7 +99,7 @@ const InstituteSection = () => {
 
         {/* Institute Banner */}
         <div className={`relative mb-16 transform transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-20'}`}>
-          <div className="relative backdrop-blur-2xl bg-gradient-to-br from-white/10 to-white/5 border border-white/20 rounded-3xl p-8 md:p-12 shadow-2xl overflow-hidden">
+          <div className="relative backdrop-blur-2xl bg-gradient-to-br from-white/10 to-white/5 border border-white/20 rounded-3xl p-0 md:p-12 shadow-2xl overflow-hidden">
 
             {/* Decorative elements */}
             <div className="absolute -top-6 -right-6 w-24 h-24 bg-gradient-to-r from-purple-500/20 to-blue-500/20 rounded-full blur-2xl" />
@@ -107,25 +107,26 @@ const InstituteSection = () => {
 
             <div className="relative flex flex-col items-center text-center max-w-4xl mx-auto">
               {/* College Image */}
-              <div className="relative mb-8 group">
-                <div className="absolute -inset-4 bg-gradient-to-r from-purple-500 via-blue-500 to-cyan-500 rounded-2xl blur-xl opacity-30 group-hover:opacity-50 transition-opacity duration-500" />
+              <div className="relative cursor-pointer mb-8 group">
+                <div className="absolute -inset-4 bg-gradient-to-r from-purple-500 via-blue-500 to-cyan-500 rounded-2xl blur-xl opacity-50 group-hover:opacity-60 transition-opacity duration-500" />
                 <div className="relative">
                   <img
-                    src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=800&h=500&fit=crop"
+                    src="https://i.ibb.co.com/Nn1zbFg6/pabna-ideal.jpg"
                     alt="Pabna Ideal Nursing College"
-                    className="w-full max-w-2xl rounded-2xl shadow-2xl transform group-hover:scale-105 transition-all duration-500"
+                    className="w-full max-w-2xl rounded-2xl shadow-2xl transform group-hover:scale-105 transition-all duration-500  "
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent rounded-2xl" />
                 </div>
               </div>
 
+<div className='px-4 py-6 md:px-0 md:py-0' >
+
               {/* College Title */}
-              <h1 className="text-3xl md:text-5xl font-black text-white mb-4 tracking-wide">
+              <h1 className="text-2xl md:text-5xl font-black text-white mb-4 tracking-wide">
                 <span className="bg-gradient-to-r from-green-400 via-cyan-400 to-blue-400 bg-clip-text text-transparent">
-                  PABNA IDEAL
+                  PABNA IDEAL NURSING COLLEGE
                 </span>
-                <br />
-                <span className="text-white">NURSING COLLEGE</span>
+
               </h1>
 
               {/* Description */}
@@ -134,7 +135,7 @@ const InstituteSection = () => {
               </p>
 
               {/* CTA Button */}
-              <button className="group relative px-8 py-4 bg-gradient-to-r from-green-500 via-blue-500 to-purple-500 rounded-2xl font-bold text-white shadow-2xl hover:shadow-blue-500/25 transform hover:scale-105 transition-all duration-300 overflow-hidden">
+              <button className="group relative px-8 py-4 bg-gradient-to-r from-green-500 via-blue-500 to-purple-500 rounded-2xl font-bold text-white shadow-2xl hover:shadow-blue-500/25 transform hover:scale-105 transition-all duration-300 overflow-hidden cursor-pointer">
                 <div className="absolute inset-0 bg-gradient-to-r from-purple-500 via-blue-500 to-green-500 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 <span className="relative flex items-center gap-2">
                   Get Started
@@ -143,12 +144,13 @@ const InstituteSection = () => {
                   </svg>
                 </span>
               </button>
+              </div>
             </div>
           </div>
         </div>
 
         {/* FAQ Section */}
-        <div className={`transform transition-all duration-1000 delay-300 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-20'}`}>
+        <div className={`transform  transition-all duration-1000 delay-300 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-20'}`}>
           <h2 className="text-2xl md:text-4xl font-bold text-center text-white mb-12">
             <span className="bg-gradient-to-r from-blue-400 via-purple-400 to-cyan-400 bg-clip-text text-transparent">
               আমি কেন পাবনা আইডিয়াল নার্সিং কলেজে পড়ি?
@@ -163,14 +165,14 @@ const InstituteSection = () => {
                 style={{ transitionDelay: `${400 + index * 100}ms` }}
               >
                 {/* Glowing effect on hover */}
-                <div className="absolute -inset-1 bg-gradient-to-r from-green-500/20 via-blue-500/20 to-purple-500/20 rounded-2xl blur-xl opacity-0 group-hover:opacity-60 transition-all duration-500" />
+                <div className="absolute cursor-pointer -inset-1 bg-gradient-to-r from-green-500/20 via-blue-500/20 to-purple-500/20 rounded-2xl blur-xl opacity-70 group-hover:opacity-60 transition-all duration-500" />
 
                 <div className="relative backdrop-blur-xl bg-gradient-to-br from-white/10 to-white/5 border border-white/20 rounded-2xl shadow-xl overflow-hidden">
 
                   {/* Accordion Header */}
                   <button
                     onClick={() => toggleAccordion(item.id)}
-                    className="w-full px-6 py-5 text-left flex items-center justify-between hover:bg-white/5 transition-all duration-300 group"
+                    className="w-full cursor-pointer px-6 py-5 text-left flex items-center justify-between hover:bg-white/5 transition-all duration-300 group"
                   >
                     <h3 className="text-lg md:text-xl font-bold text-green-400 group-hover:text-green-300 transition-colors pr-4">
                       {item.title}
