@@ -32,7 +32,7 @@ const InstituteSection = () => {
   };
 
   return (
-    <section id="institute" className="relative py-20 bg-gradient-to-br from-gray-900 via-purple-900 to-gray-900 overflow-hidden">
+    <section id="institute" className="relative py-16 bg-gradient-to-br from-gray-900 via-purple-900 to-gray-900 overflow-hidden">
       {/* Background Effects - Same as other sections */}
       <div className="absolute inset-0">
         {/* Floating particles */}
@@ -90,7 +90,7 @@ const InstituteSection = () => {
                 </svg>
               </div>
             </div>
-            <h2 className="text-4xl md:text-5xl font-black bg-gradient-to-r from-white via-purple-200 to-blue-200 bg-clip-text text-transparent">
+            <h2 className="text-3xl md:text-5xl font-black bg-gradient-to-r from-white via-purple-200 to-blue-200 bg-clip-text text-transparent">
               About My Institute
             </h2>
           </div>
@@ -149,7 +149,7 @@ const InstituteSection = () => {
 
         {/* FAQ Section */}
         <div className={`transform transition-all duration-1000 delay-300 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-20'}`}>
-          <h2 className="text-3xl md:text-4xl font-bold text-center text-white mb-12">
+          <h2 className="text-2xl md:text-4xl font-bold text-center text-white mb-12">
             <span className="bg-gradient-to-r from-blue-400 via-purple-400 to-cyan-400 bg-clip-text text-transparent">
               আমি কেন পাবনা আইডিয়াল নার্সিং কলেজে পড়ি?
             </span>

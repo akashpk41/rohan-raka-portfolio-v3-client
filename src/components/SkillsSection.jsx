@@ -73,7 +73,7 @@ const SkillsSection = () => {
   ];
 
   return (
-    <section className="relative py-20 bg-gradient-to-br from-gray-900 via-purple-900 to-gray-900 overflow-hidden">
+    <section className="relative py-16 bg-gradient-to-br from-gray-900 via-purple-900 to-gray-900 overflow-hidden">
       {/* Unique Background Effects */}
       <div className="absolute inset-0">
         {/* Animated Gradient Orbs */}
@@ -111,7 +111,7 @@ const SkillsSection = () => {
                 </svg>
               </div>
             </div>
-            <h2 className="text-4xl md:text-5xl font-black bg-gradient-to-r from-white via-cyan-200 to-purple-200 bg-clip-text text-transparent">
+            <h2 className="text-3xl md:text-5xl font-black bg-gradient-to-r from-white via-cyan-200 to-purple-200 bg-clip-text text-transparent">
               My Technical Skills
             </h2>
           </div>
@@ -131,10 +131,10 @@ const SkillsSection = () => {
               {/* Card Background with 3D Effect */}
               <div className="relative">
                 {/* Glowing border effect */}
-                <div className={`absolute -inset-1 bg-gradient-to-r ${skill.gradient} rounded-3xl blur-xl opacity-0 group-hover:opacity-60 transition-all duration-500`} />
+                <div className={`absolute -inset-1 bg-gradient-to-r ${skill.gradient} rounded-3xl blur-xl opacity-70 group-hover:opacity-60 transition-all duration-500  `} />
 
                 {/* Main Card */}
-                <div className={`relative backdrop-blur-2xl bg-gradient-to-br ${skill.bgGradient} border border-white/20 rounded-3xl p-8 shadow-2xl transform transition-all duration-500 group-hover:scale-105 group-hover:-translate-y-2 ${hoveredCard === skill.id ? 'shadow-2xl shadow-purple-500/25' : ''}`}>
+                <div className={`cursor-pointer mt-4 relative backdrop-blur-2xl bg-gradient-to-br ${skill.bgGradient} border border-white/20 rounded-3xl p-8 shadow-2xl transform transition-all duration-500 group-hover:scale-105 group-hover:-translate-y-2 ${hoveredCard === skill.id ? 'shadow-2xl shadow-purple-500/25' : ''}`}>
 
                   {/* Floating Icon */}
                   <div className="absolute -top-6 -right-2">
@@ -154,7 +154,7 @@ const SkillsSection = () => {
                   </h3>
 
                   {/* Description */}
-                  <p className="text-gray-300 text-base leading-relaxed group-hover:text-gray-200 transition-colors duration-300">
+                  <p className="text-gray-200 text-base leading-relaxed group-hover:text-gray-200 transition-colors duration-300">
                     {skill.description}
                   </p>
 

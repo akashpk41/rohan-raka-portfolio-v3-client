@@ -11,8 +11,8 @@ function App() {
     <>
       {/* <Header /> */}
       {/* <SkillsSection /> */}
-      {/* <InstituteSection /> */}
-      <TimelineSection />
+      <InstituteSection />
+      {/* <TimelineSection /> */}
       {/* <TestimonialSection /> */}
     {/* <Gallery /> */}
     </>
