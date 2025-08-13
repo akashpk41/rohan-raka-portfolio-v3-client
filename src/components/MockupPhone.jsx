@@ -11,52 +11,27 @@ const MockupPhone = () => {
     return () => clearTimeout(timer);
   }, []);
 
-  const carouselImages = [
-    {
-      src: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=400&h=800&fit=crop",
-      alt: "Memory 1"
-    },
-    {
-      src: "https://images.unsplash.com/photo-1523050854058-8df90110c9d1?w=400&h=800&fit=crop",
-      alt: "Memory 2"
-    },
-    {
-      src: "https://images.unsplash.com/photo-1544717297-fa95b6ee9643?w=400&h=800&fit=crop",
-      alt: "Memory 3"
-    },
-    {
-      src: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&h=800&fit=crop",
-      alt: "Memory 4"
-    },
-    {
-      src: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&h=800&fit=crop",
-      alt: "Memory 5"
-    },
-    {
-      src: "https://images.unsplash.com/photo-1511632765486-a01980e01a18?w=400&h=800&fit=crop",
-      alt: "Memory 6"
-    },
-    {
-      src: "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=400&h=800&fit=crop",
-      alt: "Memory 7"
-    },
-    {
-      src: "https://images.unsplash.com/photo-1543269664-647b4ac92d22?w=400&h=800&fit=crop",
-      alt: "Memory 8"
-    },
-    {
-      src: "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=400&h=800&fit=crop",
-      alt: "Memory 9"
-    },
-    {
-      src: "https://images.unsplash.com/photo-1547036967-23d11aacaee0?w=400&h=800&fit=crop",
-      alt: "Memory 10"
-    },
-    {
-      src: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=400&h=800&fit=crop",
-      alt: "Memory 11"
-    }
-  ];
+
+
+
+const carouselImages = [
+  { src: "https://i.ibb.co.com/8ndKBwR5/carousel-3.jpg", alt: "Memory 1" },
+  { src: "https://i.ibb.co.com/SXHM3ZCd/carousel-4.jpg", alt: "Memory 2" },
+  { src: "https://i.ibb.co.com/3mNV3kWR/carousel-5.jpg", alt: "Memory 3" },
+  { src: "https://i.ibb.co.com/1tJj4wFv/carousel-6.jpg", alt: "Memory 4" },
+  { src: "https://i.ibb.co.com/5gqvSDML/carousel-7.jpg", alt: "Memory 5" },
+  { src: "https://i.ibb.co.com/B5Z6t6qz/carousel-8.jpg", alt: "Memory 6" },
+  { src: "https://i.ibb.co.com/kgydsr2V/carousel-9.jpg", alt: "Memory 7" },
+  { src: "https://i.ibb.co.com/mVvC2WQ2/carousel-10.jpg", alt: "Memory 8" },
+  { src: "https://i.ibb.co.com/x87r5JYt/carousel-11.jpg", alt: "Memory 9" },
+  { src: "https://i.ibb.co.com/9zT3PFs/carousel-2.jpg", alt: "Memory 10" },
+  { src: "https://i.ibb.co.com/BVNLcT2j/carousel-1.jpg", alt: "Memory 11" },
+  { src: "https://i.ibb.co.com/wF06WJDT/carousel-15.jpg", alt: "Memory 12" },
+  { src: "https://i.ibb.co.com/0ynfPgRZ/carousel-12.jpg", alt: "Memory 13" },
+  { src: "https://i.ibb.co.com/svZPRR6V/carousel-13.jpg", alt: "Memory 14" },
+  { src: "https://i.ibb.co.com/N0zYSYX/carousel-14.jpg", alt: "Memory 15" },
+  { src: "https://i.ibb.co.com/tPZRcsRd/carousel-16.jpg", alt: "Memory 16" },
+];
 
   // Auto scroll functionality
   useEffect(() => {
@@ -232,9 +207,9 @@ const MockupPhone = () => {
                 Stay tuned. The best is yet to come..
               </p>
               <div className="text-2xl animate-bounce">🚀</div>
-              <div className="w-8 h-8 rounded-full overflow-hidden border-2 border-yellow-400 animate-pulse">
+              <div className="w-18 h-18 rounded-full overflow-hidden border-2 border-blue-400 animate-pulse">
                 <img
-                  src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face"
+                  src="https://i.ibb.co.com/wF06WJDT/carousel-15.jpg"
                   alt="Smile"
                   className="w-full h-full object-cover"
                 />

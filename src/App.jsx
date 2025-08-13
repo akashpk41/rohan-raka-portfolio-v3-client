@@ -4,6 +4,7 @@ import ContactForm from "./components/ContactForm";
 import Gallery from "./components/Gallery";
 import Header from "./components/Header";
 import InstituteSection from "./components/InstituteSection";
+import InteractivePortfolio from "./components/InteractivePortfolio";
 import MockupPhone from "./components/MockupPhone";
 import SkillsSection from "./components/SkillsSection";
 import Slider from "./components/Slider";
@@ -16,16 +17,17 @@ function App() {
     <>
       <Header />
       {/* <SkillsSection /> */}
-      <InstituteSection />
+      {/* <InteractivePortfolio /> */}
+      {/* <InstituteSection /> */}
       {/* <TimelineSection /> */}
       {/* <TestimonialSection /> */}
       {/* <Gallery /> */}
       {/* <Slider /> */}
-      {/* <BlogSection /> */}
-      <CollegeSummaryLocation />
+      <BlogSection />
+      {/* <CollegeSummaryLocation /> */}
       {/* <TimeSection /> */}
-      {/* <ContactForm /> */}
       {/* <MockupPhone /> */}
+      {/* <ContactForm /> */}
     </>
   );
 }
