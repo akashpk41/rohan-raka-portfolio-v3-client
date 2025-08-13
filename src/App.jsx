@@ -16,13 +16,13 @@ function App() {
     <>
       <Header />
       {/* <SkillsSection /> */}
-      {/* <InstituteSection /> */}
+      <InstituteSection />
       {/* <TimelineSection /> */}
       {/* <TestimonialSection /> */}
       {/* <Gallery /> */}
       {/* <Slider /> */}
       {/* <BlogSection /> */}
-      {/* <CollegeSummaryLocation /> */}
+      <CollegeSummaryLocation />
       {/* <TimeSection /> */}
       {/* <ContactForm /> */}
       {/* <MockupPhone /> */}

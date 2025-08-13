@@ -108,7 +108,7 @@ const CollegeSummaryLocation = () => {
               </span>
             </h2>
 
-            <div className="w-24 h-1 bg-gradient-to-r from-cyan-400 to-purple-400 rounded-full mx-auto" />
+            <div className="w-48 h-1 bg-gradient-to-r from-cyan-400 to-purple-400 rounded-full mx-auto" />
           </div>
 
           {/* Summary Content */}
@@ -123,32 +123,36 @@ const CollegeSummaryLocation = () => {
             >
               {/* Main Summary Card */}
               <div className="backdrop-blur-xl bg-white/5 border border-white/10 rounded-3xl p-8 shadow-2xl">
-                <div className="space-y-4 text-gray-300 leading-relaxed">
-                  <p>
+                <div className="space-y-4 text-gray-100 leading-relaxed">
+                  <p className="text-lg mb-6">
                     <span className="text-cyan-400 font-semibold">
                       Pabna Ideal Nursing College
                     </span>{" "}
-                    পরবর্তী প্রজন্মের দয়ালু এবং দক্ষ নার্সদের লালন-পালনে
-                    নিবেদিত। আমাদের মিশন হল একটি ব্যাপক শিক্ষা প্রদান করা যা
-                    তাত্ত্বিক জ্ঞানের সাথে ব্যবহারিক অভিজ্ঞতাকে একত্রিত করে।
+                    is dedicated to nurturing the next generation of
+                    compassionate and skilled nurses. Our mission is to provide
+                    a comprehensive education that combines theoretical
+                    knowledge with practical experience, ensuring our students
+                    are well-prepared for the challenges of modern healthcare.
                   </p>
 
-                  <p>
-                    আমরা{" "}
+                  <p className="text-lg mb-6">
+                    We believe in the power of{" "}
                     <span className="text-purple-400 font-semibold">
-                      সহানুভূতি, পেশাদারিত্ব এবং ক্রমাগত শিক্ষার
-                    </span>{" "}
-                    শক্তিতে বিশ্বাস করি। আমাদের ফ্যাকাল্টি শিক্ষার্থীদের পরামর্শ
-                    দিতে, একটি সহায়ক পরিবেশ গড়ে তুলতে প্রতিশ্রুতিবদ্ধ।
+                      empathy, professionalism, and continuous learning
+                    </span>
+                    . Our faculty is committed to mentoring students, fostering
+                    a supportive environment where they can thrive academically
+                    and personally.
                   </p>
 
-                  <p>
-                    স্বাস্থ্যসেবা এবং সমাজে ইতিবাচক প্রভাব ফেলার জন্য আমাদের
-                    যাত্রায় যোগ দিন। একসাথে, আমরা{" "}
+                  <p className="text-lg">
+                    Join us in our journey to make a positive impact on
+                    healthcare and society. Together, we can shape the future of
+                    nursing with{" "}
                     <span className="text-green-400 font-semibold">
-                      উৎকর্ষতা এবং সততার
-                    </span>{" "}
-                    সাথে নার্সিংয়ের ভবিষ্যত গঠন করতে পারি।
+                      excellence and integrity
+                    </span>
+                    .
                   </p>
                 </div>
               </div>
@@ -159,7 +163,7 @@ const CollegeSummaryLocation = () => {
                   {
                     icon: (
                       <svg
-                        className="w-5 h-5"
+                        className="w-8 h-8"
                         fill="none"
                         stroke="currentColor"
                         viewBox="0 0 24 24"
@@ -178,7 +182,7 @@ const CollegeSummaryLocation = () => {
                   {
                     icon: (
                       <svg
-                        className="w-5 h-5"
+                        className="w-8 h-8"
                         fill="none"
                         stroke="currentColor"
                         viewBox="0 0 24 24"
@@ -192,12 +196,12 @@ const CollegeSummaryLocation = () => {
                       </svg>
                     ),
                     title: "Expert Faculty",
-                    description: "অভিজ্ঞ এবং দক্ষ শিক্ষকমণ্ডলী",
+                    description: "অভিজ্ঞ এবং দক্ষ শিক্ষক মণ্ডলী",
                   },
                   {
                     icon: (
                       <svg
-                        className="w-5 h-5"
+                        className="w-8 h-8"
                         fill="none"
                         stroke="currentColor"
                         viewBox="0 0 24 24"
@@ -211,7 +215,7 @@ const CollegeSummaryLocation = () => {
                       </svg>
                     ),
                     title: "Modern Facilities",
-                    description: "অত্याধুनিক ল্যাব এবং সুবিধা",
+                    description: "অত্যাধুনিক ল্যাব এবং সুবিধা",
                   },
                 ].map((feature, index) => (
                   <div
@@ -231,7 +235,7 @@ const CollegeSummaryLocation = () => {
                         <h4 className="text-white font-semibold">
                           {feature.title}
                         </h4>
-                        <p className="text-gray-400 text-sm">
+                        <p className="text-gray-200 text-sm">
                           {feature.description}
                         </p>
                       </div>
@@ -250,20 +254,20 @@ const CollegeSummaryLocation = () => {
               }`}
             >
               {/* College Image */}
-              <div className="relative mb-8">
-                <div className="absolute inset-0 bg-gradient-to-br from-cyan-400/20 via-purple-400/20 to-green-400/20 rounded-3xl blur-3xl" />
-                <div className="relative backdrop-blur-2xl bg-white/5 border border-white/10 rounded-3xl p-6 shadow-2xl">
-                  <div className="w-full h-80 bg-gradient-to-br from-gray-800 via-gray-700 to-gray-800 rounded-2xl flex items-center justify-center overflow-hidden">
+              <div className="relative   mb-8">
+                <div className="absolute  inset-0 bg-gradient-to-br from-cyan-400/20 via-purple-400/20 to-green-400/20 rounded-3xl blur-3xl" />
+                <div className="relative  backdrop-blur-2xl bg-white/5 border border-white/10 rounded-3xl shadow-2xl">
+                  <div className="w-full cursor-pointer  bg-gradient-to-br from-gray-800 via-gray-700 to-gray-800 rounded-xl flex items-center justify-center overflow-hidden">
                     <img
-                      src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=600&h=400&fit=crop"
+                      src="https://scontent.fdac27-2.fna.fbcdn.net/v/t39.30808-6/484979600_1182302797017271_17774322822121988_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeGJadtWOZaFmwSCwyGRZ7jSz9uownYSurbP26jCdhK6tpGxP-rEbnh4n1WjaGrpTMygXuufb_nHw8u2JPXR22yA&_nc_ohc=koQ1kpn4tyQQ7kNvwGSktRG&_nc_oc=AdnVKvS1vC3yU4dpfzN9xECearYbJjS9B8U2ppcVPWnLpBxY3jeRBb2bPtybWlPpVQo&_nc_zt=23&_nc_ht=scontent.fdac27-2.fna&_nc_gid=7BYYbngPXrYgs4n40EzGzA&oh=00_AfV8-LgvOygqFHv07p8oHtpZKCdKbNph6Rxpn-DIPCkUmw&oe=68A247B3"
                       alt="Pabna Ideal Nursing College"
-                      className="w-full h-full object-cover rounded-2xl"
+                      className="w-full h-full object-contain rounded-2xl"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent rounded-2xl" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent rounded-2xl" />
                   </div>
 
                   {/* College Badge */}
-                  <div className="mt-4 text-center">
+                  <div className="mt-4 p-4 text-center">
                     <h3 className="text-white font-bold text-xl">
                       পাবনা আইডিয়াল নার্সিং কলেজ
                     </h3>
@@ -275,10 +279,10 @@ const CollegeSummaryLocation = () => {
               </div>
 
               {/* Stats Cards */}
-              <div className="grid grid-cols-3 gap-4">
+              <div className="grid cursor-pointer grid-cols-3 gap-3">
                 {[
                   {
-                    number: "500+",
+                    number: "5500+",
                     label: "Students",
                     color: "from-green-400 to-cyan-400",
                   },
@@ -296,7 +300,7 @@ const CollegeSummaryLocation = () => {
                   <div
                     key={stat.label}
                     className={`backdrop-blur-xl bg-white/5 border border-white/10 rounded-xl p-4 text-center shadow-lg transform transition-all duration-500 hover:scale-105 ${
-                      index === activeCard ? "ring-2 ring-cyan-400/50" : ""
+                      index === activeCard ? "ring-2 ring-cyan-400/50 scale-105" : ""
                     }`}
                     style={{ transitionDelay: `${(index + 6) * 100}ms` }}
                   >
@@ -305,7 +309,7 @@ const CollegeSummaryLocation = () => {
                     >
                       {stat.number}
                     </div>
-                    <div className="text-gray-400 text-sm">{stat.label}</div>
+                    <div className="text-gray-200 text-sm">{stat.label}</div>
                   </div>
                 ))}
               </div>
@@ -321,7 +325,7 @@ const CollegeSummaryLocation = () => {
             }`}
           >
             {/* Location Header */}
-            <div className="text-center mb-12">
+            <div id="location" className="text-center mb-12">
               <div className="inline-block px-6 py-3 bg-gradient-to-r from-green-500/20 to-cyan-500/20 backdrop-blur-sm border border-green-500/30 rounded-full mb-6">
                 <span className="text-green-400 font-medium flex items-center gap-2">
                   <svg
@@ -347,20 +351,20 @@ const CollegeSummaryLocation = () => {
                 </span>
               </div>
 
-              <h2 className="text-3xl md:text-5xl font-black mb-4">
+              <h2  className="text-3xl md:text-5xl font-black mb-4">
                 <span className="text-white">COLLEGE </span>
                 <span className="bg-gradient-to-r from-green-400 via-cyan-400 to-purple-400 bg-clip-text text-transparent">
                   LOCATION
                 </span>
               </h2>
 
-              <div className="w-20 h-1 bg-gradient-to-r from-green-400 to-cyan-400 rounded-full mx-auto" />
+              <div className="w-48 h-1 bg-gradient-to-r from-green-400 to-cyan-400 rounded-full mx-auto" />
             </div>
 
             {/* Map Container */}
-            <div className="backdrop-blur-2xl bg-white/5 border border-white/10 rounded-3xl p-6 shadow-2xl">
+            <div className="backdrop-blur-2xl bg-white/5 border border-white/10 rounded-3xl  shadow-2xl">
               {/* Map */}
-              <div className="relative w-full h-96 rounded-2xl overflow-hidden shadow-2xl mb-6">
+              <div className="relative  w-full h-96 rounded-2xl overflow-hidden shadow-2xl mb-6">
                 <div className="absolute inset-0 bg-gradient-to-br from-cyan-400/10 via-purple-400/10 to-green-400/10 z-10 pointer-events-none" />
                 <iframe
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3651.893746992159!2d89.2445008!3d24.02037!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39fe84cad714942b%3A0xdb4a027622247b3d!2sPabna%20Ideal%20Nursing%20College!5e0!3m2!1sen!2sbd!4v1720784692002!5m2!1sen!2sbd"
@@ -375,9 +379,9 @@ const CollegeSummaryLocation = () => {
               </div>
 
               {/* Location Info Cards */}
-              <div className="grid md:grid-cols-3 gap-6">
+              <div className="grid p-4 md:grid-cols-3 gap-6">
                 {/* Address Card */}
-                <div className="backdrop-blur-xl bg-gradient-to-br from-green-500/10 to-cyan-500/10 border border-green-500/20 rounded-xl p-6 text-center group hover:from-green-500/20 hover:to-cyan-500/20 transition-all duration-300">
+                <a href="https://www.facebook.com/pabnaidealnc" target="_blank"  className="backdrop-blur-xl bg-gradient-to-br from-green-500/10 to-cyan-500/10 border border-green-500/20 rounded-xl p-6 text-center group hover:from-green-500/20 hover:to-cyan-500/20 transition-all duration-300">
                   <div className="w-12 h-12 bg-gradient-to-r from-green-400 to-cyan-400 rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
                     <svg
                       className="w-6 h-6 text-white"
@@ -397,13 +401,13 @@ const CollegeSummaryLocation = () => {
                   <p className="text-green-400 font-semibold">
                     Pabna Ideal Nursing College
                   </p>
-                  <p className="text-gray-400 text-sm">
+                  <p className="text-gray-200 text-sm">
                     Hospital Road, Pabna Sadar
                   </p>
-                </div>
+                </a>
 
                 {/* Contact Card */}
-                <div className="backdrop-blur-xl bg-gradient-to-br from-cyan-500/10 to-purple-500/10 border border-cyan-500/20 rounded-xl p-6 text-center group hover:from-cyan-500/20 hover:to-purple-500/20 transition-all duration-300">
+                <div className="backdrop-blur-xl  bg-gradient-to-br from-cyan-500/10 to-purple-500/10 border border-cyan-500/20 rounded-xl p-6 text-center group hover:from-cyan-500/20 hover:to-purple-500/20 transition-all duration-300">
                   <div className="w-12 h-12 bg-gradient-to-r from-cyan-400 to-purple-400 rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
                     <svg
                       className="w-6 h-6 text-white"
@@ -423,11 +427,11 @@ const CollegeSummaryLocation = () => {
                   <p className="text-cyan-400 font-semibold">
                     +880 1799-818188
                   </p>
-                  <p className="text-gray-400 text-sm">Available 24/7</p>
+                  <p className="text-gray-200 text-sm">Available 24/7</p>
                 </div>
 
                 {/* Direction Card */}
-                <div className="backdrop-blur-xl bg-gradient-to-br from-purple-500/10 to-pink-500/10 border border-purple-500/20 rounded-xl p-6 text-center group hover:from-purple-500/20 hover:to-pink-500/20 transition-all duration-300">
+                <a href="#location" className="backdrop-blur-xl bg-gradient-to-br from-purple-500/10 to-pink-500/10 border border-purple-500/20 rounded-xl p-6 text-center group hover:from-purple-500/20 hover:to-pink-500/20 transition-all duration-300">
                   <div className="w-12 h-12 bg-gradient-to-r from-purple-400 to-pink-400 rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
                     <svg
                       className="w-6 h-6 text-white"
@@ -447,8 +451,8 @@ const CollegeSummaryLocation = () => {
                   <button className="text-purple-400 font-semibold hover:text-purple-300 transition-colors">
                     Get Directions
                   </button>
-                  <p className="text-gray-400 text-sm">Via Google Maps</p>
-                </div>
+                  <p className="text-gray-200 text-sm">Via Google Maps</p>
+                </a>
               </div>
             </div>
           </div>
