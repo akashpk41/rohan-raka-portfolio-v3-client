@@ -1,4 +1,4 @@
-import BlogSection from "./components/BlogSection";
+// import BlogSection from "./components/BlogSection";
 import CollegeSummaryLocation from "./components/CollegeSummaryLocation";
 import ContactForm from "./components/ContactForm";
 import Gallery from "./components/Gallery";
@@ -15,17 +15,17 @@ function App() {
   return (
     <>
       <Header />
-      <SkillsSection />
-      <InstituteSection />
-      <TimelineSection />
-      <TestimonialSection />
-      <Gallery />
-      <Slider />
+      {/* <SkillsSection /> */}
+      {/* <InstituteSection /> */}
+      {/* <TimelineSection /> */}
+      {/* <TestimonialSection /> */}
+      {/* <Gallery /> */}
+      {/* <Slider /> */}
       {/* <BlogSection /> */}
-      <CollegeSummaryLocation />
-      <TimeSection />
-      <ContactForm />
-      <MockupPhone />
+      {/* <CollegeSummaryLocation /> */}
+      {/* <TimeSection /> */}
+      {/* <ContactForm /> */}
+      {/* <MockupPhone /> */}
     </>
   );
 }
