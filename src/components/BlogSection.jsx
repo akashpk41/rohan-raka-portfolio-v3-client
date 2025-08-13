@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-const BlogSection = () => {
+const PremiumBlogSection = () => {
   const [isLoaded, setIsLoaded] = useState(false);
   const [selectedCategory, setSelectedCategory] = useState('All');
   const [hoveredBlog, setHoveredBlog] = useState(null);
@@ -161,15 +161,13 @@ const BlogSection = () => {
           </div>
 
           {/* Blog Posts Grid */}
-          <div className="grid lg:grid-cols-2 gap-8 mb-16">
+          <div className="space-y-8 mb-16">
             {filteredBlogs.map((blog, index) => (
               <div
                 key={blog.id}
                 onMouseEnter={() => setHoveredBlog(blog.id)}
                 onMouseLeave={() => setHoveredBlog(null)}
-                className={`group transform transition-all duration-700 hover:scale-105 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-20'} ${
-                  blog.featured ? 'lg:col-span-2' : ''
-                }`}
+                className={`group transform transition-all duration-700 hover:scale-105 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-20'}`}
                 style={{ transitionDelay: `${(index + 3) * 200}ms` }}
               >
                 <article className={`relative backdrop-blur-2xl bg-gradient-to-br ${blog.bgGradient} border ${blog.borderColor} rounded-3xl overflow-hidden shadow-2xl hover:shadow-cyan-500/25 transition-all duration-500`}>
@@ -188,11 +186,11 @@ const BlogSection = () => {
                     </div>
                   )}
 
-                  <div className={`${blog.featured ? 'lg:flex lg:items-center' : 'block'}`}>
-
-                    {/* Blog Image */}
-                    <div className={`relative overflow-hidden ${blog.featured ? 'lg:w-1/2' : 'w-full'}`}>
-                      <div className="relative h-64 lg:h-80">
+                  {/* Mobile Layout */}
+                  <div className="block md:hidden">
+                    {/* Mobile Blog Image */}
+                    <div className="relative overflow-hidden">
+                      <div className="relative h-48">
                         <img
                           src={blog.image}
                           alt={blog.title}
@@ -200,73 +198,198 @@ const BlogSection = () => {
                         />
 
                         {/* Image Overlay */}
-                        <div className={`absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent`} />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
 
                         {/* Category Badge on Image */}
-                        <div className="absolute bottom-4 left-4">
+                        <div className="absolute bottom-3 left-3">
                           <div className={`px-3 py-1 bg-gradient-to-r ${blog.gradient} rounded-full backdrop-blur-sm`}>
-                            <span className="text-white font-semibold text-sm">{blog.category}</span>
+                            <span className="text-white font-semibold text-xs">{blog.category}</span>
                           </div>
                         </div>
 
-                        {/* Stats Overlay */}
-                        <div className={`absolute top-4 right-4 space-y-2 transition-opacity duration-300 ${hoveredBlog === blog.id ? 'opacity-100' : 'opacity-0'}`}>
-                          <div className="flex items-center gap-1 px-3 py-1 backdrop-blur-xl bg-black/30 rounded-full">
-                            <svg className="w-4 h-4 text-red-400" fill="currentColor" viewBox="0 0 24 24">
+                        {/* Stats Overlay - Mobile */}
+                        <div className="absolute top-3 right-3 space-y-2">
+                          <div className="flex items-center gap-1 px-2 py-1 backdrop-blur-xl bg-black/30 rounded-full">
+                            <svg className="w-3 h-3 text-red-400" fill="currentColor" viewBox="0 0 24 24">
                               <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
                             </svg>
-                            <span className="text-white text-sm font-medium">{blog.likes}</span>
+                            <span className="text-white text-xs font-medium">{blog.likes}</span>
                           </div>
 
-                          <div className="flex items-center gap-1 px-3 py-1 backdrop-blur-xl bg-black/30 rounded-full">
-                            <svg className="w-4 h-4 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <div className="flex items-center gap-1 px-2 py-1 backdrop-blur-xl bg-black/30 rounded-full">
+                            <svg className="w-3 h-3 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
                               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
                             </svg>
-                            <span className="text-white text-sm font-medium">{blog.views}</span>
+                            <span className="text-white text-xs font-medium">{blog.views}</span>
                           </div>
                         </div>
                       </div>
                     </div>
 
-                    {/* Blog Content */}
-                    <div className={`p-8 ${blog.featured ? 'lg:w-1/2' : 'w-full'}`}>
-
-                      {/* Meta Info */}
-                      <div className="flex items-center gap-4 mb-4 text-sm text-gray-400">
+                    {/* Mobile Content */}
+                    <div className="p-4">
+                      {/* Mobile Meta Info */}
+                      <div className="space-y-2 mb-3">
+                        {/* Author Row */}
                         <div className="flex items-center gap-2">
-                          <div className="w-6 h-6 bg-gradient-to-r from-cyan-400 to-purple-400 rounded-full flex items-center justify-center">
+                          <div className="w-5 h-5 bg-gradient-to-r from-cyan-400 to-purple-400 rounded-full flex items-center justify-center">
                             <span className="text-white text-xs font-bold">R</span>
                           </div>
-                          <span>{blog.author}</span>
+                          <span className="text-gray-400 text-sm font-medium">{blog.author}</span>
                         </div>
 
-                        <div className="flex items-center gap-1">
-                          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                          </svg>
-                          <span>{blog.date}</span>
-                        </div>
+                        {/* Date and Time Row */}
+                        <div className="flex items-center gap-4 text-xs text-gray-500">
+                          <div className="flex items-center gap-1">
+                            <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                            </svg>
+                            <span>{blog.date}</span>
+                          </div>
 
-                        <div className="flex items-center gap-1">
-                          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                          </svg>
-                          <span>{blog.readTime}</span>
+                          <div className="flex items-center gap-1">
+                            <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                            <span>{blog.readTime}</span>
+                          </div>
                         </div>
                       </div>
 
-                      {/* Title */}
-                      <h2 className="text-xl md:text-2xl font-bold text-white mb-4 leading-tight group-hover:text-cyan-400 transition-colors duration-300">
+                      {/* Mobile Title */}
+                      <h2 className="text-lg font-bold text-white mb-2 leading-tight group-hover:text-cyan-400 transition-colors duration-300">
                         {blog.title}
                       </h2>
 
-                      {/* Excerpt */}
-                      <p className="text-gray-300 mb-6 leading-relaxed">
+                      {/* Mobile Excerpt */}
+                      <p className="text-gray-300 text-sm mb-4 leading-relaxed line-clamp-2">
                         {blog.excerpt}
                       </p>
 
-                      {/* Tags */}
+                      {/* Mobile Tags */}
+                      <div className="flex flex-wrap gap-1 mb-4">
+                        {blog.tags.slice(0, 2).map((tag, tagIndex) => (
+                          <span
+                            key={tagIndex}
+                            className="px-2 py-1 bg-white/5 border border-white/20 rounded-full text-xs text-cyan-400"
+                          >
+                            #{tag}
+                          </span>
+                        ))}
+                      </div>
+
+                      {/* Mobile Footer */}
+                      <div className="flex items-center justify-between">
+                        <button className="px-4 py-2 bg-gradient-to-r from-cyan-500 to-purple-500 rounded-lg font-semibold text-white text-sm shadow-lg hover:shadow-cyan-500/25 transition-all duration-300">
+                          Read More
+                        </button>
+                        <div className="flex items-center gap-3 text-gray-400 text-sm">
+                          <span className="flex items-center gap-1">
+                            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                            </svg>
+                            {blog.likes}
+                          </span>
+                          <span className="flex items-center gap-1">
+                            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+                            </svg>
+                            {blog.comments}
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Desktop Layout */}
+                  <div className="hidden md:flex md:items-center">
+                  {/* Desktop Layout */}
+                  <div className="hidden md:flex md:items-center">
+
+                    {/* Desktop Blog Image */}
+                    <div className="md:w-1/2 lg:w-2/5">
+                      <div className="relative overflow-hidden">
+                        <div className="relative h-64 lg:h-80">
+                          <img
+                            src={blog.image}
+                            alt={blog.title}
+                            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                          />
+
+                          {/* Image Overlay */}
+                          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+
+                          {/* Category Badge on Image */}
+                          <div className="absolute bottom-4 left-4">
+                            <div className={`px-3 py-1 bg-gradient-to-r ${blog.gradient} rounded-full backdrop-blur-sm`}>
+                              <span className="text-white font-semibold text-sm">{blog.category}</span>
+                            </div>
+                          </div>
+
+                          {/* Stats Overlay - Desktop */}
+                          <div className="absolute top-4 right-4 space-y-2">
+                            <div className="flex items-center gap-1 px-3 py-1 backdrop-blur-xl bg-black/30 rounded-full">
+                              <svg className="w-4 h-4 text-red-400" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                              </svg>
+                              <span className="text-white text-sm font-medium">{blog.likes}</span>
+                            </div>
+
+                            <div className="flex items-center gap-1 px-3 py-1 backdrop-blur-xl bg-black/30 rounded-full">
+                              <svg className="w-4 h-4 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                              </svg>
+                              <span className="text-white text-sm font-medium">{blog.views}</span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Desktop Blog Content */}
+                    <div className="md:w-1/2 lg:w-3/5 p-8">
+
+                      {/* Desktop Meta Info */}
+                      <div className="space-y-3 mb-4">
+                        {/* Author Row */}
+                        <div className="flex items-center gap-3">
+                          <div className="w-8 h-8 bg-gradient-to-r from-cyan-400 to-purple-400 rounded-full flex items-center justify-center">
+                            <span className="text-white text-sm font-bold">R</span>
+                          </div>
+                          <span className="text-gray-300 text-base font-semibold">{blog.author}</span>
+                        </div>
+
+                        {/* Date and Time Row */}
+                        <div className="flex items-center gap-6 text-sm text-gray-400">
+                          <div className="flex items-center gap-2">
+                            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                            </svg>
+                            <span>{blog.date}</span>
+                          </div>
+
+                          <div className="flex items-center gap-2">
+                            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                            <span>{blog.readTime}</span>
+                          </div>
+                        </div>
+                      </div>
+
+                      {/* Desktop Title */}
+                      <h2 className="text-xl lg:text-2xl xl:text-3xl font-bold text-white mb-4 leading-tight group-hover:text-cyan-400 transition-colors duration-300">
+                        {blog.title}
+                      </h2>
+
+                      {/* Desktop Excerpt */}
+                      <p className="text-gray-300 mb-6 leading-relaxed text-base lg:text-lg">
+                        {blog.excerpt}
+                      </p>
+
+                      {/* Desktop Tags */}
                       <div className="flex flex-wrap gap-2 mb-6">
                         {blog.tags.map((tag, tagIndex) => (
                           <span
@@ -278,10 +401,10 @@ const BlogSection = () => {
                         ))}
                       </div>
 
-                      {/* Footer */}
+                      {/* Desktop Footer */}
                       <div className="flex items-center justify-between">
 
-                        {/* Read More Button */}
+                        {/* Desktop Read More Button */}
                         <button className="group/btn relative px-6 py-3 bg-gradient-to-r from-cyan-500 to-purple-500 rounded-xl font-semibold text-white shadow-lg hover:shadow-cyan-500/25 transform hover:scale-105 transition-all duration-300 overflow-hidden">
                           <div className="absolute inset-0 bg-gradient-to-r from-purple-500 to-cyan-500 opacity-0 group-hover/btn:opacity-100 transition-opacity duration-300" />
                           <span className="relative flex items-center gap-2">
@@ -292,7 +415,7 @@ const BlogSection = () => {
                           </span>
                         </button>
 
-                        {/* Engagement Stats */}
+                        {/* Desktop Engagement Stats */}
                         <div className="flex items-center gap-4 text-gray-400">
                           <button className="flex items-center gap-1 hover:text-red-400 transition-colors duration-300 group/like">
                             <svg className="w-5 h-5 group-hover/like:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -302,6 +425,18 @@ const BlogSection = () => {
                           </button>
 
                           <button className="flex items-center gap-1 hover:text-blue-400 transition-colors duration-300 group/comment">
+                            <svg className="w-5 h-5 group-hover/comment:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+                            </svg>
+                            <span className="text-sm">{blog.comments}</span>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </article>
+              </div>
+            ))}">
                             <svg className="w-5 h-5 group-hover/comment:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
                             </svg>
@@ -364,4 +499,4 @@ const BlogSection = () => {
   );
 };
 
-export default BlogSection;
+export default PremiumBlogSection;

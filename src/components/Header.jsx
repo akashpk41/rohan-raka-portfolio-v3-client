@@ -69,11 +69,11 @@ const Header = () => {
       {/* Glassmorphism Overlay */}
       <div className="absolute inset-0 bg-gradient-to-br from-black/20 via-purple-900/10 to-black/30 backdrop-blur-sm" />
 
-      {/* Navigation */}
+      {/* Sticky Navigation - Full Width */}
       <nav className={`fixed top-0 w-full z-50 transition-all duration-700 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-10'}`}>
-        <div className="mx-4 mt-4">
-          <div className="backdrop-blur-xl bg-white/5 border border-white/10 rounded-2xl shadow-2xl">
-            <div className="px-6 py-4">
+        <div className="w-full ">
+          <div className="backdrop-blur-xl bg-white/5 border border-white/10  shadow-2xl max-w-7xl mx-auto">
+            <div className="px-6 py-3">
               <div className="flex items-center justify-between">
                 {/* Logo */}
                 <div className="group cursor-pointer">
@@ -159,46 +159,46 @@ const Header = () => {
         </div>
       </nav>
 
-      {/* Hero Section */}
-      <main className="relative z-10 flex items-center justify-center min-h-screen px-4">
+      {/* Hero Section - Added padding-top for navbar */}
+      <main className="relative z-10 flex items-center justify-center min-h-screen px-4 pt-20">
         <div className="max-w-7xl mx-auto">
-          {/* Mobile Profile Image - Shows only on mobile */}
-          <div className={`md:hidden mb-8 flex justify-center transform transition-all duration-1000 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+          {/* Mobile Profile Image - Shows only on mobile - Fixed positioning */}
+          <div className={`md:hidden mb-12 flex justify-center transform transition-all duration-1000 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
             <div className="relative">
               {/* Floating Elements Around Mobile Profile */}
-              <div className="absolute -top-6 -left-6 w-12 h-12 bg-gradient-to-r from-cyan-400/20 to-purple-400/20 rounded-xl backdrop-blur-sm border border-cyan-400/30 animate-float" />
-              <div className="absolute -bottom-6 -right-6 w-10 h-10 bg-gradient-to-r from-green-400/20 to-cyan-400/20 rounded-full backdrop-blur-sm border border-green-400/30 animate-bounce" />
+              <div className="absolute -top-8 -left-8 w-16 h-16 bg-gradient-to-r from-cyan-400/20 to-purple-400/20 rounded-xl backdrop-blur-sm border border-cyan-400/30 animate-float" />
+              <div className="absolute -bottom-8 -right-8 w-14 h-14 bg-gradient-to-r from-green-400/20 to-cyan-400/20 rounded-full backdrop-blur-sm border border-green-400/30 animate-bounce" />
 
-              {/* Mobile Profile Container */}
-              <div className="relative backdrop-blur-2xl bg-gradient-to-br from-white/10 to-white/5 border border-white/20 rounded-2xl p-4 shadow-2xl">
-                <div className="relative w-32 h-40 mx-auto">
-                  <div className="absolute inset-0 bg-gradient-to-br from-cyan-400/20 via-purple-400/20 to-green-400/20 rounded-xl blur-2xl" />
-                  <div className="relative w-full h-full bg-gradient-to-br from-gray-800 via-gray-700 to-gray-800 rounded-xl border border-white/20 flex items-center justify-center overflow-hidden">
+              {/* Mobile Profile Container - Made bigger */}
+              <div className="relative backdrop-blur-2xl bg-gradient-to-br from-white/10 to-white/5 border border-white/20 rounded-3xl p-6 shadow-2xl">
+                <div className="relative w-52 h-60 mx-auto">
+                  <div className="absolute inset-0 bg-gradient-to-br from-cyan-400/20 via-purple-400/20 to-green-400/20 rounded-2xl blur-3xl" />
+                  <div className="relative w-full h-full bg-gradient-to-br from-gray-800 via-gray-700 to-gray-800 rounded-2xl border border-white/20 flex items-center justify-center overflow-hidden">
                     {/* Sample Profile Image */}
                     <img
                       src="https://i.ibb.co.com/0pBPRq6x/rohan-raka.png"
                       alt="Rohan Raka"
-                      className="w-full h-full object-cover rounded-xl"
+                      className="w-full h-full object-cover rounded-2xl"
                     />
 
                     {/* Gradient Overlay */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent rounded-xl" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent rounded-2xl" />
                   </div>
                 </div>
 
                 {/* Mobile Profile Info */}
-                <div className="mt-3 text-center">
-                  <h3 className="text-sm font-bold text-white">Nursing Student</h3>
-                  <p className="text-xs text-cyan-400">Pabna Ideal Nursing College</p>
+                <div className="mt-4 text-center">
+                  <h3 className="text-lg font-bold text-white">Nursing Student</h3>
+                  <p className="text-sm text-cyan-400">Pabna Ideal Nursing College</p>
                 </div>
               </div>
 
               {/* Mobile Decorative Elements */}
-              <div className="absolute -z-10 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-48 h-48 bg-gradient-to-r from-cyan-500/10 via-purple-500/10 to-green-500/10 rounded-full blur-2xl animate-pulse" />
+              <div className="absolute -z-10 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-gradient-to-r from-cyan-500/10 via-purple-500/10 to-green-500/10 rounded-full blur-3xl animate-pulse" />
             </div>
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
 
             {/* Left Content */}
             <div className={`space-y-8 transform transition-all duration-1000 ${isLoaded ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-20'}`}>
@@ -256,44 +256,44 @@ const Header = () => {
               </div>
             </div>
 
-            {/* Right Content - Desktop Profile Area */}
-            <div className={`hidden lg:block relative transform transition-all duration-1000 delay-300 ${isLoaded ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-20'}`}>
+            {/* Right Content - Desktop Profile Area - Made bigger */}
+            <div className={`hidden md:block relative transform transition-all duration-1000 delay-300 ${isLoaded ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-20'}`}>
               <div className="relative">
 
                 {/* Floating Elements Around Profile */}
-                <div className="absolute -top-10 -left-10 w-20 h-20 bg-gradient-to-r from-cyan-400/20 to-purple-400/20 rounded-2xl backdrop-blur-sm border border-cyan-400/30 animate-float" />
-                <div className="absolute -bottom-10 -right-10 w-16 h-16 bg-gradient-to-r from-green-400/20 to-cyan-400/20 rounded-full backdrop-blur-sm border border-green-400/30 animate-bounce" />
-                <div className="absolute top-1/2 -right-16 w-12 h-12 bg-gradient-to-r from-purple-400/20 to-pink-400/20 rounded-lg backdrop-blur-sm border border-purple-400/30 animate-pulse" />
+                <div className="absolute -top-12 -left-12 w-24 h-24 bg-gradient-to-r from-cyan-400/20 to-purple-400/20 rounded-2xl backdrop-blur-sm border border-cyan-400/30 animate-float" />
+                <div className="absolute -bottom-12 -right-12 w-20 h-20 bg-gradient-to-r from-green-400/20 to-cyan-400/20 rounded-full backdrop-blur-sm border border-green-400/30 animate-bounce" />
+                <div className="absolute top-1/2 -right-20 w-16 h-16 bg-gradient-to-r from-purple-400/20 to-pink-400/20 rounded-lg backdrop-blur-sm border border-purple-400/30 animate-pulse" />
 
-                {/* Main Profile Container */}
-                <div className="relative backdrop-blur-2xl bg-gradient-to-br from-white/10 to-white/5 border border-white/20 rounded-3xl p-8 shadow-2xl transform hover:scale-105 transition-all duration-500">
+                {/* Main Profile Container - Made bigger */}
+                <div className="relative backdrop-blur-2xl bg-gradient-to-br from-white/10 to-white/5 border border-white/20 rounded-3xl p-10 shadow-2xl transform hover:scale-105 transition-all duration-500">
 
-                  {/* Profile Image */}
-                  <div className="relative w-80 h-96 mx-auto">
-                    <div className="absolute inset-0 bg-gradient-to-br from-cyan-400/20 via-purple-400/20 to-green-400/20 rounded-2xl blur-3xl" />
-                    <div className="relative w-full h-full bg-gradient-to-br from-gray-800 via-gray-700 to-gray-800 rounded-2xl border border-white/20 flex items-center justify-center overflow-hidden">
+                  {/* Profile Image - Made bigger */}
+                  <div className="relative w-96 h-[500px] mx-auto">
+                    <div className="absolute inset-0 bg-gradient-to-br from-cyan-400/20 via-purple-400/20 to-green-400/20 rounded-3xl blur-3xl" />
+                    <div className="relative w-full h-full bg-gradient-to-br from-gray-800 via-gray-700 to-gray-800 rounded-3xl border border-white/20 flex items-center justify-center overflow-hidden">
                       {/* Professional Photo */}
                       <img
                         src="https://i.ibb.co.com/0pBPRq6x/rohan-raka.png"
                         alt="Rohan Raka - Professional Photo"
-                        className="w-full h-full object-cover rounded-2xl"
+                        className="w-full h-full object-cover rounded-3xl"
                       />
 
                       {/* Gradient Overlay */}
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent rounded-2xl" />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent rounded-3xl" />
 
                       {/* Professional Badge */}
-                      <div className="absolute bottom-4 left-4 right-4">
-                        <div className="backdrop-blur-xl bg-white/10 border border-white/20 rounded-xl p-3">
-                          <div className="flex items-center gap-3">
-                            <div className="w-10 h-10 bg-gradient-to-r from-cyan-400 to-purple-400 rounded-full flex items-center justify-center">
-                              <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <div className="absolute bottom-6 left-6 right-6">
+                        <div className="backdrop-blur-xl bg-white/10 border border-white/20 rounded-xl p-4">
+                          <div className="flex items-center gap-4">
+                            <div className="w-12 h-12 bg-gradient-to-r from-cyan-400 to-purple-400 rounded-full flex items-center justify-center">
+                              <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                               </svg>
                             </div>
                             <div>
-                              <p className="text-white text-sm font-semibold">Verified Student</p>
-                              <p className="text-cyan-400 text-xs">Healthcare Professional</p>
+                              <p className="text-white text-base font-semibold">Verified Student</p>
+                              <p className="text-cyan-400 text-sm">Healthcare Professional</p>
                             </div>
                           </div>
                         </div>
@@ -302,26 +302,26 @@ const Header = () => {
                   </div>
 
                   {/* Profile Info */}
-                  <div className="mt-6 text-center">
-                    <h3 className="text-xl font-bold text-white">Nursing Student</h3>
-                    <p className="text-cyan-400">Pabna Ideal Nursing College</p>
+                  <div className="mt-8 text-center">
+                    <h3 className="text-2xl font-bold text-white">Nursing Student</h3>
+                    <p className="text-lg text-cyan-400">Pabna Ideal Nursing College</p>
                   </div>
                 </div>
 
-                {/* Decorative Elements */}
-                <div className="absolute -z-10 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-gradient-to-r from-cyan-500/10 via-purple-500/10 to-green-500/10 rounded-full blur-3xl animate-pulse" />
+                {/* Decorative Elements - Made bigger */}
+                <div className="absolute -z-10 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-gradient-to-r from-cyan-500/10 via-purple-500/10 to-green-500/10 rounded-full blur-3xl animate-pulse" />
               </div>
             </div>
           </div>
         </div>
       </main>
 
-      {/* Scroll Indicator */}
-      <div className={`absolute bottom-8 left-1/2 transform -translate-x-1/2 transition-all duration-1000 delay-1000 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-        <div className="flex flex-col items-center space-y-2">
-          <p className="text-sm text-gray-400">Scroll to explore</p>
-          <div className="w-6 h-10 border-2 border-white/30 rounded-full flex justify-center">
-            <div className="w-1 h-3 bg-gradient-to-b from-cyan-400 to-purple-400 rounded-full mt-2 animate-bounce" />
+      {/* Fixed Scroll Indicator - Better positioning */}
+      <div className={`absolute bottom-8 left-1/2 transform -translate-x-1/2 transition-all duration-1000 delay-1000 z-0 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+        <div className="flex flex-col items-center space-y-3 backdrop-blur-xl bg-white/5 border border-white/10 rounded-2xl p-4 shadow-xl">
+          <p className="text-sm font-medium text-gray-300">Scroll to explore</p>
+          <div className="w-6 h-12 border-2 border-white/40 rounded-full flex justify-center relative">
+            <div className="w-1.5 h-4 bg-gradient-to-b from-cyan-400 to-purple-400 rounded-full mt-2 animate-bounce shadow-lg" />
           </div>
         </div>
       </div>
