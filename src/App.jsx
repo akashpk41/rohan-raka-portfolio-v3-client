@@ -1,6 +1,7 @@
-// import BlogSection from "./components/BlogSection";
+import BlogSection from "./components/BlogSection";
 import CollegeSummaryLocation from "./components/CollegeSummaryLocation";
 import ContactForm from "./components/ContactForm";
+import Footer from "./components/Footer";
 import Gallery from "./components/Gallery";
 import Header from "./components/Header";
 import InstituteSection from "./components/InstituteSection";
@@ -15,7 +16,7 @@ import TimeSection from "./components/TimeSection";
 function App() {
   return (
     <>
-      <Header />
+      {/* <Header /> */}
       {/* <SkillsSection /> */}
       {/* <InteractivePortfolio /> */}
       {/* <InstituteSection /> */}
@@ -23,11 +24,12 @@ function App() {
       {/* <TestimonialSection /> */}
       {/* <Gallery /> */}
       {/* <Slider /> */}
-      <BlogSection />
+      {/* <BlogSection /> */}
       {/* <CollegeSummaryLocation /> */}
       {/* <TimeSection /> */}
       {/* <MockupPhone /> */}
       {/* <ContactForm /> */}
+      <Footer />
     </>
   );
 }
