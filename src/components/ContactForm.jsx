@@ -1,12 +1,12 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
 const ContactForm = () => {
   const [isLoaded, setIsLoaded] = useState(false);
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    subject: '',
-    message: ''
+    name: "",
+    email: "",
+    subject: "",
+    message: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState(null);
@@ -20,9 +20,9 @@ const ContactForm = () => {
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
-    setFormData(prev => ({
+    setFormData((prev) => ({
       ...prev,
-      [name]: value
+      [name]: value,
     }));
   };
 
@@ -33,8 +33,8 @@ const ContactForm = () => {
     // Simulate form submission
     setTimeout(() => {
       setIsSubmitting(false);
-      setSubmitStatus('success');
-      setFormData({ name: '', email: '', subject: '', message: '' });
+      setSubmitStatus("success");
+      setFormData({ name: "", email: "", subject: "", message: "" });
 
       setTimeout(() => {
         setSubmitStatus(null);
@@ -43,7 +43,7 @@ const ContactForm = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-purple-900 to-gray-900 relative overflow-hidden">
+    <div className=" bg-gradient-to-br from-gray-900 via-purple-900 to-gray-900 relative overflow-hidden">
       {/* Animated Background */}
       <div className="fixed inset-0 pointer-events-none">
         {/* Animated particles */}
@@ -56,7 +56,7 @@ const ContactForm = () => {
                 left: `${Math.random() * 100}%`,
                 top: `${Math.random() * 100}%`,
                 animationDelay: `${Math.random() * 3}s`,
-                animationDuration: `${2 + Math.random() * 4}s`
+                animationDuration: `${2 + Math.random() * 4}s`,
               }}
             />
           ))}
@@ -69,9 +69,9 @@ const ContactForm = () => {
               key={`shape-${i}`}
               className="absolute opacity-10 animate-float"
               style={{
-                left: `${15 + (i * 15)}%`,
+                left: `${15 + i * 15}%`,
                 top: `${20 + ((i * 10) % 60)}%`,
-                animationDelay: `${i * 0.8}s`
+                animationDelay: `${i * 0.8}s`,
               }}
             >
               {i % 3 === 0 && (
@@ -94,13 +94,28 @@ const ContactForm = () => {
       {/* Main Content */}
       <div className="relative z-10 min-h-screen flex items-center justify-center px-4 py-8">
         <div className="max-w-4xl mx-auto w-full">
-
           {/* Header Section */}
-          <div className={`text-center mb-12 transform transition-all duration-1000 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-10'}`}>
+          <div
+            className={`text-center mb-12 transform transition-all duration-1000 ${
+              isLoaded
+                ? "opacity-100 translate-y-0"
+                : "opacity-0 -translate-y-10"
+            }`}
+          >
             <div className="inline-block px-6 py-3 bg-gradient-to-r from-cyan-500/20 to-purple-500/20 backdrop-blur-sm border border-cyan-500/30 rounded-full mb-6">
               <span className="text-cyan-400 font-medium flex items-center gap-2">
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+                <svg
+                  className="w-5 h-5"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"
+                  />
                 </svg>
                 Let's Connect
               </span>
@@ -116,112 +131,56 @@ const ContactForm = () => {
             <div className="w-24 h-1 bg-gradient-to-r from-cyan-400 to-purple-400 rounded-full mx-auto mb-6" />
 
             <p className="text-lg text-gray-300 max-w-2xl mx-auto">
-              আমার সাথে যোগাযোগ করুন। আমি সবসময় নতুন সুযোগ এবং আকর্ষণীয় প্রকল্পের জন্য উন্মুক্ত।
+              I’m always open to new opportunities and exciting projects.
             </p>
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-12 items-start">
-
-            {/* Contact Info */}
-            <div className={`space-y-6 transform transition-all duration-1000 delay-200 ${isLoaded ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-20'}`}>
-
-              {/* Contact Cards */}
-              <div className="space-y-4">
-                {[
-                  {
-                    icon: (
-                      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                      </svg>
-                    ),
-                    title: 'Email',
-                    info: 'rohan.raka@email.com',
-                    subtitle: 'Send me an email anytime'
-                  },
-                  {
-                    icon: (
-                      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                      </svg>
-                    ),
-                    title: 'Phone',
-                    info: '+880 1XXX-XXXXXX',
-                    subtitle: 'Call or text me'
-                  },
-                  {
-                    icon: (
-                      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                      </svg>
-                    ),
-                    title: 'Location',
-                    info: 'Pabna, Bangladesh',
-                    subtitle: 'Rajshahi Division'
-                  }
-                ].map((contact, index) => (
-                  <div
-                    key={contact.title}
-                    className={`backdrop-blur-xl bg-white/5 border border-white/10 rounded-2xl p-6 shadow-2xl hover:bg-white/10 transition-all duration-300 transform hover:scale-105 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
-                    style={{ transitionDelay: `${(index + 2) * 100}ms` }}
-                  >
-                    <div className="flex items-start gap-4">
-                      <div className="w-12 h-12 bg-gradient-to-r from-cyan-400 to-purple-400 rounded-xl flex items-center justify-center text-white shrink-0">
-                        {contact.icon}
-                      </div>
-                      <div>
-                        <h3 className="text-white font-semibold mb-1">{contact.title}</h3>
-                        <p className="text-cyan-400 font-medium">{contact.info}</p>
-                        <p className="text-gray-400 text-sm">{contact.subtitle}</p>
-                      </div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-
-              {/* Social Links */}
-              <div className={`backdrop-blur-xl bg-white/5 border border-white/10 rounded-2xl p-6 shadow-2xl transform transition-all duration-1000 delay-500 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-                <h3 className="text-white font-semibold mb-4">Follow Me</h3>
-                <div className="flex gap-3">
-                  {[
-                    { name: 'Facebook', color: 'from-blue-500 to-blue-600' },
-                    { name: 'Instagram', color: 'from-pink-500 to-purple-600' },
-                    { name: 'LinkedIn', color: 'from-blue-600 to-blue-700' },
-                    { name: 'Twitter', color: 'from-sky-400 to-sky-500' }
-                  ].map((social) => (
-                    <button
-                      key={social.name}
-                      className={`w-12 h-12 bg-gradient-to-r ${social.color} rounded-xl flex items-center justify-center text-white hover:scale-110 transform transition-all duration-300 shadow-lg`}
-                    >
-                      <span className="text-sm font-bold">{social.name[0]}</span>
-                    </button>
-                  ))}
-                </div>
-              </div>
-            </div>
-
+          <div className=" mx-auto md:w-1/2">
             {/* Contact Form */}
-            <div className={`transform transition-all duration-1000 delay-300 ${isLoaded ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-20'}`}>
+            <div
+              className={`transform transition-all duration-1000 delay-300 ${
+                isLoaded
+                  ? "opacity-100 translate-x-0"
+                  : "opacity-0 translate-x-20"
+              }`}
+            >
               <div className="backdrop-blur-2xl bg-white/5 border border-white/10 rounded-3xl p-8 shadow-2xl">
-
                 {/* Form Header */}
                 <div className="mb-8">
-                  <h2 className="text-2xl font-bold text-white mb-2">Send Message</h2>
-                  <p className="text-gray-400">আমাকে একটি বার্তা পাঠান এবং আমি শীঘ্রই উত্তর দেব।</p>
+                  <h2 className="text-2xl font-bold text-white mb-2">
+                    Send Message
+                  </h2>
+                  <p className="text-gray-400">
+                    Drop me a message and I’ll get back to you shortly.
+                  </p>
                 </div>
 
                 {/* Success Message */}
-                {submitStatus === 'success' && (
+                {submitStatus === "success" && (
                   <div className="mb-6 p-4 bg-gradient-to-r from-green-500/20 to-emerald-500/20 border border-green-500/30 rounded-xl">
                     <div className="flex items-center gap-3">
                       <div className="w-8 h-8 bg-gradient-to-r from-green-400 to-emerald-400 rounded-full flex items-center justify-center">
-                        <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                        <svg
+                          className="w-5 h-5 text-white"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M5 13l4 4L19 7"
+                          />
                         </svg>
                       </div>
                       <div>
-                        <p className="text-green-400 font-semibold">Message Sent!</p>
-                        <p className="text-green-300 text-sm">ধন্যবাদ! আমি শীঘ্রই আপনার সাথে যোগাযোগ করব।</p>
+                        <p className="text-green-400 font-semibold">
+                          Message Sent!
+                        </p>
+                        <p className="text-green-300 text-sm">
+                          Thank you! I will get in touch with you soon.
+                        </p>
                       </div>
                     </div>
                   </div>
@@ -232,8 +191,18 @@ const ContactForm = () => {
                   {/* Name Field */}
                   <div className="space-y-2">
                     <label className="text-white font-medium flex items-center gap-2">
-                      <svg className="w-4 h-4 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                      <svg
+                        className="w-4 h-4 text-cyan-400"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
+                        />
                       </svg>
                       Full Name
                     </label>
@@ -242,7 +211,7 @@ const ContactForm = () => {
                       name="name"
                       value={formData.name}
                       onChange={handleInputChange}
-                      placeholder="আপনার পূর্ণ নাম লিখুন"
+                      placeholder="Enter Your Full Name"
                       required
                       className="w-full px-4 py-3 bg-white/5 border border-white/20 rounded-xl text-white placeholder-gray-400 focus:bg-white/10 focus:border-cyan-400/50 focus:outline-none transition-all duration-300"
                     />
@@ -251,8 +220,18 @@ const ContactForm = () => {
                   {/* Email Field */}
                   <div className="space-y-2">
                     <label className="text-white font-medium flex items-center gap-2">
-                      <svg className="w-4 h-4 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                      <svg
+                        className="w-4 h-4 text-cyan-400"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                        />
                       </svg>
                       Email Address
                     </label>
@@ -261,7 +240,7 @@ const ContactForm = () => {
                       name="email"
                       value={formData.email}
                       onChange={handleInputChange}
-                      placeholder="your.email@example.com"
+                      placeholder="Enter Your Email"
                       required
                       className="w-full px-4 py-3 bg-white/5 border border-white/20 rounded-xl text-white placeholder-gray-400 focus:bg-white/10 focus:border-cyan-400/50 focus:outline-none transition-all duration-300"
                     />
@@ -270,8 +249,18 @@ const ContactForm = () => {
                   {/* Subject Field */}
                   <div className="space-y-2">
                     <label className="text-white font-medium flex items-center gap-2">
-                      <svg className="w-4 h-4 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z" />
+                      <svg
+                        className="w-4 h-4 text-cyan-400"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z"
+                        />
                       </svg>
                       Subject
                     </label>
@@ -280,7 +269,7 @@ const ContactForm = () => {
                       name="subject"
                       value={formData.subject}
                       onChange={handleInputChange}
-                      placeholder="বিষয় লিখুন"
+                      placeholder="Enter The Subject"
                       required
                       className="w-full px-4 py-3 bg-white/5 border border-white/20 rounded-xl text-white placeholder-gray-400 focus:bg-white/10 focus:border-cyan-400/50 focus:outline-none transition-all duration-300"
                     />
@@ -289,8 +278,18 @@ const ContactForm = () => {
                   {/* Message Field */}
                   <div className="space-y-2">
                     <label className="text-white font-medium flex items-center gap-2">
-                      <svg className="w-4 h-4 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+                      <svg
+                        className="w-4 h-4 text-cyan-400"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"
+                        />
                       </svg>
                       Message
                     </label>
@@ -298,7 +297,7 @@ const ContactForm = () => {
                       name="message"
                       value={formData.message}
                       onChange={handleInputChange}
-                      placeholder="আপনার বার্তা এখানে লিখুন..."
+                      placeholder="Type your message here..."
                       rows={5}
                       required
                       className="w-full px-4 py-3 bg-white/5 border border-white/20 rounded-xl text-white placeholder-gray-400 focus:bg-white/10 focus:border-cyan-400/50 focus:outline-none transition-all duration-300 resize-none"
@@ -321,8 +320,18 @@ const ContactForm = () => {
                       ) : (
                         <>
                           Send Message
-                          <svg className="w-5 h-5 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
+                          <svg
+                            className="w-5 h-5 transform group-hover:translate-x-1 transition-transform"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth={2}
+                              d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"
+                            />
                           </svg>
                         </>
                       )}
@@ -338,8 +347,13 @@ const ContactForm = () => {
       {/* Custom Styles */}
       <style jsx>{`
         @keyframes float {
-          0%, 100% { transform: translateY(0px) rotate(0deg); }
-          50% { transform: translateY(-20px) rotate(180deg); }
+          0%,
+          100% {
+            transform: translateY(0px) rotate(0deg);
+          }
+          50% {
+            transform: translateY(-20px) rotate(180deg);
+          }
         }
 
         .animate-float {

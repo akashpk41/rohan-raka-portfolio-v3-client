@@ -28,7 +28,7 @@ function App() {
       {/* <CollegeSummaryLocation /> */}
       {/* <TimeSection /> */}
       {/* <MockupPhone /> */}
-      {/* <ContactForm /> */}
+      <ContactForm />
       <Footer />
     </>
   );
