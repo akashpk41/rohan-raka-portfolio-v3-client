@@ -16,18 +16,18 @@ import TimeSection from "./components/TimeSection";
 function App() {
   return (
     <>
-      {/* <Header /> */}
-      {/* <SkillsSection /> */}
-      {/* <InteractivePortfolio /> */}
-      {/* <InstituteSection /> */}
-      {/* <TimelineSection /> */}
-      {/* <TestimonialSection /> */}
-      {/* <Gallery /> */}
-      {/* <Slider /> */}
-      {/* <BlogSection /> */}
-      {/* <CollegeSummaryLocation /> */}
-      {/* <TimeSection /> */}
-      {/* <MockupPhone /> */}
+      <Header />
+      <SkillsSection />
+      <InteractivePortfolio />
+      <InstituteSection />
+      <TimelineSection />
+      <TestimonialSection />
+      <Gallery />
+      <Slider />
+      <BlogSection />
+      <CollegeSummaryLocation />
+      <TimeSection />
+      <MockupPhone />
       <ContactForm />
       <Footer />
     </>
