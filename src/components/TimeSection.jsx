@@ -60,7 +60,7 @@ const TimeSection = () => {
   const currentYear = currentTime.getFullYear();
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-purple-900 to-gray-900 relative overflow-hidden py-20">
+    <div className=" bg-gradient-to-br from-gray-900 via-purple-900 to-gray-900 relative overflow-hidden py-16">
       {/* Animated Background */}
       <div className="fixed inset-0 pointer-events-none">
         {/* Clock-themed particles */}
@@ -133,13 +133,13 @@ const TimeSection = () => {
             <div className="w-24 h-1 bg-gradient-to-r from-cyan-400 to-purple-400 rounded-full mx-auto mb-8" />
 
             {/* Steve Jobs Quote */}
-            <div className="backdrop-blur-xl bg-white/5 border border-white/10 rounded-2xl p-8 max-w-2xl mx-auto shadow-2xl">
+            <div className="backdrop-blur-xl bg-white/5 border border-white/10 rounded-2xl p-4 max-w-2xl mx-auto shadow-2xl">
               <blockquote className="text-lg md:text-xl text-gray-300 italic leading-relaxed">
-                <span className="text-3xl text-cyan-400">"</span>
+                <span className="text-4xl text-cyan-400">"</span>
                 Your time is limited, don't waste it.
                 <span className="text-3xl text-cyan-400">"</span>
               </blockquote>
-              <cite className="block text-right text-purple-400 font-semibold mt-4">
+              <cite className="block mt-2 text-right text-purple-400 font-semibold ">
                 — Steve Jobs
               </cite>
             </div>
@@ -155,7 +155,7 @@ const TimeSection = () => {
               <div className="relative z-10">
                 {/* Current Time */}
                 <div className="mb-6">
-                  <h2 className="text-5xl md:text-7xl font-black bg-gradient-to-r from-cyan-400 via-green-400 to-purple-400 bg-clip-text text-transparent mb-2 font-mono">
+                  <h2 className="text-5xl md:text-7xl font-black bg-gradient-to-r from-cyan-400 via-green-400 to-red-400 bg-clip-text text-transparent mb-2 font-mono">
                     {formatTime(currentTime)}
                   </h2>
                   <p className="text-xl md:text-2xl text-white font-semibold">
@@ -169,7 +169,7 @@ const TimeSection = () => {
                     <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
-                    Bangladesh Standard Time (BST)
+                    Bangladesh Standard Time
                   </span>
                 </div>
               </div>
@@ -206,7 +206,7 @@ const TimeSection = () => {
                   bgGradient: 'from-red-500/10 to-pink-500/10',
                   borderColor: 'border-red-500/30',
                   icon: (
-                    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
                     </svg>
                   )
@@ -254,7 +254,7 @@ const TimeSection = () => {
                   style={{ transitionDelay: `${index * 100}ms` }}
                 >
                   <div className="flex items-center justify-center mb-3">
-                    <div className={`w-10 h-10 bg-gradient-to-r ${item.color} rounded-xl flex items-center justify-center text-white group-hover:scale-110 transition-transform duration-300`}>
+                    <div className={`w-12 h-12 bg-gradient-to-r ${item.color} rounded-xl flex items-center justify-center text-white group-hover:scale-110 transition-transform duration-300`}>
                       {item.icon}
                     </div>
                   </div>
@@ -287,7 +287,7 @@ const TimeSection = () => {
 
           {/* Inspirational Quote in Bangla */}
           <div className={`transform transition-all duration-1000 delay-600 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-            <div className="backdrop-blur-2xl bg-gradient-to-br from-white/10 to-white/5 border border-white/20 rounded-3xl p-10 shadow-2xl">
+            <div className="backdrop-blur-2xl bg-gradient-to-br from-white/10 to-white/5 border border-white/20 rounded-3xl p-6 shadow-2xl">
 
               {/* Quote Header */}
               <div className="text-center mb-8">
@@ -299,14 +299,14 @@ const TimeSection = () => {
                     Words of Wisdom
                   </span>
                 </div>
-                <h3 className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-yellow-400 via-orange-400 to-red-400 bg-clip-text text-transparent">
+                <h3 className="text-3xl md:text-3xl font-bold bg-gradient-to-r from-yellow-400 via-orange-400 to-red-400 bg-clip-text text-transparent">
                   জীবনের প্রেরণা
                 </h3>
               </div>
 
               {/* Bangla Quote */}
-              <blockquote className="text-base md:text-lg text-gray-300 leading-relaxed text-center max-w-4xl mx-auto">
-                <span className="text-4xl text-cyan-400 block mb-4">"</span>
+              <blockquote className="text-xl md:text-lg text-white leading-relaxed text-center max-w-4xl mx-auto">
+                <span className="text-4xl text-cyan-400 block mb-2">"</span>
 
                 <p className="mb-6">
                   প্রত্যেক মানুষের মাঝেই কোনো না কোনো <span className="text-cyan-400 font-semibold">বিশেষ প্রতিভা</span> থাকে। কেউ সেই প্রতিভাকে চিনে নিয়ে সময়কে সঠিকভাবে কাজে লাগিয়ে নিজের জীবনকে <span className="text-green-400 font-semibold">উন্নতির পথে</span> এগিয়ে নিয়ে যায়। আবার অনেকেই থাকে, যারা অন্যের কথায় প্রভাবিত হয়ে নিজের লক্ষ্য থেকে বিচ্যুত হয়ে পড়ে।
@@ -321,13 +321,13 @@ const TimeSection = () => {
 
               {/* Decorative Elements */}
               <div className="flex items-center justify-center gap-4 mt-8">
-                <div className="w-12 h-0.5 bg-gradient-to-r from-transparent via-cyan-400 to-transparent" />
-                <div className="w-8 h-8 bg-gradient-to-r from-cyan-400 to-purple-400 rounded-full flex items-center justify-center">
+                <div className="w-18 h-0.5 bg-gradient-to-r from-transparent via-cyan-400 to-transparent" />
+                <div className="w-14 h-14 bg-gradient-to-r from-cyan-400 to-purple-400 rounded-full flex items-center justify-center">
                   <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
                   </svg>
                 </div>
-                <div className="w-12 h-0.5 bg-gradient-to-r from-transparent via-purple-400 to-transparent" />
+                <div className="w-18 h-0.5 bg-gradient-to-r from-transparent via-purple-400 to-transparent" />
               </div>
             </div>
           </div>

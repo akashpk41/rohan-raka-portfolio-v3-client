@@ -33,11 +33,11 @@ function App() {
       {/* <Slider /> */}
       {/* <BlogSection /> */}
       {/* <CollegeSummaryLocation /> */}
-      {/* <TimeSection /> */}
       {/* <MockupPhone /> */}
       {/* <ContactForm /> */}
-      <MusicPlayer />
+      {/* <MusicPlayer /> */}
 
+      <TimeSection />
       <Footer />
     </>
   );
