@@ -318,11 +318,11 @@ const QuizSection = () => {
           <div className="flex items-center justify-center space-x-4 mb-6">
             <div className="relative">
               <div className="absolute inset-0 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-full blur-lg opacity-60 animate-pulse" />
-              <div className="relative w-16 h-16 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-full flex items-center justify-center">
+              <div className="relative w-12 h-12 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-full flex items-center justify-center">
                 <span className="text-3xl">🎮</span>
               </div>
             </div>
-            <h2 className="text-4xl md:text-6xl font-black bg-gradient-to-r from-white via-indigo-200 to-purple-200 bg-clip-text text-transparent">
+            <h2 className="text-3xl md:text-6xl font-black bg-gradient-to-r from-white via-indigo-200 to-purple-200 bg-clip-text text-transparent">
               Test Your Health IQ
             </h2>
           </div>
@@ -342,7 +342,7 @@ const QuizSection = () => {
                 <button
                   key={key}
                   onClick={() => setSelectedCategory(key)}
-                  className={`group relative p-6 rounded-3xl border-2 transition-all duration-300 transform hover:scale-105 ${
+                  className={`group cursor-pointer relative p-6 rounded-3xl border-2 transition-all duration-300 transform hover:scale-105 ${
                     selectedCategory === key
                       ? `bg-gradient-to-br ${category.bgColor} border-white/30 shadow-2xl`
                       : 'bg-white/5 border-white/20 hover:border-white/40 hover:bg-white/10'
@@ -350,13 +350,13 @@ const QuizSection = () => {
                 >
                   <div className="text-center space-y-4">
                     <div className="text-4xl mb-3">{category.icon}</div>
-                    <h3 className={`font-bold text-lg ${selectedCategory === key ? 'text-white' : 'text-gray-300'}`}>
+                    <h3 className={`font-bold text-xl ${selectedCategory === key ? 'text-white' : 'text-gray-300'}`}>
                       {category.name}
                     </h3>
-                    <p className="text-gray-400 text-sm">
+                    <p className="text-gray-300 text-base">
                       {category.description}
                     </p>
-                    <div className={`inline-block px-3 py-1 rounded-full text-xs font-semibold ${
+                    <div className={`inline-block px-4 py-2 rounded-full text-sm font-semibold ${
                       selectedCategory === key
                         ? `bg-gradient-to-r ${category.color} text-white`
                         : 'bg-white/10 text-gray-300'
@@ -378,13 +378,13 @@ const QuizSection = () => {
             <div className="text-center">
               <button
                 onClick={startQuiz}
-                className={`group relative px-12 py-6 bg-gradient-to-r ${currentCategoryData.color} rounded-3xl font-bold text-white text-xl shadow-2xl transform hover:scale-110 transition-all duration-300 overflow-hidden`}
+                className={`group cursor-pointer relative md:px-12 px-3 py-3  md:py-6 bg-gradient-to-r ${currentCategoryData.color} rounded-3xl font-bold text-white text-xl shadow-2xl transform hover:scale-110 transition-all duration-300 overflow-hidden`}
               >
                 <div className={`absolute inset-0 bg-gradient-to-r ${currentCategoryData.color.split(' ').reverse().join(' ')} opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
                 <span className="relative flex items-center gap-3">
-                  <span className="text-2xl">{currentCategoryData.icon}</span>
+                  <span className="text-1xl md:text-2xl">{currentCategoryData.icon}</span>
                   Start {currentCategoryData.name} Quiz
-                  <span className="text-2xl">🚀</span>
+                  <span className="text-1xl md:text-2xl">🚀</span>
                 </span>
               </button>
 
@@ -440,7 +440,7 @@ const QuizSection = () => {
                     <span className="text-white font-bold">{currentQuestion + 1}</span>
                   </div>
                   <div>
-                    <h3 className="text-2xl font-bold text-white leading-relaxed">
+                    <h3 className=" text-2xl font-bold text-white leading-relaxed">
                       {currentQuestions[currentQuestion]?.question}
                     </h3>
                     <div className="flex items-center gap-3 mt-3">
@@ -462,7 +462,7 @@ const QuizSection = () => {
                     key={index}
                     onClick={() => handleAnswerSelect(index)}
                     disabled={selectedAnswer !== null}
-                    className={`w-full p-4 rounded-2xl border-2 text-left transition-all duration-300 transform hover:scale-105 ${
+                    className={`w-full cursor-pointer p-4 rounded-2xl border-2 text-left transition-all duration-300 transform hover:scale-105 ${
                       showResult
                         ? index === currentQuestions[currentQuestion].correctAnswer
                           ? 'bg-green-500/20 border-green-500 text-green-300'
@@ -517,7 +517,7 @@ const QuizSection = () => {
           <div className={`max-w-4xl mx-auto text-center transform transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-20'}`}>
 
             {/* Results Card */}
-            <div className="relative backdrop-blur-2xl bg-gradient-to-br from-white/10 to-white/5 border border-white/20 rounded-3xl p-12 shadow-2xl mb-8">
+            <div className="relative backdrop-blur-2xl bg-gradient-to-br from-white/10 to-white/5 border border-white/20 rounded-3xl p-10 md:p-12 shadow-2xl mb-8">
 
               {/* Confetti Effect */}
               <div className="absolute inset-0 pointer-events-none overflow-hidden rounded-3xl">
@@ -537,7 +537,7 @@ const QuizSection = () => {
 
               <div className="relative z-10">
                 <div className="text-6xl mb-6">🎉</div>
-                <h3 className="text-4xl font-black text-white mb-4">Quiz Completed!</h3>
+                <h3 className=" text-3xl md:text-4xl font-black text-white mb-4">Quiz Completed!</h3>
 
                 {/* Score Display */}
                 <div className="mb-8">
@@ -580,13 +580,13 @@ const QuizSection = () => {
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
                   <button
                     onClick={resetQuiz}
-                    className={`px-8 py-4 bg-gradient-to-r ${currentCategoryData.color} rounded-2xl font-bold text-white shadow-lg transform hover:scale-105 transition-all duration-300`}
+                    className={`px-8 cursor-pointer py-4 bg-gradient-to-r ${currentCategoryData.color} rounded-2xl font-bold text-white shadow-lg transform hover:scale-105 transition-all duration-300`}
                   >
                     Retake Quiz
                   </button>
                   <button
                     onClick={() => setSelectedCategory(Object.keys(quizCategories)[0])}
-                    className="px-8 py-4 backdrop-blur-xl bg-white/10 border border-white/20 rounded-2xl font-semibold text-white hover:bg-white/20 transform hover:scale-105 transition-all duration-300"
+                    className="px-8 cursor-pointer py-4 backdrop-blur-xl bg-white/10 border border-white/20 rounded-2xl font-semibold text-white hover:bg-white/20 transform hover:scale-105 transition-all duration-300"
                   >
                     Try Different Category
                   </button>
