@@ -1,0 +1,48 @@
+/* Progress Bar Style */
+.scroll-progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 6px;
+  background: linear-gradient(90deg, #ff00ff, #00ffff, #ff00ff);
+  background-size: 200% 200%;
+  animation: glowMove 3s linear infinite, gradientShift 6s ease infinite;
+  z-index: 9999;
+  transition: width 0.2s ease-out;
+}
+
+/* গ্রেডিয়েন্ট মুভ */
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* গ্লো ইফেক্ট */
+@keyframes glowMove {
+  0% { box-shadow: 0 0 10px #ff00ff, 0 0 20px #00ffff; }
+  50% { box-shadow: 0 0 20px #ff00ff, 0 0 30px #00ffff; }
+  100% { box-shadow: 0 0 10px #ff00ff, 0 0 20px #00ffff; }
+}
+
+/* Side Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #1a0033;
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(#ff00ff, #00ffff);
+  border-radius: 5px;
+  box-shadow: 0 0 5px #ff00ff, 0 0 5px #00ffff;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(#00ffff, #ff00ff);
+}
+
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #ff00ff #1a0033;
+}

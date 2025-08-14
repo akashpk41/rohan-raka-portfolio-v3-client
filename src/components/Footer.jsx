@@ -198,7 +198,7 @@ const Footer = () => {
                           className={`group w-12 h-12 p-3 backdrop-blur-xl bg-white/5 border border-white/20 rounded-xl text-gray-300 ${social.color} ${social.bg} transition-all duration-300 transform hover:scale-110 shadow-lg  shadow-cyan-500/25`}
                           style={{ transitionDelay: `${index * 100}ms` }}
                         >
-                          <Icon className="text-lg animate-bounce" />
+                          <Icon className="text-lg animate-pulse" />
                         </a>
                       );
                     })}
@@ -216,7 +216,7 @@ const Footer = () => {
                   <p className=" text-xl md:text-4xl text-gray-300">
                     Developed by{" "}
                     <FaHeart className="text-red-600 inline animate-pulse mx-1" />{" "}
-                  
+
                     <button
                       onClick={openModal}
                       className="ml-1 cursor-pointer font-semibold text-cyan-400 hover:text-cyan-300 underline hover:no-underline transition-all duration-300"
@@ -315,7 +315,7 @@ const Footer = () => {
                     Akash PK
                   </h2>
                   <div className="flex items-center justify-center gap-2 text-cyan-600 text-lg font-semibold mb-2">
-                    <FaCode className="animate-bounce" />
+                    <FaCode className="animate-pulse" />
                     <span>MERN Stack Developer</span>
                   </div>
 

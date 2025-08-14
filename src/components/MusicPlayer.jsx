@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef } from "react";
 import {
   FaPlay,
   FaPause,
@@ -14,13 +14,13 @@ import {
   FaBrain,
   FaLeaf,
   FaMoon,
-  FaSun
-} from 'react-icons/fa';
+  FaSun,
+} from "react-icons/fa";
 
 const MusicPlayer = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [isPlaying, setIsPlaying] = useState(false);
-  const [currentPlaylist, setCurrentPlaylist] = useState('focus');
+  const [currentPlaylist, setCurrentPlaylist] = useState("focus");
   const [currentTrack, setCurrentTrack] = useState(0);
   const [volume, setVolume] = useState(70);
   const [progress, setProgress] = useState(0);
@@ -40,75 +40,175 @@ const MusicPlayer = () => {
   // Mood-based playlists
   const playlists = {
     focus: {
-      name: 'Focus & Study',
+      name: "Focus & Study",
       icon: FaBrain,
-      color: 'from-cyan-500 to-blue-500',
-      bgColor: 'from-cyan-500/10 to-blue-500/10',
-      borderColor: 'border-cyan-500/30',
-      description: 'Enhance concentration during medical studies',
+      color: "from-cyan-500 to-blue-500",
+      bgColor: "from-cyan-500/10 to-blue-500/10",
+      borderColor: "border-cyan-500/30",
+      description: "Enhance concentration during medical studies",
       tracks: [
-        { name: 'Deep Focus - Medical Study', artist: 'Healthcare Sounds', duration: '4:32', mood: 'Concentration' },
-        { name: 'Ambient Hospital Calm', artist: 'Healing Tones', duration: '3:45', mood: 'Peaceful' },
-        { name: 'Study Session Flow', artist: 'Focus Music', duration: '5:12', mood: 'Productive' },
-        { name: 'Medical Mind Clarity', artist: 'Brain Waves', duration: '4:18', mood: 'Clear Thinking' }
-      ]
+        {
+          name: "Deep Focus - Medical Study",
+          artist: "Healthcare Sounds",
+          duration: "4:32",
+          mood: "Concentration",
+        },
+        {
+          name: "Ambient Hospital Calm",
+          artist: "Healing Tones",
+          duration: "3:45",
+          mood: "Peaceful",
+        },
+        {
+          name: "Study Session Flow",
+          artist: "Focus Music",
+          duration: "5:12",
+          mood: "Productive",
+        },
+        {
+          name: "Medical Mind Clarity",
+          artist: "Brain Waves",
+          duration: "4:18",
+          mood: "Clear Thinking",
+        },
+      ],
     },
     healing: {
-      name: 'Healing & Recovery',
+      name: "Healing & Recovery",
       icon: FaHeart,
-      color: 'from-green-500 to-emerald-500',
-      bgColor: 'from-green-500/10 to-emerald-500/10',
-      borderColor: 'border-green-500/30',
-      description: 'Soothing sounds for patient care moments',
+      color: "from-green-500 to-emerald-500",
+      bgColor: "from-green-500/10 to-emerald-500/10",
+      borderColor: "border-green-500/30",
+      description: "Soothing sounds for patient care moments",
       tracks: [
-        { name: 'Gentle Healing Touch', artist: 'Recovery Sounds', duration: '6:22', mood: 'Healing' },
-        { name: 'Patient Care Ambience', artist: 'Medical Harmony', duration: '4:55', mood: 'Compassionate' },
-        { name: 'Recovery Room Peace', artist: 'Wellness Audio', duration: '5:33', mood: 'Restorative' },
-        { name: 'Healing Frequencies', artist: 'Therapeutic Music', duration: '7:11', mood: 'Therapeutic' }
-      ]
+        {
+          name: "Gentle Healing Touch",
+          artist: "Recovery Sounds",
+          duration: "6:22",
+          mood: "Healing",
+        },
+        {
+          name: "Patient Care Ambience",
+          artist: "Medical Harmony",
+          duration: "4:55",
+          mood: "Compassionate",
+        },
+        {
+          name: "Recovery Room Peace",
+          artist: "Wellness Audio",
+          duration: "5:33",
+          mood: "Restorative",
+        },
+        {
+          name: "Healing Frequencies",
+          artist: "Therapeutic Music",
+          duration: "7:11",
+          mood: "Therapeutic",
+        },
+      ],
     },
     meditation: {
-      name: 'Meditation & Mindfulness',
+      name: "Meditation & Mindfulness",
       icon: FaLeaf,
-      color: 'from-purple-500 to-pink-500',
-      bgColor: 'from-purple-500/10 to-pink-500/10',
-      borderColor: 'border-purple-500/30',
-      description: 'Mindful moments for healthcare professionals',
+      color: "from-purple-500 to-pink-500",
+      bgColor: "from-purple-500/10 to-pink-500/10",
+      borderColor: "border-purple-500/30",
+      description: "Mindful moments for healthcare professionals",
       tracks: [
-        { name: 'Nurse Mindfulness Session', artist: 'Zen Healthcare', duration: '8:45', mood: 'Mindful' },
-        { name: 'Meditation for Caregivers', artist: 'Peace Sounds', duration: '6:30', mood: 'Calming' },
-        { name: 'Inner Peace Protocol', artist: 'Mindful Medicine', duration: '9:15', mood: 'Centered' },
-        { name: 'Healthcare Hero Rest', artist: 'Serenity Audio', duration: '7:42', mood: 'Peaceful' }
-      ]
+        {
+          name: "Nurse Mindfulness Session",
+          artist: "Zen Healthcare",
+          duration: "8:45",
+          mood: "Mindful",
+        },
+        {
+          name: "Meditation for Caregivers",
+          artist: "Peace Sounds",
+          duration: "6:30",
+          mood: "Calming",
+        },
+        {
+          name: "Inner Peace Protocol",
+          artist: "Mindful Medicine",
+          duration: "9:15",
+          mood: "Centered",
+        },
+        {
+          name: "Healthcare Hero Rest",
+          artist: "Serenity Audio",
+          duration: "7:42",
+          mood: "Peaceful",
+        },
+      ],
     },
     nightshift: {
-      name: 'Night Shift',
+      name: "Night Shift",
       icon: FaMoon,
-      color: 'from-indigo-500 to-purple-500',
-      bgColor: 'from-indigo-500/10 to-purple-500/10',
-      borderColor: 'border-indigo-500/30',
-      description: 'Gentle accompaniment for overnight care',
+      color: "from-indigo-500 to-purple-500",
+      bgColor: "from-indigo-500/10 to-purple-500/10",
+      borderColor: "border-indigo-500/30",
+      description: "Gentle accompaniment for overnight care",
       tracks: [
-        { name: 'Night Shift Serenity', artist: 'Midnight Care', duration: '12:34', mood: 'Gentle' },
-        { name: 'Overnight Ward Ambience', artist: 'Night Sounds', duration: '15:22', mood: 'Subtle' },
-        { name: 'Quiet Hours Comfort', artist: 'Peaceful Nights', duration: '11:18', mood: 'Soothing' },
-        { name: 'Dawn Preparation', artist: 'Morning Transition', duration: '8:55', mood: 'Hopeful' }
-      ]
+        {
+          name: "Night Shift Serenity",
+          artist: "Midnight Care",
+          duration: "12:34",
+          mood: "Gentle",
+        },
+        {
+          name: "Overnight Ward Ambience",
+          artist: "Night Sounds",
+          duration: "15:22",
+          mood: "Subtle",
+        },
+        {
+          name: "Quiet Hours Comfort",
+          artist: "Peaceful Nights",
+          duration: "11:18",
+          mood: "Soothing",
+        },
+        {
+          name: "Dawn Preparation",
+          artist: "Morning Transition",
+          duration: "8:55",
+          mood: "Hopeful",
+        },
+      ],
     },
     energy: {
-      name: 'Energy & Motivation',
+      name: "Energy & Motivation",
       icon: FaSun,
-      color: 'from-orange-500 to-red-500',
-      bgColor: 'from-orange-500/10 to-red-500/10',
-      borderColor: 'border-orange-500/30',
-      description: 'Uplifting music for active care moments',
+      color: "from-orange-500 to-red-500",
+      bgColor: "from-orange-500/10 to-red-500/10",
+      borderColor: "border-orange-500/30",
+      description: "Uplifting music for active care moments",
       tracks: [
-        { name: 'Healthcare Hero Energy', artist: 'Motivation Music', duration: '3:28', mood: 'Energetic' },
-        { name: 'Active Care Rhythm', artist: 'Upbeat Medical', duration: '4:12', mood: 'Dynamic' },
-        { name: 'Shift Start Boost', artist: 'Energy Waves', duration: '3:45', mood: 'Motivating' },
-        { name: 'Positive Patient Care', artist: 'Uplifting Sounds', duration: '4:33', mood: 'Inspiring' }
-      ]
-    }
+        {
+          name: "Healthcare Hero Energy",
+          artist: "Motivation Music",
+          duration: "3:28",
+          mood: "Energetic",
+        },
+        {
+          name: "Active Care Rhythm",
+          artist: "Upbeat Medical",
+          duration: "4:12",
+          mood: "Dynamic",
+        },
+        {
+          name: "Shift Start Boost",
+          artist: "Energy Waves",
+          duration: "3:45",
+          mood: "Motivating",
+        },
+        {
+          name: "Positive Patient Care",
+          artist: "Uplifting Sounds",
+          duration: "4:33",
+          mood: "Inspiring",
+        },
+      ],
+    },
   };
 
   const currentPlaylistData = playlists[currentPlaylist];
@@ -119,7 +219,7 @@ const MusicPlayer = () => {
     let interval;
     if (isPlaying) {
       interval = setInterval(() => {
-        setCurrentTime(prev => {
+        setCurrentTime((prev) => {
           const newTime = prev + 1;
           const trackDuration = 300; // 5 minutes in seconds
           setDuration(trackDuration);
@@ -139,7 +239,7 @@ const MusicPlayer = () => {
   const formatTime = (seconds) => {
     const minutes = Math.floor(seconds / 60);
     const remainingSeconds = Math.floor(seconds % 60);
-    return `${minutes}:${remainingSeconds.toString().padStart(2, '0')}`;
+    return `${minutes}:${remainingSeconds.toString().padStart(2, "0")}`;
   };
 
   const handlePlayPause = () => {
@@ -148,7 +248,9 @@ const MusicPlayer = () => {
 
   const handleNext = () => {
     if (isShuffling) {
-      setCurrentTrack(Math.floor(Math.random() * currentPlaylistData.tracks.length));
+      setCurrentTrack(
+        Math.floor(Math.random() * currentPlaylistData.tracks.length)
+      );
     } else {
       setCurrentTrack((prev) =>
         prev === currentPlaylistData.tracks.length - 1 ? 0 : prev + 1
@@ -192,8 +294,14 @@ const MusicPlayer = () => {
       <div className="absolute inset-0">
         {/* Large Gradient Orbs */}
         <div className="absolute top-20 right-20 w-96 h-96 bg-gradient-to-r from-purple-500/15 to-pink-500/15 rounded-full blur-3xl animate-pulse" />
-        <div className="absolute bottom-20 left-20 w-80 h-80 bg-gradient-to-r from-cyan-500/15 to-blue-500/15 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
-        <div className="absolute top-1/2 right-1/4 w-72 h-72 bg-gradient-to-r from-green-500/10 to-emerald-500/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '2s' }} />
+        <div
+          className="absolute bottom-20 left-20 w-80 h-80 bg-gradient-to-r from-cyan-500/15 to-blue-500/15 rounded-full blur-3xl animate-pulse"
+          style={{ animationDelay: "1s" }}
+        />
+        <div
+          className="absolute top-1/2 right-1/4 w-72 h-72 bg-gradient-to-r from-green-500/10 to-emerald-500/10 rounded-full blur-3xl animate-pulse"
+          style={{ animationDelay: "2s" }}
+        />
 
         {/* Musical Note Particles */}
         {[...Array(20)].map((_, i) => (
@@ -204,15 +312,21 @@ const MusicPlayer = () => {
               left: `${Math.random() * 100}%`,
               top: `${Math.random() * 100}%`,
               animationDelay: `${Math.random() * 3}s`,
-              animationDuration: `${4 + Math.random() * 3}s`
+              animationDuration: `${4 + Math.random() * 3}s`,
             }}
           >
             {i % 6 === 0 && <div className="text-2xl text-cyan-400">♪</div>}
             {i % 6 === 1 && <div className="text-xl text-purple-400">♫</div>}
             {i % 6 === 2 && <div className="text-lg text-green-400">♬</div>}
-            {i % 6 === 3 && <div className="w-3 h-3 bg-gradient-to-r from-cyan-400 to-blue-400 rounded-full" />}
-            {i % 6 === 4 && <div className="w-2 h-2 bg-gradient-to-r from-purple-400 to-pink-400 rounded-full" />}
-            {i % 6 === 5 && <div className="w-4 h-4 border-2 border-green-400/50 rounded-full animate-pulse" />}
+            {i % 6 === 3 && (
+              <div className="w-3 h-3 bg-gradient-to-r from-cyan-400 to-blue-400 rounded-full" />
+            )}
+            {i % 6 === 4 && (
+              <div className="w-2 h-2 bg-gradient-to-r from-purple-400 to-pink-400 rounded-full" />
+            )}
+            {i % 6 === 5 && (
+              <div className="w-4 h-4 border-2 border-green-400/50 rounded-full animate-pulse" />
+            )}
           </div>
         ))}
       </div>
@@ -221,9 +335,12 @@ const MusicPlayer = () => {
       <div className="absolute inset-0 bg-gradient-to-br from-black/20 via-purple-900/10 to-black/30 backdrop-blur-sm" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-4">
-
         {/* Section Title */}
-        <div className={`text-center mb-16 transform transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+        <div
+          className={`text-center mb-16 transform transition-all duration-1000 ${
+            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+          }`}
+        >
           <div className="flex items-center justify-center space-x-4 mb-6">
             <div className="relative">
               <div className="absolute inset-0 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full blur-lg opacity-60 animate-pulse" />
@@ -237,35 +354,56 @@ const MusicPlayer = () => {
           </div>
           <div className="w-40 h-1 bg-gradient-to-r from-purple-500 via-pink-500 to-cyan-500 rounded-full mx-auto mb-6" />
           <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
-            Enhance your focus and well-being with carefully curated ambient music designed for healthcare professionals
+            Enhance your focus and well-being with carefully curated ambient
+            music designed for healthcare professionals
           </p>
         </div>
 
         <div className="grid  lg:grid-cols-3 gap-4 lg:gap-8">
-
           {/* Main Music Player */}
           <div className="lg:col-span-2 md:-ml-0 -ml-8  space-y-4 lg:space-y-8">
-
             {/* Current Playing Card */}
-            <div className={`  relative backdrop-blur-2xl bg-gradient-to-br ${currentPlaylistData.bgColor} border ${currentPlaylistData.borderColor} rounded-2xl lg:rounded-3xl overflow-hidden shadow-2xl hover:shadow-purple-500/25 transition-all duration-500 transform ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-
+            <div
+              className={`  relative backdrop-blur-2xl bg-gradient-to-br ${
+                currentPlaylistData.bgColor
+              } border ${
+                currentPlaylistData.borderColor
+              } rounded-2xl lg:rounded-3xl overflow-hidden shadow-2xl hover:shadow-purple-500/25 transition-all duration-500 transform ${
+                isVisible
+                  ? "opacity-100 translate-y-0"
+                  : "opacity-0 translate-y-10"
+              }`}
+            >
               {/* Animated Background */}
               <div className="absolute inset-0 pointer-events-none">
-                <div className={`absolute top-0 right-0 w-64 h-64 bg-gradient-to-br ${currentPlaylistData.color} opacity-10 rounded-full blur-3xl ${isPlaying ? 'animate-pulse' : ''}`} />
-                <div className={`absolute bottom-0 left-0 w-48 h-48 bg-gradient-to-tr ${currentPlaylistData.color} opacity-5 rounded-full blur-2xl ${isPlaying ? 'animate-pulse' : ''}`} style={{ animationDelay: '1s' }} />
+                <div
+                  className={`absolute top-0 right-0 w-64 h-64 bg-gradient-to-br ${
+                    currentPlaylistData.color
+                  } opacity-10 rounded-full blur-3xl ${
+                    isPlaying ? "animate-pulse" : ""
+                  }`}
+                />
+                <div
+                  className={`absolute bottom-0 left-0 w-48 h-48 bg-gradient-to-tr ${
+                    currentPlaylistData.color
+                  } opacity-5 rounded-full blur-2xl ${
+                    isPlaying ? "animate-pulse" : ""
+                  }`}
+                  style={{ animationDelay: "1s" }}
+                />
               </div>
 
               <div className="relative z-10 p-4 lg:p-8">
-
                 {/* Track Info */}
                 <div className="flex items-center gap-3 lg:gap-6 mb-6 lg:mb-8">
-
                   {/* Album Art / Visualizer */}
                   <div className="relative w-16 h-16 lg:w-24 lg:h-24 flex-shrink-0">
                     <div className="absolute inset-0 bg-gradient-to-br ${currentPlaylistData.color} rounded-xl lg:rounded-2xl ${isPlaying ? 'animate-pulse' : ''}" />
                     <div className="absolute inset-1 lg:inset-2 bg-gradient-to-br from-white/20 to-transparent rounded-lg lg:rounded-xl flex items-center justify-center">
                       {React.createElement(currentPlaylistData.icon, {
-                        className: `text-xl lg:text-3xl text-white ${isPlaying ? 'animate-bounce' : ''}`
+                        className: `text-xl lg:text-3xl text-white ${
+                          isPlaying ? "animate-pulse" : ""
+                        }`,
                       })}
                     </div>
 
@@ -279,7 +417,9 @@ const MusicPlayer = () => {
                             style={{
                               height: `${8 + Math.random() * 16}px`,
                               animationDelay: `${i * 100}ms`,
-                              animationDuration: `${500 + Math.random() * 1000}ms`
+                              animationDuration: `${
+                                500 + Math.random() * 1000
+                              }ms`,
                             }}
                           />
                         ))}
@@ -291,12 +431,18 @@ const MusicPlayer = () => {
                     <h3 className="text-lg lg:text-2xl font-bold text-white mb-1 truncate">
                       {currentTrackData.name}
                     </h3>
-                    <p className="text-sm lg:text-base text-gray-300 mb-2">{currentTrackData.artist}</p>
+                    <p className="text-sm lg:text-base text-gray-300 mb-2">
+                      {currentTrackData.artist}
+                    </p>
                     <div className="flex items-center gap-2 lg:gap-3">
-                      <span className={`px-2 py-1 bg-gradient-to-r ${currentPlaylistData.color} text-white text-xs rounded-full font-medium`}>
+                      <span
+                        className={`px-2 py-1 bg-gradient-to-r ${currentPlaylistData.color} text-white text-xs rounded-full font-medium`}
+                      >
                         {currentTrackData.mood}
                       </span>
-                      <span className="text-gray-400 text-xs lg:text-sm">{currentTrackData.duration}</span>
+                      <span className="text-gray-400 text-xs lg:text-sm">
+                        {currentTrackData.duration}
+                      </span>
                     </div>
                   </div>
                 </div>
@@ -323,14 +469,13 @@ const MusicPlayer = () => {
 
                 {/* Music Controls */}
                 <div className="flex items-center justify-center gap-3 lg:gap-6">
-
                   {/* Shuffle */}
                   <button
                     onClick={() => setIsShuffling(!isShuffling)}
                     className={`p-2 cursor-pointer rounded-full transition-all duration-300 transform hover:scale-110 ${
                       isShuffling
                         ? `bg-gradient-to-r ${currentPlaylistData.color} text-white shadow-lg`
-                        : 'text-gray-400 hover:text-white'
+                        : "text-gray-400 hover:text-white"
                     }`}
                   >
                     <FaRandom />
@@ -352,7 +497,7 @@ const MusicPlayer = () => {
                     {isPlaying ? (
                       <FaPause className="text-xl lg:text-2xl group-hover:animate-pulse" />
                     ) : (
-                      <FaPlay className="text-xl lg:text-2xl ml-1 group-hover:animate-bounce" />
+                      <FaPlay className="text-xl lg:text-2xl ml-1 group-hover:animate-pulse" />
                     )}
                   </button>
 
@@ -370,7 +515,7 @@ const MusicPlayer = () => {
                     className={`p-2 rounded-full transition-all duration-300 transform hover:scale-110 ${
                       isLooping
                         ? `bg-gradient-to-r ${currentPlaylistData.color} text-white shadow-lg`
-                        : 'text-gray-400 hover:text-white'
+                        : "text-gray-400 hover:text-white"
                     }`}
                   >
                     <FaRedo />
@@ -380,9 +525,17 @@ const MusicPlayer = () => {
             </div>
 
             {/* Current Playlist Tracks */}
-            <div className={`backdrop-blur-2xl bg-white/5 border border-white/20 rounded-2xl p-6 shadow-xl transform transition-all duration-1000 delay-300 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+            <div
+              className={`backdrop-blur-2xl bg-white/5 border border-white/20 rounded-2xl p-6 shadow-xl transform transition-all duration-1000 delay-300 ${
+                isVisible
+                  ? "opacity-100 translate-y-0"
+                  : "opacity-0 translate-y-10"
+              }`}
+            >
               <h3 className="text-xl font-bold text-white mb-6 flex items-center gap-3">
-                {React.createElement(currentPlaylistData.icon, { className: 'text-2xl' })}
+                {React.createElement(currentPlaylistData.icon, {
+                  className: "text-2xl",
+                })}
                 {currentPlaylistData.name} Playlist
               </h3>
 
@@ -398,14 +551,16 @@ const MusicPlayer = () => {
                     className={`flex items-center gap-4 p-3 rounded-xl cursor-pointer transition-all duration-300 group ${
                       index === currentTrack
                         ? `bg-gradient-to-r ${currentPlaylistData.bgColor} border ${currentPlaylistData.borderColor}`
-                        : 'hover:bg-white/5 hover:border-white/10'
+                        : "hover:bg-white/5 hover:border-white/10"
                     } border border-transparent`}
                   >
-                    <div className={`w-8 h-8 rounded-full flex items-center justify-center ${
-                      index === currentTrack && isPlaying
-                        ? `bg-gradient-to-r ${currentPlaylistData.color} animate-pulse`
-                        : 'bg-white/10'
-                    }`}>
+                    <div
+                      className={`w-8 h-8 rounded-full flex items-center justify-center ${
+                        index === currentTrack && isPlaying
+                          ? `bg-gradient-to-r ${currentPlaylistData.color} animate-pulse`
+                          : "bg-white/10"
+                      }`}
+                    >
                       {index === currentTrack && isPlaying ? (
                         <FaPause className="text-white text-xs" />
                       ) : (
@@ -414,23 +569,31 @@ const MusicPlayer = () => {
                     </div>
 
                     <div className="flex-1 min-w-0">
-                      <h4 className={`font-semibold truncate ${
-                        index === currentTrack ? 'text-white' : 'text-gray-300 group-hover:text-white'
-                      }`}>
+                      <h4
+                        className={`font-semibold truncate ${
+                          index === currentTrack
+                            ? "text-white"
+                            : "text-gray-300 group-hover:text-white"
+                        }`}
+                      >
                         {track.name}
                       </h4>
                       <p className="text-gray-400 text-sm">{track.artist}</p>
                     </div>
 
                     <div className="text-right">
-                      <span className={`px-2 py-1 rounded-full text-xs ${
-                        index === currentTrack
-                          ? `bg-gradient-to-r ${currentPlaylistData.color} text-white`
-                          : 'bg-white/10 text-gray-300'
-                      }`}>
+                      <span
+                        className={`px-2 py-1 rounded-full text-xs ${
+                          index === currentTrack
+                            ? `bg-gradient-to-r ${currentPlaylistData.color} text-white`
+                            : "bg-white/10 text-gray-300"
+                        }`}
+                      >
                         {track.mood}
                       </span>
-                      <p className="text-gray-400 text-xs mt-1">{track.duration}</p>
+                      <p className="text-gray-400 text-xs mt-1">
+                        {track.duration}
+                      </p>
                     </div>
                   </div>
                 ))}
@@ -440,9 +603,14 @@ const MusicPlayer = () => {
 
           {/* Sidebar Controls */}
           <div className="space-y-4 lg:space-y-6">
-
             {/* Volume Control */}
-            <div className={`backdrop-blur-2xl bg-white/5 border border-white/20 rounded-xl lg:rounded-2xl p-4 lg:p-6 shadow-xl transform transition-all duration-1000 delay-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+            <div
+              className={`backdrop-blur-2xl bg-white/5 border border-white/20 rounded-xl lg:rounded-2xl p-4 lg:p-6 shadow-xl transform transition-all duration-1000 delay-500 ${
+                isVisible
+                  ? "opacity-100 translate-y-0"
+                  : "opacity-0 translate-y-10"
+              }`}
+            >
               <h4 className="text-white font-bold mb-4 flex items-center gap-2">
                 <VolumeIcon className="text-xl" />
                 Volume Control
@@ -457,10 +625,12 @@ const MusicPlayer = () => {
                       min="0"
                       max="100"
                       value={volume}
-                      onChange={(e) => handleVolumeChange(Number(e.target.value))}
+                      onChange={(e) =>
+                        handleVolumeChange(Number(e.target.value))
+                      }
                       className="w-full h-2 bg-white/20 rounded-full appearance-none cursor-pointer slider"
                       style={{
-                        background: `linear-gradient(to right, rgb(168, 85, 247) 0%, rgb(236, 72, 153) ${volume}%, rgba(255,255,255,0.2) ${volume}%)`
+                        background: `linear-gradient(to right, rgb(168, 85, 247) 0%, rgb(236, 72, 153) ${volume}%, rgba(255,255,255,0.2) ${volume}%)`,
                       }}
                     />
                   </div>
@@ -468,13 +638,21 @@ const MusicPlayer = () => {
                 </div>
 
                 <div className="text-center">
-                  <span className="text-2xl font-bold text-white">{volume}%</span>
+                  <span className="text-2xl font-bold text-white">
+                    {volume}%
+                  </span>
                 </div>
               </div>
             </div>
 
             {/* Playlist Selection */}
-            <div className={`backdrop-blur-2xl bg-white/5 border border-white/20 rounded-2xl p-6 shadow-xl transform transition-all duration-1000 delay-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+            <div
+              className={`backdrop-blur-2xl bg-white/5 border border-white/20 rounded-2xl p-6 shadow-xl transform transition-all duration-1000 delay-700 ${
+                isVisible
+                  ? "opacity-100 translate-y-0"
+                  : "opacity-0 translate-y-10"
+              }`}
+            >
               <h4 className="text-white font-bold mb-6">Choose Mood</h4>
 
               <div className="space-y-3">
@@ -490,14 +668,24 @@ const MusicPlayer = () => {
                     className={`w-full cursor-pointer p-4 rounded-xl border-2 transition-all duration-300 transform hover:scale-105 text-left ${
                       currentPlaylist === key
                         ? `bg-gradient-to-r ${playlist.bgColor} ${playlist.borderColor} shadow-lg`
-                        : 'bg-white/5 border-white/20 hover:border-white/30 hover:bg-white/10'
+                        : "bg-white/5 border-white/20 hover:border-white/30 hover:bg-white/10"
                     }`}
                   >
                     <div className="flex items-center gap-3 mb-2">
                       {React.createElement(playlist.icon, {
-                        className: `text-xl ${currentPlaylist === key ? 'text-white' : 'text-gray-400'}`
+                        className: `text-xl ${
+                          currentPlaylist === key
+                            ? "text-white"
+                            : "text-gray-400"
+                        }`,
                       })}
-                      <h5 className={`font-semibold ${currentPlaylist === key ? 'text-white' : 'text-gray-300'}`}>
+                      <h5
+                        className={`font-semibold ${
+                          currentPlaylist === key
+                            ? "text-white"
+                            : "text-gray-300"
+                        }`}
+                      >
                         {playlist.name}
                       </h5>
                     </div>
@@ -508,7 +696,9 @@ const MusicPlayer = () => {
                     {currentPlaylist === key && (
                       <div className="mt-2 flex items-center gap-2">
                         <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
-                        <span className="text-green-400 text-xs font-medium">Active</span>
+                        <span className="text-green-400 text-xs font-medium">
+                          Active
+                        </span>
                       </div>
                     )}
                   </button>
@@ -517,7 +707,13 @@ const MusicPlayer = () => {
             </div>
 
             {/* Music Benefits */}
-            <div className={`backdrop-blur-2xl bg-gradient-to-br from-purple-500/10 to-pink-500/10 border border-purple-500/30 rounded-2xl p-6 shadow-xl transform transition-all duration-1000 delay-900 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+            <div
+              className={`backdrop-blur-2xl bg-gradient-to-br from-purple-500/10 to-pink-500/10 border border-purple-500/30 rounded-2xl p-6 shadow-xl transform transition-all duration-1000 delay-900 ${
+                isVisible
+                  ? "opacity-100 translate-y-0"
+                  : "opacity-0 translate-y-10"
+              }`}
+            >
               <h4 className="text-purple-300 font-bold mb-4 flex items-center gap-2">
                 <FaBrain className="text-xl" />
                 Music Benefits
@@ -549,7 +745,8 @@ const MusicPlayer = () => {
       {/* Custom Styles */}
       <style jsx>{`
         @keyframes float {
-          0%, 100% {
+          0%,
+          100% {
             transform: translateY(0px) rotate(0deg);
             opacity: 0.2;
           }
@@ -568,7 +765,11 @@ const MusicPlayer = () => {
           width: 20px;
           height: 20px;
           border-radius: 50%;
-          background: linear-gradient(45deg, rgb(168, 85, 247), rgb(236, 72, 153));
+          background: linear-gradient(
+            45deg,
+            rgb(168, 85, 247),
+            rgb(236, 72, 153)
+          );
           cursor: pointer;
           box-shadow: 0 4px 12px rgba(168, 85, 247, 0.4);
         }
@@ -577,7 +778,11 @@ const MusicPlayer = () => {
           width: 20px;
           height: 20px;
           border-radius: 50%;
-          background: linear-gradient(45deg, rgb(168, 85, 247), rgb(236, 72, 153));
+          background: linear-gradient(
+            45deg,
+            rgb(168, 85, 247),
+            rgb(236, 72, 153)
+          );
           cursor: pointer;
           border: none;
           box-shadow: 0 4px 12px rgba(168, 85, 247, 0.4);

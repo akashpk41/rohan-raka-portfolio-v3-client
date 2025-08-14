@@ -203,10 +203,10 @@ const carouselImages = [
             </div>
 
             <div className="flex items-center gap-3">
-              <p className="text-lg md:text-xl font-bold text-white">
+              <p className="text-base md:text-xl font-bold text-white">
                 Stay tuned. The best is yet to come..
               </p>
-              <div className="text-2xl animate-bounce">🚀</div>
+              <div className="text-2xl animate-pulse">🚀</div>
               <div className="w-18 h-18 rounded-full overflow-hidden border-2 border-blue-400 animate-pulse">
                 <img
                   src="https://i.ibb.co.com/wF06WJDT/carousel-15.jpg"

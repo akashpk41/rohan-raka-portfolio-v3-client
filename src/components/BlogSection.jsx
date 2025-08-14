@@ -113,7 +113,7 @@ const BlogSection = () => {
           {[...Array(8)].map((_, i) => (
             <div
               key={`blog-shape-${i}`}
-              className="absolute opacity-10 animate-bounce"
+              className="absolute opacity-10 animate-pulse"
               style={{
                 left: `${10 + i * 12}%`,
                 top: `${15 + ((i * 10) % 70)}%`,

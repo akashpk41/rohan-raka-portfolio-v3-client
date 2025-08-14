@@ -83,12 +83,12 @@ const Header = () => {
             <div className="px-6 py-3">
               <div className="flex items-center justify-between">
                 {/* Logo */}
-                <div className="group cursor-pointer">
-                  <h1 className="text-xl md:text-2xl font-bold bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent hover:from-pink-400 hover:via-cyan-400 hover:to-purple-400 transition-all duration-500">
+                <a href="#home"  className="group cursor-pointer">
+                  <h1 id='home' className="text-xl md:text-2xl font-bold bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent hover:from-pink-400 hover:via-cyan-400 hover:to-purple-400 transition-all duration-500">
                     Rohan Raka
                   </h1>
                   <div className="w-0 group-hover:w-full h-0.5 bg-gradient-to-r from-cyan-400 to-purple-400 transition-all duration-500" />
-                </div>
+                </a>
 
                 {/* Desktop Navigation Links */}
                 <div className="hidden md:flex items-center space-x-8">
@@ -237,7 +237,7 @@ const Header = () => {
             <div className="relative">
               {/* Floating Elements Around Mobile Profile */}
               <div className="absolute -top-2 left-2 z-5 w-24 h-24 bg-gradient-to-r from-cyan-400/20 to-purple-400/20 rounded-xl backdrop-blur-sm border border-cyan-400/30 animate-float" />
-              <div className="absolute -bottom-22 right-1 w-24 h-24 bg-gradient-to-r from-green-400/20 to-cyan-400/20 rounded-full backdrop-blur-sm border border-green-400/30 animate-bounce" />
+              <div className="absolute -bottom-22 right-1 w-24 h-24 bg-gradient-to-r from-green-400/20 to-cyan-400/20 rounded-full backdrop-blur-sm border border-green-400/30 animate-pulse" />
 
               {/* Mobile Profile Container - Made bigger */}
               <div className="relative backdrop-blur-2xl bg-gradient-to-br from-white/10 w- to-white/5 border border-white/20 rounded-3xl  p-2 shadow-2xl">
@@ -358,7 +358,7 @@ const Header = () => {
                   </span>
                 </button>
 
-                <button className="group cursor-pointer px-8 py-4 backdrop-blur-xl bg-white/10 border border-white/20 rounded-2xl font-semibold text-white hover:bg-white/20 transform hover:scale-105 transition-all duration-300">
+                <button className="group cursor-pointer px-8 py-4 backdrop-blur-xl bg-whit0e/10 border border-white/20 rounded-2xl font-semibold text-white hover:bg-white/20 transform hover:scale-105 transition-all duration-300">
                   <span className="flex items-center justify-center gap-2">
                     Contact Me
                     <svg
@@ -390,7 +390,7 @@ const Header = () => {
               <div className="relative">
                 {/* Floating Elements Around Profile */}
                 <div className="absolute -top-12 -left-12 w-24 h-24 bg-gradient-to-r from-cyan-400/20 to-purple-400/20 rounded-2xl backdrop-blur-sm border border-cyan-400/30 animate-float" />
-                <div className="absolute -bottom-12 -right-12 w-20 h-20 bg-gradient-to-r from-green-400/20 to-cyan-400/20 rounded-full backdrop-blur-sm border border-green-400/30 animate-bounce" />
+                <div className="absolute -bottom-12 -right-12 w-20 h-20 bg-gradient-to-r from-green-400/20 to-cyan-400/20 rounded-full backdrop-blur-sm border border-green-400/30 animate-pulse" />
                 <div className="absolute top-1/2 -right-20 w-16 h-16 bg-gradient-to-r from-purple-400/20 to-pink-400/20 rounded-lg backdrop-blur-sm border border-purple-400/30 animate-pulse" />
 
                 {/* Main Profile Container - Made bigger */}
@@ -465,7 +465,7 @@ const Header = () => {
         <div className="flex flex-col items-center space-y-3 backdrop-blur-xl bg-white/5 border border-white/10 rounded-2xl p-4 shadow-xl">
           <p className="text-sm font-medium text-gray-300">Scroll to explore</p>
           <div className="w-6 h-12 border-2 border-white/40 rounded-full flex justify-center relative">
-            <div className="w-1.5 h-4 bg-gradient-to-b from-cyan-400 to-purple-400 rounded-full mt-2 animate-bounce shadow-lg" />
+            <div className="w-1.5 h-4 bg-gradient-to-b from-cyan-400 to-purple-400 rounded-full mt-2 animate-pulse shadow-lg" />
           </div>
         </div>
       </div>
@@ -512,19 +512,19 @@ const Header = () => {
         }
 
         .animate-float {
-          animation: float 6s ease-in-out infinite;
+          animation: float 20s ease-in-out infinite;
         }
 
         .animate-float-0 {
-          animation: float-0 4s ease-in-out infinite;
+          animation: float-0 20s ease-in-out infinite;
         }
 
         .animate-float-1 {
-          animation: float-1 5s ease-in-out infinite;
+          animation: float-1 20s ease-in-out infinite;
         }
 
         .animate-float-2 {
-          animation: float-2 3s ease-in-out infinite;
+          animation: float-2 20s ease-in-out infinite;
         }
       `}</style>
     </div>

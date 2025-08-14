@@ -165,7 +165,7 @@ const InteractivePortfolio = () => {
                 </svg>
               </div>
             </div>
-            <h2 className="text-4xl md:text-6xl font-black bg-gradient-to-r from-white via-purple-200 to-pink-200 bg-clip-text text-transparent">
+            <h2 className="text-2xl md:text-6xl font-black bg-gradient-to-r from-white via-purple-200 to-pink-200 bg-clip-text text-transparent">
               Portfolio Showcase
             </h2>
           </div>
@@ -181,7 +181,7 @@ const InteractivePortfolio = () => {
             <button
               key={category.id}
               onClick={() => setActiveCategory(category.id)}
-              className={`group relative px-6 py-3 rounded-2xl font-semibold transition-all duration-300 transform hover:scale-105 ${
+              className={`group relative px-4 md:px-6 py-2 md:py-3 rounded-2xl font-semibold transition-all duration-300 transform hover:scale-105 ${
                 activeCategory === category.id
                   ? 'bg-gradient-to-r from-purple-500 to-pink-500 text-white shadow-lg shadow-purple-500/25'
                   : 'backdrop-blur-xl bg-white/10 text-gray-300 border border-white/20 hover:bg-white/20 hover:text-white'
@@ -219,7 +219,7 @@ const InteractivePortfolio = () => {
               {/* 3D Card Container */}
               <div className="relative perspective-1000">
                 {/* Glowing Effect */}
-                <div className={`absolute -inset-2 bg-gradient-to-r ${project.glowColor} rounded-3xl blur-xl opacity-60 group-hover:opacity-100 transition-all duration-500 animate-pulse`} />
+                <div className={`absolute -inset-2 bg-gradient-to-r ${project.glowColor} rounded-3xl blur-xl opacity-60 group-hover:opacity-70 transition-all duration-500 animate-pulse`} />
 
                 {/* Main Card */}
                 <div className={`relative backdrop-blur-2xl bg-gradient-to-br ${project.gradient} border border-white/20 rounded-3xl overflow-hidden shadow-2xl transform transition-all duration-700 group-hover:scale-105 group-hover:rotate-y-12 cursor-pointer`}

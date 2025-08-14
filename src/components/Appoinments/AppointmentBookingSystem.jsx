@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
 
 const AppointmentBookingSystem = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -10,15 +10,15 @@ const AppointmentBookingSystem = () => {
   const [hoveredTimeSlot, setHoveredTimeSlot] = useState(null);
   const [isBookingConfirmed, setIsBookingConfirmed] = useState(false);
   const [patientInfo, setPatientInfo] = useState({
-    fullName: '',
-    phone: '',
-    email: '',
-    address: '',
-    notes: ''
+    fullName: "",
+    phone: "",
+    email: "",
+    address: "",
+    notes: "",
   });
   const [showPaymentModal, setShowPaymentModal] = useState(false);
   const [selectedPaymentMethod, setSelectedPaymentMethod] = useState(null);
-  const [paymentStep, setPaymentStep] = useState('method');
+  const [paymentStep, setPaymentStep] = useState("method");
 
   useEffect(() => {
     const timer = setTimeout(() => setIsVisible(true), 200);
@@ -36,7 +36,7 @@ const AppointmentBookingSystem = () => {
       icon: "🏥",
       gradient: "from-green-500/20 to-emerald-500/20",
       glowColor: "from-green-500 to-emerald-500",
-      available: true
+      available: true,
     },
     {
       id: 2,
@@ -47,7 +47,7 @@ const AppointmentBookingSystem = () => {
       icon: "🏠",
       gradient: "from-blue-500/20 to-cyan-500/20",
       glowColor: "from-blue-500 to-cyan-500",
-      available: true
+      available: true,
     },
     {
       id: 3,
@@ -58,18 +58,18 @@ const AppointmentBookingSystem = () => {
       icon: "📚",
       gradient: "from-purple-500/20 to-pink-500/20",
       glowColor: "from-purple-500 to-pink-500",
-      available: true
+      available: true,
     },
     {
       id: 4,
-      name: "Elderly Care Consultation",
+      name: "Baby Care Consultation",
       duration: "45 min",
       price: "৳700",
-      description: "Specialized care planning for elderly patients",
-      icon: "👴",
+      description: "Specialized care planning for new born babies",
+      icon: "👶",
       gradient: "from-orange-500/20 to-yellow-500/20",
       glowColor: "from-orange-500 to-yellow-500",
-      available: true
+      available: true,
     },
     {
       id: 5,
@@ -80,7 +80,7 @@ const AppointmentBookingSystem = () => {
       icon: "⚕️",
       gradient: "from-red-500/20 to-rose-500/20",
       glowColor: "from-red-500 to-rose-500",
-      available: true
+      available: true,
     },
     {
       id: 6,
@@ -91,8 +91,8 @@ const AppointmentBookingSystem = () => {
       icon: "💉",
       gradient: "from-indigo-500/20 to-violet-500/20",
       glowColor: "from-indigo-500 to-violet-500",
-      available: true
-    }
+      available: true,
+    },
   ];
 
   // Time Slots
@@ -110,7 +110,7 @@ const AppointmentBookingSystem = () => {
     { time: "04:00", period: "PM", available: true },
     { time: "04:30", period: "PM", available: true },
     { time: "05:00", period: "PM", available: true },
-    { time: "05:30", period: "PM", available: true }
+    { time: "05:30", period: "PM", available: true },
   ];
 
   const steps = [
@@ -118,39 +118,39 @@ const AppointmentBookingSystem = () => {
     { id: 2, title: "Choose Date", icon: "📅" },
     { id: 3, title: "Pick Time", icon: "⏰" },
     { id: 4, title: "Confirm", icon: "✅" },
-    { id: 5, title: "Success", icon: "🎉" }
+    { id: 5, title: "Success", icon: "🎉" },
   ];
 
   // Payment Methods
   const paymentMethods = [
     {
-      id: 'bkash',
-      name: 'bKash',
-      icon: '📱',
-      color: 'from-pink-500 to-red-500',
-      description: 'Pay with bKash Mobile Banking'
+      id: "bkash",
+      name: "bKash",
+      icon: "📱",
+      color: "from-pink-500 to-red-500",
+      description: "Pay with bKash Mobile Banking",
     },
     {
-      id: 'nagad',
-      name: 'Nagad',
-      icon: '💳',
-      color: 'from-orange-500 to-yellow-500',
-      description: 'Pay with Nagad Digital Payment'
+      id: "nagad",
+      name: "Nagad",
+      icon: "💳",
+      color: "from-orange-500 to-yellow-500",
+      description: "Pay with Nagad Digital Payment",
     },
     {
-      id: 'rocket',
-      name: 'Rocket',
-      icon: '🚀',
-      color: 'from-purple-500 to-indigo-500',
-      description: 'Pay with Dutch-Bangla Rocket'
+      id: "rocket",
+      name: "Rocket",
+      icon: "🚀",
+      color: "from-purple-500 to-indigo-500",
+      description: "Pay with Dutch-Bangla Rocket",
     },
     {
-      id: 'cash',
-      name: 'Cash Payment',
-      icon: '💵',
-      color: 'from-green-500 to-emerald-500',
-      description: 'Pay cash during appointment'
-    }
+      id: "cash",
+      name: "Cash Payment",
+      icon: "💵",
+      color: "from-green-500 to-emerald-500",
+      description: "Pay cash during appointment",
+    },
   ];
 
   // Helper Functions
@@ -185,11 +185,11 @@ const AppointmentBookingSystem = () => {
   };
 
   const formatDate = (date) => {
-    return date.toLocaleDateString('en-GB', {
-      weekday: 'long',
-      year: 'numeric',
-      month: 'long',
-      day: 'numeric'
+    return date.toLocaleDateString("en-GB", {
+      weekday: "long",
+      year: "numeric",
+      month: "long",
+      day: "numeric",
     });
   };
 
@@ -241,9 +241,9 @@ const AppointmentBookingSystem = () => {
   };
 
   const handlePatientInfoChange = (field, value) => {
-    setPatientInfo(prev => ({
+    setPatientInfo((prev) => ({
       ...prev,
-      [field]: value
+      [field]: value,
     }));
   };
 
@@ -253,17 +253,17 @@ const AppointmentBookingSystem = () => {
 
   const handlePaymentMethodSelect = (method) => {
     setSelectedPaymentMethod(method);
-    if (method.id === 'cash') {
-      setPaymentStep('success');
+    if (method.id === "cash") {
+      setPaymentStep("success");
       setTimeout(() => {
         setCurrentStep(5);
         setIsBookingConfirmed(true);
         setShowPaymentModal(false);
       }, 2000);
     } else {
-      setPaymentStep('processing');
+      setPaymentStep("processing");
       setTimeout(() => {
-        setPaymentStep('success');
+        setPaymentStep("success");
         setTimeout(() => {
           setCurrentStep(5);
           setIsBookingConfirmed(true);
@@ -280,15 +280,15 @@ const AppointmentBookingSystem = () => {
     setSelectedTimeSlot(null);
     setIsBookingConfirmed(false);
     setPatientInfo({
-      fullName: '',
-      phone: '',
-      email: '',
-      address: '',
-      notes: ''
+      fullName: "",
+      phone: "",
+      email: "",
+      address: "",
+      notes: "",
     });
     setShowPaymentModal(false);
     setSelectedPaymentMethod(null);
-    setPaymentStep('method');
+    setPaymentStep("method");
   };
 
   return (
@@ -296,8 +296,14 @@ const AppointmentBookingSystem = () => {
       {/* Premium Background Effects */}
       <div className="absolute inset-0">
         <div className="absolute top-10 left-10 w-96 h-96 bg-gradient-to-r from-purple-500/15 to-pink-500/15 rounded-full blur-3xl animate-pulse" />
-        <div className="absolute bottom-10 right-10 w-80 h-80 bg-gradient-to-r from-cyan-500/15 to-blue-500/15 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
-        <div className="absolute top-1/2 left-1/3 w-72 h-72 bg-gradient-to-r from-green-500/10 to-teal-500/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '2s' }} />
+        <div
+          className="absolute bottom-10 right-10 w-80 h-80 bg-gradient-to-r from-cyan-500/15 to-blue-500/15 rounded-full blur-3xl animate-pulse"
+          style={{ animationDelay: "1s" }}
+        />
+        <div
+          className="absolute top-1/2 left-1/3 w-72 h-72 bg-gradient-to-r from-green-500/10 to-teal-500/10 rounded-full blur-3xl animate-pulse"
+          style={{ animationDelay: "2s" }}
+        />
 
         {/* Floating Medical Icons */}
         {[...Array(15)].map((_, i) => (
@@ -308,7 +314,7 @@ const AppointmentBookingSystem = () => {
               left: `${Math.random() * 100}%`,
               top: `${Math.random() * 100}%`,
               animation: `float ${4 + Math.random() * 3}s ease-in-out infinite`,
-              animationDelay: `${Math.random() * 3}s`
+              animationDelay: `${Math.random() * 3}s`,
             }}
           >
             {i % 5 === 0 && <div className="text-2xl">📅</div>}
@@ -325,15 +331,19 @@ const AppointmentBookingSystem = () => {
 
       <div className="relative z-10 max-w-6xl mx-auto px-4">
         {/* Section Title */}
-        <div className={`text-center mb-16 transform transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+        <div
+          className={`text-center mb-16 transform transition-all duration-1000 ${
+            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+          }`}
+        >
           <div className="flex items-center justify-center space-x-4 mb-6">
             <div className="relative">
               <div className="absolute inset-0 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-full blur-lg opacity-60 animate-pulse" />
-              <div className="relative w-16 h-16 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-full flex items-center justify-center">
+              <div className="relative w-14 h-14 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-full flex items-center justify-center">
                 <span className="text-2xl">📅</span>
               </div>
             </div>
-            <h2 className="text-4xl md:text-6xl font-black bg-gradient-to-r from-white via-cyan-200 to-blue-200 bg-clip-text text-transparent">
+            <h2 className="text-3xl md:text-6xl font-black bg-gradient-to-r from-white via-cyan-200 to-blue-200 bg-clip-text text-transparent">
               Book Appointment
             </h2>
           </div>
@@ -344,33 +354,43 @@ const AppointmentBookingSystem = () => {
         </div>
 
         {/* Progress Steps */}
-        <div className={`mb-12 transform transition-all duration-1000 delay-300 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-          <div className="flex items-center justify-center space-x-4 md:space-x-8">
+        <div
+          className={`mb-12  transform transition-all duration-1000 delay-300 ${
+            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+          }`}
+        >
+          <div className="flex items-center justify-center space-x-4 md:space-x-4">
             {steps.map((step, index) => (
               <div key={step.id} className="flex items-center">
-                <div className={`relative flex items-center justify-center w-12 h-12 rounded-full transition-all duration-500 ${
-                  currentStep >= step.id
-                    ? 'bg-gradient-to-r from-cyan-500 to-blue-500 text-white shadow-lg shadow-cyan-500/25'
-                    : 'bg-white/10 text-gray-400 border border-white/20'
-                }`}>
+                <div
+                  className={`relative flex items-center justify-center w-12 h-12 rounded-full transition-all duration-500 ${
+                    currentStep >= step.id
+                      ? "bg-gradient-to-r from-cyan-500 to-blue-500 text-white shadow-lg shadow-cyan-500/25"
+                      : "bg-white/10 text-gray-400 border border-white/20"
+                  }`}
+                >
                   <span className="text-lg">{step.icon}</span>
                   {currentStep >= step.id && (
                     <div className="absolute inset-0 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-full animate-ping opacity-30" />
                   )}
                 </div>
                 <div className="ml-3 hidden md:block">
-                  <div className={`text-sm font-semibold ${
-                    currentStep >= step.id ? 'text-white' : 'text-gray-400'
-                  }`}>
+                  <div
+                    className={`text-sm font-semibold ${
+                      currentStep >= step.id ? "text-white" : "text-gray-400"
+                    }`}
+                  >
                     {step.title}
                   </div>
                 </div>
                 {index < steps.length - 1 && (
-                  <div className={`hidden md:block w-16 h-0.5 mx-4 transition-all duration-500 ${
-                    currentStep > step.id
-                      ? 'bg-gradient-to-r from-cyan-500 to-blue-500'
-                      : 'bg-white/20'
-                  }`} />
+                  <div
+                    className={`hidden md:block w-16 h-0.5 mx-4 transition-all duration-500 ${
+                      currentStep > step.id
+                        ? "bg-gradient-to-r from-cyan-500 to-blue-500"
+                        : "bg-white/20"
+                    }`}
+                  />
                 )}
               </div>
             ))}
@@ -379,37 +399,54 @@ const AppointmentBookingSystem = () => {
 
         {/* Main Content */}
         <div className="backdrop-blur-2xl bg-gradient-to-br from-white/10 to-white/5 border border-white/20 rounded-3xl shadow-2xl overflow-hidden">
-
           {/* Step 1: Service Selection */}
           {currentStep === 1 && (
-            <div className="p-8">
-              <h3 className="text-2xl font-bold text-white mb-8 text-center">Select Your Service</h3>
+            <div className="p-4 md:p-8">
+              <h3 className="text-2xl font-bold text-white mb-8 text-center">
+                Select Your Service
+              </h3>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {services.map((service) => (
                   <div
                     key={service.id}
                     className={`group relative cursor-pointer transform transition-all duration-300 hover:scale-105 ${
-                      selectedService?.id === service.id ? 'scale-105' : ''
+                      selectedService?.id === service.id ? "scale-105" : ""
                     }`}
                     onClick={() => handleServiceSelect(service)}
                   >
-                    <div className={`absolute -inset-2 bg-gradient-to-r ${service.glowColor} rounded-2xl blur-xl opacity-60 group-hover:opacity-100 transition-all duration-500 ${
-                      selectedService?.id === service.id ? 'opacity-100' : ''
-                    }`} />
+                    <div
+                      className={`absolute -inset-2 bg-gradient-to-r ${
+                        service.glowColor
+                      } rounded-2xl blur-xl opacity-60 group-hover:opacity-100 transition-all duration-500 ${
+                        selectedService?.id === service.id ? "opacity-100" : ""
+                      }`}
+                    />
 
-                    <div className={`relative backdrop-blur-xl bg-gradient-to-br ${service.gradient} border border-white/20 rounded-2xl p-6 shadow-xl`}>
+                    <div
+                      className={`relative backdrop-blur-xl bg-gradient-to-br ${service.gradient} border border-white/20 rounded-2xl p-6 shadow-xl`}
+                    >
                       <div className="flex items-center justify-between mb-4">
-                        <div className={`w-12 h-12 bg-gradient-to-r ${service.glowColor} rounded-xl flex items-center justify-center shadow-lg`}>
+                        <div
+                          className={`w-12 h-12 bg-gradient-to-r ${service.glowColor} rounded-xl flex items-center justify-center shadow-lg`}
+                        >
                           <span className="text-2xl">{service.icon}</span>
                         </div>
                         <div className="text-right">
-                          <div className="text-2xl font-bold text-white">{service.price}</div>
-                          <div className="text-sm text-gray-300">{service.duration}</div>
+                          <div className="text-2xl font-bold text-white">
+                            {service.price}
+                          </div>
+                          <div className="text-sm text-gray-300">
+                            {service.duration}
+                          </div>
                         </div>
                       </div>
 
-                      <h4 className="text-lg font-semibold text-white mb-2">{service.name}</h4>
-                      <p className="text-gray-300 text-sm leading-relaxed">{service.description}</p>
+                      <h4 className="text-lg font-semibold text-white mb-2">
+                        {service.name}
+                      </h4>
+                      <p className="text-gray-300 text-sm leading-relaxed">
+                        {service.description}
+                      </p>
 
                       {service.available && (
                         <div className="mt-4 flex items-center text-green-400 text-sm">
@@ -426,11 +463,16 @@ const AppointmentBookingSystem = () => {
 
           {/* Step 2: Date Selection */}
           {currentStep === 2 && (
-            <div className="p-8">
-              <div className="flex items-center justify-between mb-8">
-                <h3 className="text-2xl font-bold text-white">Choose Date</h3>
+            <div className="p-4 md:p-8">
+              <div className="flex flex-col md:flex-row items-center justify-between mb-8">
+                <h3 className="text-2xl mb-2 md:mb-0 font-bold text-white">
+                  Choose Date
+                </h3>
                 <div className="text-gray-300">
-                  Selected: <span className="text-cyan-400 font-semibold">{selectedService?.name}</span>
+                  Selected:{" "}
+                  <span className="text-cyan-400 font-semibold">
+                    {selectedService?.name}
+                  </span>
                 </div>
               </div>
 
@@ -438,33 +480,61 @@ const AppointmentBookingSystem = () => {
                 <div className="flex items-center justify-between mb-6">
                   <button
                     onClick={() => navigateMonth(-1)}
-                    className="p-3 bg-white/10 backdrop-blur-sm rounded-xl hover:bg-white/20 transition-all duration-300 border border-white/20"
+                    className="p-3 cursor-pointer bg-white/10 backdrop-blur-sm rounded-xl hover:bg-white/20 transition-all duration-300 border border-white/20"
                   >
-                    <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                    <svg
+                      className="w-5 h-5 text-white"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M15 19l-7-7 7-7"
+                      />
                     </svg>
                   </button>
 
                   <h4 className="text-xl font-semibold text-white">
-                    {calendarView.toLocaleDateString('en-US', { month: 'long', year: 'numeric' })}
+                    {calendarView.toLocaleDateString("en-US", {
+                      month: "long",
+                      year: "numeric",
+                    })}
                   </h4>
 
                   <button
                     onClick={() => navigateMonth(1)}
-                    className="p-3 bg-white/10 backdrop-blur-sm rounded-xl hover:bg-white/20 transition-all duration-300 border border-white/20"
+                    className="p-3 cursor-pointer bg-white/10 backdrop-blur-sm rounded-xl hover:bg-white/20 transition-all duration-300 border border-white/20"
                   >
-                    <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    <svg
+                      className="w-5 h-5 text-white"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M9 5l7 7-7 7"
+                      />
                     </svg>
                   </button>
                 </div>
 
                 <div className="grid grid-cols-7 gap-2 mb-4">
-                  {['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'].map((day) => (
-                    <div key={day} className="text-center text-gray-400 font-semibold py-2">
-                      {day}
-                    </div>
-                  ))}
+                  {["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"].map(
+                    (day) => (
+                      <div
+                        key={day}
+                        className="text-center text-gray-400 font-semibold py-2"
+                      >
+                        {day}
+                      </div>
+                    )
+                  )}
                 </div>
 
                 <div className="grid grid-cols-7 gap-2">
@@ -473,14 +543,14 @@ const AppointmentBookingSystem = () => {
                       key={index}
                       onClick={() => handleDateSelect(dayInfo.date)}
                       disabled={isDateDisabled(dayInfo.date)}
-                      className={`aspect-square p-2 rounded-xl text-sm font-medium transition-all duration-300 ${
+                      className={`aspect-square cursor-pointer p-2 rounded-xl text-sm font-medium transition-all duration-300 ${
                         !dayInfo.isCurrentMonth
-                          ? 'text-gray-600 cursor-default'
+                          ? "text-gray-600 cursor-default"
                           : isDateDisabled(dayInfo.date)
-                          ? 'text-gray-600 cursor-not-allowed'
+                          ? "text-gray-600 cursor-not-allowed"
                           : isSelectedDate(dayInfo.date)
-                          ? 'bg-gradient-to-r from-cyan-500 to-blue-500 text-white shadow-lg shadow-cyan-500/25 scale-110'
-                          : 'text-white hover:bg-white/20 hover:scale-105 border border-white/20'
+                          ? "bg-gradient-to-r from-cyan-500 to-blue-500 text-white shadow-lg shadow-cyan-500/25 scale-110"
+                          : "text-white hover:bg-white/20 hover:scale-105 border border-white/20"
                       }`}
                     >
                       {dayInfo.date.getDate()}
@@ -491,8 +561,12 @@ const AppointmentBookingSystem = () => {
                 {selectedDate && (
                   <div className="mt-6 p-4 bg-cyan-500/20 backdrop-blur-sm rounded-2xl border border-cyan-500/30">
                     <div className="text-center">
-                      <div className="text-cyan-400 font-semibold">Selected Date</div>
-                      <div className="text-white text-lg">{formatDate(selectedDate)}</div>
+                      <div className="text-cyan-400 font-semibold">
+                        Selected Date
+                      </div>
+                      <div className="text-white text-lg">
+                        {formatDate(selectedDate)}
+                      </div>
                     </div>
                   </div>
                 )}
@@ -500,17 +574,17 @@ const AppointmentBookingSystem = () => {
                 <div className="flex justify-between mt-8">
                   <button
                     onClick={prevStep}
-                    className="px-6 py-3 bg-white/10 backdrop-blur-sm rounded-xl text-white hover:bg-white/20 transition-all duration-300 border border-white/20"
+                    className="px-6 cursor-pointer py-3 bg-white/10 backdrop-blur-sm rounded-xl text-white hover:bg-white/20 transition-all duration-300 border border-white/20"
                   >
                     Previous
                   </button>
                   <button
                     onClick={nextStep}
                     disabled={!selectedDate}
-                    className={`px-6 py-3 rounded-xl font-semibold transition-all duration-300 ${
+                    className={`px-6 cursor-pointer py-3 rounded-xl font-semibold transition-all duration-300 ${
                       selectedDate
-                        ? 'bg-gradient-to-r from-cyan-500 to-blue-500 text-white hover:shadow-lg hover:shadow-cyan-500/25 hover:scale-105'
-                        : 'bg-gray-600 text-gray-400 cursor-not-allowed'
+                        ? "bg-gradient-to-r from-cyan-500 to-blue-500 text-white hover:shadow-lg hover:shadow-cyan-500/25 hover:scale-105"
+                        : "bg-gray-600 text-gray-400 cursor-not-allowed"
                     }`}
                   >
                     Continue
@@ -522,12 +596,24 @@ const AppointmentBookingSystem = () => {
 
           {/* Step 3: Time Slot Selection */}
           {currentStep === 3 && (
-            <div className="p-8">
-              <div className="flex items-center justify-between mb-8">
-                <h3 className="text-2xl font-bold text-white">Select Time Slot</h3>
-                <div className="text-gray-300 text-right">
-                  <div>Service: <span className="text-cyan-400 font-semibold">{selectedService?.name}</span></div>
-                  <div>Date: <span className="text-cyan-400 font-semibold">{selectedDate?.toDateString()}</span></div>
+            <div className=" p-4 md:p-8">
+              <div className="flex space-y-3 md:space-y-3  flex-col md:flex-row items-center justify-between mb-8">
+                <h3 className="text-2xl font-bold text-white">
+                  Select Time Slot
+                </h3>
+                <div className="text-gray-300 text-center md:text-right">
+                  <div>
+                    Service:{" "}
+                    <span className="  text-cyan-400 font-semibold">
+                      {selectedService?.name}
+                    </span>
+                  </div>
+                  <div>
+                    Date:{" "}
+                    <span className="text-cyan-400 font-semibold">
+                      {selectedDate?.toDateString()}
+                    </span>
+                  </div>
                 </div>
               </div>
 
@@ -538,29 +624,33 @@ const AppointmentBookingSystem = () => {
                     Morning Slots
                   </h4>
                   <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
-                    {timeSlots.filter(slot => slot.period === 'AM').map((slot, index) => (
-                      <button
-                        key={index}
-                        onClick={() => handleTimeSlotSelect(slot)}
-                        disabled={!slot.available}
-                        className={`relative p-4 rounded-xl text-center font-semibold transition-all duration-300 ${
-                          selectedTimeSlot === slot
-                            ? 'bg-gradient-to-r from-cyan-500 to-blue-500 text-white shadow-lg shadow-cyan-500/25 scale-105'
-                            : slot.available
-                            ? 'bg-white/10 backdrop-blur-sm text-white hover:bg-white/20 hover:scale-105 border border-white/20'
-                            : 'bg-gray-800/50 text-gray-600 cursor-not-allowed border border-gray-700'
-                        }`}
-                      >
-                        <div className="text-lg">{slot.time}</div>
-                        <div className="text-sm opacity-80">{slot.period}</div>
-                        {!slot.available && (
-                          <div className="absolute inset-0 flex items-center justify-center">
-                            <div className="w-8 h-0.5 bg-red-500 rotate-45 absolute" />
-                            <div className="w-8 h-0.5 bg-red-500 -rotate-45 absolute" />
+                    {timeSlots
+                      .filter((slot) => slot.period === "AM")
+                      .map((slot, index) => (
+                        <button
+                          key={index}
+                          onClick={() => handleTimeSlotSelect(slot)}
+                          disabled={!slot.available}
+                          className={`relative cursor-pointer p-4 rounded-xl text-center font-semibold transition-all duration-300 ${
+                            selectedTimeSlot === slot
+                              ? "bg-gradient-to-r from-cyan-500 to-blue-500 text-white shadow-lg shadow-cyan-500/25 scale-105"
+                              : slot.available
+                              ? "bg-white/10 backdrop-blur-sm text-white hover:bg-white/20 hover:scale-105 border border-white/20"
+                              : "bg-gray-800/50 text-gray-600 cursor-not-allowed border border-gray-700"
+                          }`}
+                        >
+                          <div className="text-lg">{slot.time}</div>
+                          <div className="text-sm opacity-80">
+                            {slot.period}
                           </div>
-                        )}
-                      </button>
-                    ))}
+                          {!slot.available && (
+                            <div className="absolute inset-0 flex items-center justify-center">
+                              <div className="w-8 h-0.5 bg-red-500 rotate-45 absolute" />
+                              <div className="w-8 h-0.5 bg-red-500 -rotate-45 absolute" />
+                            </div>
+                          )}
+                        </button>
+                      ))}
                   </div>
                 </div>
 
@@ -570,46 +660,50 @@ const AppointmentBookingSystem = () => {
                     Afternoon Slots
                   </h4>
                   <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
-                    {timeSlots.filter(slot => slot.period === 'PM').map((slot, index) => (
-                      <button
-                        key={index}
-                        onClick={() => handleTimeSlotSelect(slot)}
-                        disabled={!slot.available}
-                        className={`relative p-4 rounded-xl text-center font-semibold transition-all duration-300 ${
-                          selectedTimeSlot === slot
-                            ? 'bg-gradient-to-r from-cyan-500 to-blue-500 text-white shadow-lg shadow-cyan-500/25 scale-105'
-                            : slot.available
-                            ? 'bg-white/10 backdrop-blur-sm text-white hover:bg-white/20 hover:scale-105 border border-white/20'
-                            : 'bg-gray-800/50 text-gray-600 cursor-not-allowed border border-gray-700'
-                        }`}
-                      >
-                        <div className="text-lg">{slot.time}</div>
-                        <div className="text-sm opacity-80">{slot.period}</div>
-                        {!slot.available && (
-                          <div className="absolute inset-0 flex items-center justify-center">
-                            <div className="w-8 h-0.5 bg-red-500 rotate-45 absolute" />
-                            <div className="w-8 h-0.5 bg-red-500 -rotate-45 absolute" />
+                    {timeSlots
+                      .filter((slot) => slot.period === "PM")
+                      .map((slot, index) => (
+                        <button
+                          key={index}
+                          onClick={() => handleTimeSlotSelect(slot)}
+                          disabled={!slot.available}
+                          className={`relative cursor-pointer p-4 rounded-xl text-center font-semibold transition-all duration-300 ${
+                            selectedTimeSlot === slot
+                              ? "bg-gradient-to-r from-cyan-500 to-blue-500 text-white shadow-lg shadow-cyan-500/25 scale-105"
+                              : slot.available
+                              ? "bg-white/10 backdrop-blur-sm text-white hover:bg-white/20 hover:scale-105 border border-white/20"
+                              : "bg-gray-800/50 text-gray-600 cursor-not-allowed border border-gray-700"
+                          }`}
+                        >
+                          <div className="text-lg">{slot.time}</div>
+                          <div className="text-sm opacity-80">
+                            {slot.period}
                           </div>
-                        )}
-                      </button>
-                    ))}
+                          {!slot.available && (
+                            <div className="absolute inset-0 flex items-center justify-center">
+                              <div className="w-8 h-0.5 bg-red-500 rotate-45 absolute" />
+                              <div className="w-8 h-0.5 bg-red-500 -rotate-45 absolute" />
+                            </div>
+                          )}
+                        </button>
+                      ))}
                   </div>
                 </div>
 
                 <div className="flex justify-between mt-8">
                   <button
                     onClick={prevStep}
-                    className="px-6 py-3 bg-white/10 backdrop-blur-sm rounded-xl text-white hover:bg-white/20 transition-all duration-300 border border-white/20"
+                    className="px-6 py-3 cursor-pointer bg-white/10 backdrop-blur-sm rounded-xl text-white hover:bg-white/20 transition-all duration-300 border border-white/20"
                   >
                     Previous
                   </button>
                   <button
                     onClick={nextStep}
                     disabled={!selectedTimeSlot}
-                    className={`px-6 py-3 rounded-xl font-semibold transition-all duration-300 ${
+                    className={`px-6 py-3 cursor-pointer rounded-xl font-semibold transition-all duration-300 ${
                       selectedTimeSlot
-                        ? 'bg-gradient-to-r from-cyan-500 to-blue-500 text-white hover:shadow-lg hover:shadow-cyan-500/25 hover:scale-105'
-                        : 'bg-gray-600 text-gray-400 cursor-not-allowed'
+                        ? "bg-gradient-to-r from-cyan-500 to-blue-500 text-white hover:shadow-lg hover:shadow-cyan-500/25 hover:scale-105"
+                        : "bg-gray-600 text-gray-400 cursor-not-allowed"
                     }`}
                   >
                     Continue
@@ -621,32 +715,44 @@ const AppointmentBookingSystem = () => {
 
           {/* Step 4: Confirmation */}
           {currentStep === 4 && (
-            <div className="p-8">
-              <h3 className="text-2xl font-bold text-white mb-8 text-center">Confirm Your Appointment</h3>
+            <div className=" p-4 md:p-8">
+              <h3 className="text-2xl font-bold text-white mb-8 text-center">
+                Confirm Your Appointment
+              </h3>
 
               <div className="max-w-2xl mx-auto">
                 <div className="bg-gradient-to-br from-cyan-500/20 to-blue-500/20 backdrop-blur-sm rounded-3xl p-6 border border-cyan-500/30 mb-8">
                   <div className="space-y-4">
                     <div className="flex justify-between items-center">
                       <span className="text-gray-300">Service:</span>
-                      <span className="text-white font-semibold">{selectedService?.name}</span>
+                      <span className="text-white font-semibold">
+                        {selectedService?.name}
+                      </span>
                     </div>
                     <div className="flex justify-between items-center">
                       <span className="text-gray-300">Date:</span>
-                      <span className="text-white font-semibold">{formatDate(selectedDate)}</span>
+                      <span className="text-white font-semibold">
+                        {formatDate(selectedDate)}
+                      </span>
                     </div>
                     <div className="flex justify-between items-center">
                       <span className="text-gray-300">Time:</span>
-                      <span className="text-white font-semibold">{selectedTimeSlot?.time} {selectedTimeSlot?.period}</span>
+                      <span className="text-white font-semibold">
+                        {selectedTimeSlot?.time} {selectedTimeSlot?.period}
+                      </span>
                     </div>
                     <div className="flex justify-between items-center">
                       <span className="text-gray-300">Duration:</span>
-                      <span className="text-white font-semibold">{selectedService?.duration}</span>
+                      <span className="text-white font-semibold">
+                        {selectedService?.duration}
+                      </span>
                     </div>
                     <div className="h-px bg-gradient-to-r from-transparent via-white/20 to-transparent my-4" />
                     <div className="flex justify-between items-center">
                       <span className="text-gray-300">Total Fee:</span>
-                      <span className="text-2xl font-bold text-cyan-400">{selectedService?.price}</span>
+                      <span className="text-2xl font-bold text-cyan-400">
+                        {selectedService?.price}
+                      </span>
                     </div>
                   </div>
                 </div>
@@ -659,21 +765,29 @@ const AppointmentBookingSystem = () => {
 
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
                     <div>
-                      <label className="block text-gray-300 text-sm font-medium mb-2">Full Name *</label>
+                      <label className="block text-gray-300 text-sm font-medium mb-2">
+                        Full Name *
+                      </label>
                       <input
                         type="text"
                         value={patientInfo.fullName}
-                        onChange={(e) => handlePatientInfoChange('fullName', e.target.value)}
+                        onChange={(e) =>
+                          handlePatientInfoChange("fullName", e.target.value)
+                        }
                         className="w-full px-4 py-3 bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl text-white placeholder-gray-400 focus:border-cyan-500 focus:ring-2 focus:ring-cyan-500/20 transition-all duration-300"
                         placeholder="Enter your full name"
                       />
                     </div>
                     <div>
-                      <label className="block text-gray-300 text-sm font-medium mb-2">Phone Number *</label>
+                      <label className="block text-gray-300 text-sm font-medium mb-2">
+                        Phone Number *
+                      </label>
                       <input
                         type="tel"
                         value={patientInfo.phone}
-                        onChange={(e) => handlePatientInfoChange('phone', e.target.value)}
+                        onChange={(e) =>
+                          handlePatientInfoChange("phone", e.target.value)
+                        }
                         className="w-full px-4 py-3 bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl text-white placeholder-gray-400 focus:border-cyan-500 focus:ring-2 focus:ring-cyan-500/20 transition-all duration-300"
                         placeholder="+880 1xxx-xxxxxx"
                       />
@@ -681,33 +795,45 @@ const AppointmentBookingSystem = () => {
                   </div>
 
                   <div className="mb-4">
-                    <label className="block text-gray-300 text-sm font-medium mb-2">Email Address</label>
+                    <label className="block text-gray-300 text-sm font-medium mb-2">
+                      Email Address
+                    </label>
                     <input
                       type="email"
                       value={patientInfo.email}
-                      onChange={(e) => handlePatientInfoChange('email', e.target.value)}
+                      onChange={(e) =>
+                        handlePatientInfoChange("email", e.target.value)
+                      }
                       className="w-full px-4 py-3 bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl text-white placeholder-gray-400 focus:border-cyan-500 focus:ring-2 focus:ring-cyan-500/20 transition-all duration-300"
                       placeholder="your.email@example.com"
                     />
                   </div>
 
                   <div className="mb-4">
-                    <label className="block text-gray-300 text-sm font-medium mb-2">Address</label>
+                    <label className="block text-gray-300 text-sm font-medium mb-2">
+                      Address
+                    </label>
                     <textarea
                       rows={3}
                       value={patientInfo.address}
-                      onChange={(e) => handlePatientInfoChange('address', e.target.value)}
+                      onChange={(e) =>
+                        handlePatientInfoChange("address", e.target.value)
+                      }
                       className="w-full px-4 py-3 bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl text-white placeholder-gray-400 focus:border-cyan-500 focus:ring-2 focus:ring-cyan-500/20 transition-all duration-300"
                       placeholder="Your complete address"
                     />
                   </div>
 
                   <div>
-                    <label className="block text-gray-300 text-sm font-medium mb-2">Special Notes (Optional)</label>
+                    <label className="block text-gray-300 text-sm font-medium mb-2">
+                      Special Notes (Optional)
+                    </label>
                     <textarea
                       rows={3}
                       value={patientInfo.notes}
-                      onChange={(e) => handlePatientInfoChange('notes', e.target.value)}
+                      onChange={(e) =>
+                        handlePatientInfoChange("notes", e.target.value)
+                      }
                       className="w-full px-4 py-3 bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl text-white placeholder-gray-400 focus:border-cyan-500 focus:ring-2 focus:ring-cyan-500/20 transition-all duration-300"
                       placeholder="Any special requirements or health conditions to mention..."
                     />
@@ -721,27 +847,39 @@ const AppointmentBookingSystem = () => {
                       id="terms"
                       className="mt-1 w-5 h-5 bg-white/10 border border-white/20 rounded text-cyan-500 focus:ring-cyan-500 focus:ring-2"
                     />
-                    <label htmlFor="terms" className="text-gray-300 text-sm leading-relaxed">
-                      I agree to the <span className="text-cyan-400 cursor-pointer hover:underline">Terms & Conditions</span> and <span className="text-cyan-400 cursor-pointer hover:underline">Privacy Policy</span>. I understand the consultation fee is payable during the appointment.
+                    <label
+                      htmlFor="terms"
+                      className="text-gray-300 text-sm leading-relaxed"
+                    >
+                      I agree to the{" "}
+                      <span className="text-cyan-400 cursor-pointer hover:underline">
+                        Terms & Conditions
+                      </span>{" "}
+                      and{" "}
+                      <span className="text-cyan-400 cursor-pointer hover:underline">
+                        Privacy Policy
+                      </span>
+                      . I understand the consultation fee is payable during the
+                      appointment.
                     </label>
                   </div>
                 </div>
 
-                <div className="flex justify-between">
+                <div className="flex flex-col md:flex-row justify-between">
                   <button
                     onClick={prevStep}
-                    className="px-6 py-3 bg-white/10 backdrop-blur-sm rounded-xl text-white hover:bg-white/20 transition-all duration-300 border border-white/20"
+                    className="px-6 cursor-pointer mb-4 py-3 bg-white/10 backdrop-blur-sm rounded-xl text-white hover:bg-white/20 transition-all duration-300 border border-white/20"
                   >
                     Previous
                   </button>
 
-                  <div className="flex gap-4">
-                    <button className="px-6 py-3 bg-gradient-to-r from-green-500 to-emerald-500 text-white rounded-xl font-semibold hover:shadow-lg hover:shadow-green-500/25 hover:scale-105 transition-all duration-300">
+                  <div className="flex flex-col md:flex-row gap-4">
+                    <button className="px-6 cursor-pointer  py-3  bg-gradient-to-r from-green-500 to-emerald-500 text-white rounded-xl font-semibold hover:shadow-lg hover:shadow-green-500/25 hover:scale-105 transition-all duration-300">
                       📞 Call to Confirm
                     </button>
                     <button
                       onClick={handleBookAppointment}
-                      className="px-6 py-3 bg-gradient-to-r from-cyan-500 to-blue-500 text-white rounded-xl font-semibold hover:shadow-lg hover:shadow-cyan-500/25 hover:scale-105 transition-all duration-300"
+                      className="px-6 cursor-pointer  py-3  bg-gradient-to-r from-cyan-500 to-blue-500 text-white rounded-xl font-semibold hover:shadow-lg hover:shadow-cyan-500/25 hover:scale-105 transition-all duration-300"
                     >
                       ✅ Book Appointment
                     </button>
@@ -749,9 +887,15 @@ const AppointmentBookingSystem = () => {
                 </div>
 
                 <div className="mt-8 text-center">
-                  <div className="text-gray-400 text-sm mb-2">For immediate assistance, call us at:</div>
-                  <div className="text-cyan-400 text-lg font-semibold">+880 1234-567890</div>
-                  <div className="text-gray-400 text-sm mt-2">Available 24/7 for emergency consultations</div>
+                  <div className="text-gray-400 text-sm mb-2">
+                    For immediate assistance, call us at:
+                  </div>
+                  <div className="text-cyan-400 text-lg font-semibold">
+                    +880 01403-331656
+                  </div>
+                  <div className="text-gray-400 text-sm mt-2">
+                    Available 24/7 for emergency consultations
+                  </div>
                 </div>
               </div>
             </div>
@@ -759,23 +903,24 @@ const AppointmentBookingSystem = () => {
 
           {/* Step 5: Success Confirmation */}
           {currentStep === 5 && isBookingConfirmed && (
-            <div className="p-8">
+            <div className=" p-4 md:p-8">
               <div className="max-w-2xl mx-auto text-center">
                 <div className="mb-8">
                   <div className="relative inline-block">
                     <div className="absolute inset-0 bg-gradient-to-r from-green-500 to-emerald-500 rounded-full blur-2xl opacity-60 animate-pulse" />
-                    <div className="relative w-24 h-24 bg-gradient-to-r from-green-500 to-emerald-500 rounded-full flex items-center justify-center mx-auto mb-6 animate-bounce">
+                    <div className="relative w-24 h-24 bg-gradient-to-r from-green-500 to-emerald-500 rounded-full flex items-center justify-center mx-auto mb-6 animate-pulse">
                       <span className="text-4xl">🎉</span>
                     </div>
                   </div>
                 </div>
 
-                <h3 className="text-3xl font-bold text-white mb-4">
+                <h3 className="md:text-3xl text-2xl font-bold text-white mb-4">
                   Appointment Confirmed Successfully! 🎊
                 </h3>
 
                 <p className="text-xl text-gray-300 mb-8">
-                  আপনার appointment সফলভাবে book হয়ে গেছে। আমরা শীঘ্রই আপনার সাথে যোগাযোগ করব।
+                  আপনার appointment সফলভাবে book হয়ে গেছে। আমরা শীঘ্রই আপনার
+                  সাথে যোগাযোগ করব।
                 </p>
 
                 <div className="bg-gradient-to-br from-green-500/20 to-emerald-500/20 backdrop-blur-sm rounded-3xl p-6 border border-green-500/30 mb-8">
@@ -788,29 +933,41 @@ const AppointmentBookingSystem = () => {
                     <div className="space-y-3">
                       <div className="flex justify-between items-center">
                         <span className="text-gray-300">Patient:</span>
-                        <span className="text-white font-semibold">{patientInfo.fullName || 'N/A'}</span>
+                        <span className="text-white font-semibold">
+                          {patientInfo.fullName || "N/A"}
+                        </span>
                       </div>
                       <div className="flex justify-between items-center">
                         <span className="text-gray-300">Phone:</span>
-                        <span className="text-white font-semibold">{patientInfo.phone || 'N/A'}</span>
+                        <span className="text-white font-semibold">
+                          {patientInfo.phone || "N/A"}
+                        </span>
                       </div>
                       <div className="flex justify-between items-center">
                         <span className="text-gray-300">Service:</span>
-                        <span className="text-white font-semibold">{selectedService?.name}</span>
+                        <span className="text-white font-semibold">
+                          {selectedService?.name}
+                        </span>
                       </div>
                     </div>
                     <div className="space-y-3">
                       <div className="flex justify-between items-center">
                         <span className="text-gray-300">Date:</span>
-                        <span className="text-white font-semibold">{selectedDate?.toDateString()}</span>
+                        <span className="text-white font-semibold">
+                          {selectedDate?.toDateString()}
+                        </span>
                       </div>
                       <div className="flex justify-between items-center">
                         <span className="text-gray-300">Time:</span>
-                        <span className="text-white font-semibold">{selectedTimeSlot?.time} {selectedTimeSlot?.period}</span>
+                        <span className="text-white font-semibold">
+                          {selectedTimeSlot?.time} {selectedTimeSlot?.period}
+                        </span>
                       </div>
                       <div className="flex justify-between items-center">
                         <span className="text-gray-300">Fee:</span>
-                        <span className="text-green-400 font-bold text-xl">{selectedService?.price}</span>
+                        <span className="text-green-400 font-bold text-xl">
+                          {selectedService?.price}
+                        </span>
                       </div>
                     </div>
                   </div>
@@ -829,21 +986,24 @@ const AppointmentBookingSystem = () => {
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
                   <button
                     onClick={resetBooking}
-                    className="px-8 py-3 bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-xl font-semibold hover:shadow-lg hover:shadow-purple-500/25 hover:scale-105 transition-all duration-300"
+                    className="px-8 py-3 cursor-pointer bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-xl font-semibold hover:shadow-lg hover:shadow-purple-500/25 hover:scale-105 transition-all duration-300"
                   >
                     📅 Book Another Appointment
                   </button>
 
-                  <button className="px-8 py-3 bg-gradient-to-r from-green-500 to-emerald-500 text-white rounded-xl font-semibold hover:shadow-lg hover:shadow-green-500/25 hover:scale-105 transition-all duration-300">
+                  <button className="px-8 cursor-pointer py-3 bg-gradient-to-r from-green-500 to-emerald-500 text-white rounded-xl font-semibold hover:shadow-lg hover:shadow-green-500/25 hover:scale-105 transition-all duration-300">
                     💾 Download Confirmation
                   </button>
                 </div>
 
                 <div className="mt-8">
                   <p className="text-gray-400 italic">
-                    "স্বাস্থ্য সেবায় আমাদের বিশ্বাস করার জন্য ধন্যবাদ। আমরা আপনাকে সর্বোত্তম care প্রদান করার জন্য প্রতিশ্রুতিবদ্ধ।"
+                    "স্বাস্থ্য সেবায় আমাদের বিশ্বাস করার জন্য ধন্যবাদ। আমরা
+                    আপনাকে সর্বোত্তম care প্রদান করার জন্য প্রতিশ্রুতিবদ্ধ।"
                   </p>
-                  <div className="text-cyan-400 font-semibold mt-2">- Professional Nursing Care Team</div>
+                  <div className="text-cyan-400 font-semibold mt-2">
+                    - Professional Nursing Care Team
+                  </div>
                 </div>
               </div>
             </div>
@@ -855,10 +1015,9 @@ const AppointmentBookingSystem = () => {
       {showPaymentModal && (
         <div className="fixed inset-0 bg-black/95 backdrop-blur-sm z-50 flex items-center justify-center p-4">
           <div className="max-w-2xl w-full max-h-[90vh] overflow-y-auto bg-gradient-to-br from-gray-900/95 to-purple-900/95 backdrop-blur-xl border border-white/20 rounded-3xl shadow-2xl">
-
-            {paymentStep === 'method' && (
-              <div className="p-8">
-                <h3 className="text-2xl font-bold text-white mb-8 text-center flex items-center justify-center gap-2">
+            {paymentStep === "method" && (
+              <div className="p-4 md:p-8">
+                <h3 className="md:text-2xl text-xl font-bold text-white mb-8 text-center flex items-center justify-center gap-2">
                   <span className="text-2xl">💳</span>
                   Select Payment Method
                 </h3>
@@ -870,17 +1029,27 @@ const AppointmentBookingSystem = () => {
                       className="group relative cursor-pointer transform transition-all duration-300 hover:scale-105"
                       onClick={() => handlePaymentMethodSelect(method)}
                     >
-                      <div className={`absolute -inset-2 bg-gradient-to-r ${method.color} rounded-2xl blur-xl opacity-60 group-hover:opacity-100 transition-all duration-500`} />
+                      <div
+                        className={`absolute -inset-2 bg-gradient-to-r ${method.color} rounded-2xl blur-xl opacity-60 group-hover:opacity-100 transition-all duration-500`}
+                      />
 
-                      <div className={`relative backdrop-blur-xl bg-gradient-to-br ${method.color}/20 border border-white/20 rounded-2xl p-6 shadow-xl`}>
+                      <div
+                        className={`relative backdrop-blur-xl bg-gradient-to-br ${method.color}/20 border border-white/20 rounded-2xl p-6 shadow-xl`}
+                      >
                         <div className="flex items-center justify-center mb-4">
-                          <div className={`w-16 h-16 bg-gradient-to-r ${method.color} rounded-xl flex items-center justify-center shadow-lg`}>
+                          <div
+                            className={`w-16 h-16 bg-gradient-to-r ${method.color} rounded-xl flex items-center justify-center shadow-lg`}
+                          >
                             <span className="text-3xl">{method.icon}</span>
                           </div>
                         </div>
 
-                        <h4 className="text-xl font-semibold text-white mb-2 text-center">{method.name}</h4>
-                        <p className="text-gray-300 text-sm text-center leading-relaxed">{method.description}</p>
+                        <h4 className="text-xl font-semibold text-white mb-2 text-center">
+                          {method.name}
+                        </h4>
+                        <p className="text-gray-300 text-sm text-center leading-relaxed">
+                          {method.description}
+                        </p>
                       </div>
                     </div>
                   ))}
@@ -889,7 +1058,7 @@ const AppointmentBookingSystem = () => {
                 <div className="text-center">
                   <button
                     onClick={() => setShowPaymentModal(false)}
-                    className="px-6 py-3 bg-white/10 backdrop-blur-sm rounded-xl text-white hover:bg-white/20 transition-all duration-300 border border-white/20"
+                    className="px-6 cursor-pointer py-3 bg-white/10 backdrop-blur-sm rounded-xl text-white hover:bg-white/20 transition-all duration-300 border border-white/20"
                   >
                     Cancel
                   </button>
@@ -897,7 +1066,7 @@ const AppointmentBookingSystem = () => {
               </div>
             )}
 
-            {paymentStep === 'processing' && (
+            {paymentStep === "processing" && (
               <div className="p-8 text-center">
                 <div className="mb-8">
                   <div className="relative inline-block">
@@ -918,12 +1087,12 @@ const AppointmentBookingSystem = () => {
               </div>
             )}
 
-            {paymentStep === 'success' && (
+            {paymentStep === "success" && (
               <div className="p-8 text-center">
                 <div className="mb-8">
                   <div className="relative inline-block">
                     <div className="absolute inset-0 bg-gradient-to-r from-green-500 to-emerald-500 rounded-full blur-2xl opacity-60 animate-pulse" />
-                    <div className="relative w-20 h-20 bg-gradient-to-r from-green-500 to-emerald-500 rounded-full flex items-center justify-center mx-auto animate-bounce">
+                    <div className="relative w-20 h-20 bg-gradient-to-r from-green-500 to-emerald-500 rounded-full flex items-center justify-center mx-auto animate-pulse">
                       <span className="text-3xl">✅</span>
                     </div>
                   </div>
@@ -946,16 +1115,27 @@ const AppointmentBookingSystem = () => {
       <div className="fixed bottom-8 right-8 z-50">
         <div className="relative">
           <div className="absolute inset-0 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-full blur-xl opacity-60 animate-pulse" />
-          <button className="relative w-14 h-14 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-full flex items-center justify-center text-white shadow-lg hover:scale-110 transition-all duration-300">
-            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+          <a href="https://wa.me/8801403331656?text=Hello%20I%20am%20interested" target="_blank"  className="relative cursor-pointer w-14 h-14 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-full flex items-center justify-center text-white shadow-lg hover:scale-110 transition-all duration-300">
+            <svg
+              className="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"
+              />
             </svg>
-          </button>
+          </a>
         </div>
       </div>
 
-      <style dangerouslySetInnerHTML={{
-        __html: `
+      <style
+        dangerouslySetInnerHTML={{
+          __html: `
           @keyframes float {
             0%, 100% {
               transform: translateY(0px) rotate(0deg);
@@ -999,7 +1179,7 @@ const AppointmentBookingSystem = () => {
             }
           }
 
-          .animate-bounce {
+          .animate-pulse {
             animation: bounce 1s infinite;
           }
 
@@ -1037,8 +1217,9 @@ const AppointmentBookingSystem = () => {
           *::-webkit-scrollbar-thumb:hover {
             background: linear-gradient(45deg, #0891b2, #2563eb);
           }
-        `
-      }} />
+        `,
+        }}
+      />
     </section>
   );
 };
