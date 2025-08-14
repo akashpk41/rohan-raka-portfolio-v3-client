@@ -28,7 +28,7 @@ function App() {
       {/* <InteractivePortfolio /> */}
       {/* <InstituteSection /> */}
       {/* <TimelineSection /> */}
-      {/* <TestimonialSection /> */}
+      <TestimonialSection />
       {/* <Gallery /> */}
       {/* <Slider /> */}
       {/* <BlogSection /> */}
@@ -37,7 +37,7 @@ function App() {
       {/* <ContactForm /> */}
       {/* <MusicPlayer /> */}
 
-      <TimeSection />
+      {/* <TimeSection /> */}
       <Footer />
     </>
   );
