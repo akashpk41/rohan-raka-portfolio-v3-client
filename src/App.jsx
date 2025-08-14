@@ -1,5 +1,5 @@
 import AppointmentBookingSystem from "./components/Appoinments/AppointmentBookingSystem";
-
+import QuizSection from "./components/QuizSection/QuizSection";
 import BlogSection from "./components/BlogSection";
 import CollegeSummaryLocation from "./components/CollegeSummaryLocation";
 import ContactForm from "./components/ContactForm";
@@ -23,7 +23,7 @@ function App() {
       {/* <ScrollProgressWithTheme /> */}
       <Header />
 
-      <SkillsSection />
+      {/* <SkillsSection />
       <InstituteSection />
       <TimelineSection />
       <TestimonialSection />
@@ -32,12 +32,17 @@ function App() {
       <BlogSection />
       <CollegeSummaryLocation />
 
+
+
+
       <AppointmentBookingSystem />
       <TimeSection />
       <MusicPlayer />
       <ContactForm />
       <InteractivePortfolio />
-      <MockupPhone />
+      <MockupPhone /> */}
+
+      <QuizSection />
       <Footer />
     </>
   );
