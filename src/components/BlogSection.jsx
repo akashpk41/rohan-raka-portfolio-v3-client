@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router";
 
 const BlogSection = () => {
   const [isLoaded, setIsLoaded] = useState(false);
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [hoveredBlog, setHoveredBlog] = useState(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -43,7 +45,8 @@ const BlogSection = () => {
       date: "১২ আগস্ট, ২০২৫",
       readTime: "৭ মিনিট",
       image:
-        "https://images.unsplash.com/photo-1584982751601-97dcc096659c?w=600&h=400&fit=crop",
+
+        "https://images.unsplash.com/photo-1600091474842-83bb9c05a723?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       tags: ["Emergency", "First Aid", "Medical"],
       likes: 490,
       comments: 241,
@@ -260,11 +263,11 @@ const BlogSection = () => {
                   <div className="block md:hidden">
                     {/* Mobile Blog Image */}
                     <div className="relative overflow-hidden">
-                      <div className="relative h-48">
+                      <div className="relative rounded-2xl h-48">
                         <img
                           src={blog.image}
                           alt={blog.title}
-                          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                          className="w-full rounded-2xl h-full object-cover transition-transform duration-700 group-hover:scale-110"
                         />
 
                         {/* Image Overlay */}
@@ -402,7 +405,10 @@ const BlogSection = () => {
 
                       {/* Mobile Footer */}
                       <div className="flex mt-4 items-center justify-between">
-                        <button className="px-4 py-2 bg-gradient-to-r from-cyan-500 to-purple-500 rounded-lg font-semibold text-white text-lg shadow-lg hover:shadow-cyan-500/25 transition-all duration-300">
+                        <button
+                          onClick={() => navigate("/blog-post")}
+                          className="px-4 py-2 bg-gradient-to-r from-cyan-500 to-purple-500 rounded-lg font-semibold text-white text-lg shadow-lg hover:shadow-cyan-500/25 transition-all duration-300"
+                        >
                           Read More
                         </button>
                         <div className="flex items-center gap-3 text-gray-300 text-base">
@@ -448,11 +454,11 @@ const BlogSection = () => {
                     {/* Desktop Blog Image */}
                     <div className="md:w-1/2 lg:w-2/5">
                       <div className="relative overflow-hidden">
-                        <div className="relative h-64 lg:h-80">
+                        <div className="relative  rounded-2xl h-64 lg:h-80">
                           <img
                             src={blog.image}
                             alt={blog.title}
-                            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                            className="w-full rounded-2xl h-full object-cover transition-transform duration-700 hover:rounded-3xl group-hover:scale-110"
                           />
 
                           {/* Image Overlay */}
@@ -592,7 +598,7 @@ const BlogSection = () => {
                       {/* Desktop Footer */}
                       <div className="flex items-center justify-between">
                         {/* Desktop Read More Button */}
-                        <button className="group/btn cursor-pointer relative px-6 py-3 bg-gradient-to-r from-cyan-500 to-purple-500 rounded-xl font-semibold text-white shadow-lg hover:shadow-cyan-500/25 transform hover:scale-105 transition-all duration-300 overflow-hidden">
+                        <button onClick={() => navigate("/blog-post")}  className="group/btn cursor-pointer relative px-6 py-3 bg-gradient-to-r from-cyan-500 to-purple-500 rounded-xl font-semibold text-white shadow-lg hover:shadow-cyan-500/25 transform hover:scale-105 transition-all duration-300 overflow-hidden">
                           <div className="absolute inset-0 bg-gradient-to-r from-purple-500 to-cyan-500 opacity-0 group-hover/btn:opacity-100 transition-opacity duration-300" />
                           <span className="relative flex items-center gap-2">
                             Read More

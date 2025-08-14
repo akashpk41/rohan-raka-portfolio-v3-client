@@ -20,6 +20,7 @@ import TimelineSection from "./components/TimelineSection";
 import TimeSection from "./components/TimeSection";
 import ScrollProgressBar from "./components/ScrollProgressBar";
 import DeveloperProfile from "./components/DeveloperProfile";
+import SingleBlogPost from "./components/SingleBlogPost";
 
 // ScrollToTop component to handle automatic scroll restoration
 const ScrollToTop = () => {
@@ -87,6 +88,19 @@ const BlogsPage = () => {
       <div className=" ">
         <ScrollProgressBar />
         <BlogSection />
+      </div>
+      <Footer />
+    </>
+  );
+};
+
+// Blogs page component
+const SingleBlogPage = () => {
+  return (
+    <>
+      <div className=" ">
+        <ScrollProgressBar />
+        <SingleBlogPost />
       </div>
       <Footer />
     </>
@@ -167,6 +181,7 @@ function App() {
 
           {/* Blogs route */}
           <Route path="/blogs" element={<BlogsPage />} />
+          <Route path="/blog-post" element={<SingleBlogPage />} />
 
           {/* Quiz route */}
           <Route path="/quiz" element={<QuizPage />} />
