@@ -10,18 +10,19 @@ import InstituteSection from "./components/InstituteSection";
 import InteractivePortfolio from "./components/InteractivePortfolio";
 import MockupPhone from "./components/MockupPhone";
 import MusicPlayer from "./components/MusicPlayer";
-import ScrollProgressWithTheme from "./components/ScrollProgressWithTheme";
+
 import SkillsSection from "./components/SkillsSection";
 import Slider from "./components/Slider";
 import TestimonialSection from "./components/TestimonialSection";
 import TimelineSection from "./components/TimelineSection";
 import TimeSection from "./components/TimeSection";
+import ScrollProgressBar from "./components/ScrollProgressBar";
 
 function App() {
   return (
     <>
-      {/* <ScrollProgressWithTheme /> */}
       <Header />
+     <ScrollProgressBar />
 
       {/* <SkillsSection />
       <InstituteSection />
