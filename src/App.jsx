@@ -1,3 +1,6 @@
+
+import AppointmentBookingSystem from "./components/Appoinments/AppointmentBookingSystem";
+
 import BlogSection from "./components/BlogSection";
 import CollegeSummaryLocation from "./components/CollegeSummaryLocation";
 import ContactForm from "./components/ContactForm";
@@ -7,6 +10,7 @@ import Header from "./components/Header";
 import InstituteSection from "./components/InstituteSection";
 import InteractivePortfolio from "./components/InteractivePortfolio";
 import MockupPhone from "./components/MockupPhone";
+import MusicPlayer from "./components/MusicPlayer";
 import SkillsSection from "./components/SkillsSection";
 import Slider from "./components/Slider";
 import TestimonialSection from "./components/TestimonialSection";
@@ -17,18 +21,23 @@ function App() {
   return (
     <>
       <Header />
-      <SkillsSection />
-      <InteractivePortfolio />
-      <InstituteSection />
-      <TimelineSection />
-      <TestimonialSection />
-      <Gallery />
-      <Slider />
-      <BlogSection />
-      <CollegeSummaryLocation />
-      <TimeSection />
-      <MockupPhone />
-      <ContactForm />
+
+      {/* <SkillsSection /> */}
+
+      {/* <AppointmentBookingSystem /> */}
+      {/* <InteractivePortfolio /> */}
+      {/* <InstituteSection /> */}
+      {/* <TimelineSection /> */}
+      {/* <TestimonialSection /> */}
+      {/* <Gallery /> */}
+      {/* <Slider /> */}
+      {/* <BlogSection /> */}
+      {/* <CollegeSummaryLocation /> */}
+      {/* <TimeSection /> */}
+      {/* <MockupPhone /> */}
+      {/* <ContactForm /> */}
+      <MusicPlayer />
+
       <Footer />
     </>
   );

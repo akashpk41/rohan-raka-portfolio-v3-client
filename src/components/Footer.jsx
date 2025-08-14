@@ -216,7 +216,7 @@ const Footer = () => {
                   <p className=" text-xl md:text-4xl text-gray-300">
                     Developed by{" "}
                     <FaHeart className="text-red-600 inline animate-pulse mx-1" />{" "}
-                    by
+                  
                     <button
                       onClick={openModal}
                       className="ml-1 cursor-pointer font-semibold text-cyan-400 hover:text-cyan-300 underline hover:no-underline transition-all duration-300"

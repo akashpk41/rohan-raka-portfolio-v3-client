@@ -113,6 +113,78 @@ const CollegeSummaryLocation = () => {
 
           {/* Summary Content */}
           <div className="grid lg:grid-cols-2 gap-12 items-center mb-20">
+
+
+            {/* Right Content - College Image & Stats */}
+            <div
+              className={`transform transition-all duration-1000 delay-400 ${
+                isLoaded
+                  ? "opacity-100 translate-x-0"
+                  : "opacity-0 translate-x-20"
+              }`}
+            >
+              {/* College Image */}
+              <div className="relative   mb-8">
+                <div className="absolute  inset-0 bg-gradient-to-br from-cyan-400/20 via-purple-400/20 to-green-400/20 rounded-3xl blur-3xl" />
+                <div className="relative  backdrop-blur-2xl bg-white/5 border border-white/10 rounded-3xl shadow-2xl">
+                  <div className="w-full cursor-pointer  bg-gradient-to-br from-gray-800 via-gray-700 to-gray-800 rounded-xl flex items-center justify-center overflow-hidden">
+                    <img
+                      src="https://scontent.fdac27-2.fna.fbcdn.net/v/t39.30808-6/484979600_1182302797017271_17774322822121988_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeGJadtWOZaFmwSCwyGRZ7jSz9uownYSurbP26jCdhK6tpGxP-rEbnh4n1WjaGrpTMygXuufb_nHw8u2JPXR22yA&_nc_ohc=koQ1kpn4tyQQ7kNvwGSktRG&_nc_oc=AdnVKvS1vC3yU4dpfzN9xECearYbJjS9B8U2ppcVPWnLpBxY3jeRBb2bPtybWlPpVQo&_nc_zt=23&_nc_ht=scontent.fdac27-2.fna&_nc_gid=7BYYbngPXrYgs4n40EzGzA&oh=00_AfV8-LgvOygqFHv07p8oHtpZKCdKbNph6Rxpn-DIPCkUmw&oe=68A247B3"
+                      alt="Pabna Ideal Nursing College"
+                      className="w-full h-full object-contain rounded-2xl"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent rounded-2xl" />
+                  </div>
+
+                  {/* College Badge */}
+                  <div className="mt-4 p-4 text-center">
+                    <h3 className="text-white font-bold text-xl">
+                      পাবনা আইডিয়াল নার্সিং কলেজ
+                    </h3>
+                    <p className="text-cyan-400">
+                      Excellence in Healthcare Education
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Stats Cards */}
+              <div className="grid cursor-pointer grid-cols-3 gap-3">
+                {[
+                  {
+                    number: "5500+",
+                    label: "Students",
+                    color: "from-green-400 to-cyan-400",
+                  },
+                  {
+                    number: "50+",
+                    label: "Faculty",
+                    color: "from-cyan-400 to-purple-400",
+                  },
+                  {
+                    number: "15+",
+                    label: "Years",
+                    color: "from-purple-400 to-pink-400",
+                  },
+                ].map((stat, index) => (
+                  <div
+                    key={stat.label}
+                    className={`backdrop-blur-xl bg-white/5 border border-white/10 rounded-xl p-4 text-center shadow-lg transform transition-all duration-500 hover:scale-105 ${
+                      index === activeCard ? "ring-2 ring-cyan-400/50 scale-105" : ""
+                    }`}
+                    style={{ transitionDelay: `${(index + 6) * 100}ms` }}
+                  >
+                    <div
+                      className={`text-2xl font-bold bg-gradient-to-r ${stat.color} bg-clip-text text-transparent mb-1`}
+                    >
+                      {stat.number}
+                    </div>
+                    <div className="text-gray-200 text-sm">{stat.label}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
             {/* Left Content */}
             <div
               className={`space-y-8 transform transition-all duration-1000 delay-200 ${
@@ -245,75 +317,6 @@ const CollegeSummaryLocation = () => {
               </div>
             </div>
 
-            {/* Right Content - College Image & Stats */}
-            <div
-              className={`transform transition-all duration-1000 delay-400 ${
-                isLoaded
-                  ? "opacity-100 translate-x-0"
-                  : "opacity-0 translate-x-20"
-              }`}
-            >
-              {/* College Image */}
-              <div className="relative   mb-8">
-                <div className="absolute  inset-0 bg-gradient-to-br from-cyan-400/20 via-purple-400/20 to-green-400/20 rounded-3xl blur-3xl" />
-                <div className="relative  backdrop-blur-2xl bg-white/5 border border-white/10 rounded-3xl shadow-2xl">
-                  <div className="w-full cursor-pointer  bg-gradient-to-br from-gray-800 via-gray-700 to-gray-800 rounded-xl flex items-center justify-center overflow-hidden">
-                    <img
-                      src="https://scontent.fdac27-2.fna.fbcdn.net/v/t39.30808-6/484979600_1182302797017271_17774322822121988_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeGJadtWOZaFmwSCwyGRZ7jSz9uownYSurbP26jCdhK6tpGxP-rEbnh4n1WjaGrpTMygXuufb_nHw8u2JPXR22yA&_nc_ohc=koQ1kpn4tyQQ7kNvwGSktRG&_nc_oc=AdnVKvS1vC3yU4dpfzN9xECearYbJjS9B8U2ppcVPWnLpBxY3jeRBb2bPtybWlPpVQo&_nc_zt=23&_nc_ht=scontent.fdac27-2.fna&_nc_gid=7BYYbngPXrYgs4n40EzGzA&oh=00_AfV8-LgvOygqFHv07p8oHtpZKCdKbNph6Rxpn-DIPCkUmw&oe=68A247B3"
-                      alt="Pabna Ideal Nursing College"
-                      className="w-full h-full object-contain rounded-2xl"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent rounded-2xl" />
-                  </div>
-
-                  {/* College Badge */}
-                  <div className="mt-4 p-4 text-center">
-                    <h3 className="text-white font-bold text-xl">
-                      পাবনা আইডিয়াল নার্সিং কলেজ
-                    </h3>
-                    <p className="text-cyan-400">
-                      Excellence in Healthcare Education
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              {/* Stats Cards */}
-              <div className="grid cursor-pointer grid-cols-3 gap-3">
-                {[
-                  {
-                    number: "5500+",
-                    label: "Students",
-                    color: "from-green-400 to-cyan-400",
-                  },
-                  {
-                    number: "50+",
-                    label: "Faculty",
-                    color: "from-cyan-400 to-purple-400",
-                  },
-                  {
-                    number: "15+",
-                    label: "Years",
-                    color: "from-purple-400 to-pink-400",
-                  },
-                ].map((stat, index) => (
-                  <div
-                    key={stat.label}
-                    className={`backdrop-blur-xl bg-white/5 border border-white/10 rounded-xl p-4 text-center shadow-lg transform transition-all duration-500 hover:scale-105 ${
-                      index === activeCard ? "ring-2 ring-cyan-400/50 scale-105" : ""
-                    }`}
-                    style={{ transitionDelay: `${(index + 6) * 100}ms` }}
-                  >
-                    <div
-                      className={`text-2xl font-bold bg-gradient-to-r ${stat.color} bg-clip-text text-transparent mb-1`}
-                    >
-                      {stat.number}
-                    </div>
-                    <div className="text-gray-200 text-sm">{stat.label}</div>
-                  </div>
-                ))}
-              </div>
-            </div>
           </div>
 
           {/* Location Section */}
