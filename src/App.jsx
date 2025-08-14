@@ -46,13 +46,17 @@ const HomePage = () => {
       <div id="institute-section">
         <InstituteSection />
       </div>
-
       <TimelineSection />
       <TestimonialSection />
+      <Gallery />
       <Slider />
+      <BlogSection />
       <CollegeSummaryLocation />
-      <TimeSection />
+      <AppointmentBookingSystem />
+      <QuizSection />
+      <MusicPlayer />
 
+      <TimeSection />
       {/* Make sure this section has the correct ID for navbar scrolling */}
       <div id="contact-section">
         <ContactForm />
@@ -127,6 +131,9 @@ const AppointmentPage = () => {
       <div className=" ">
         <ScrollProgressBar />
         <AppointmentBookingSystem />
+        <div className="-mt-20 ">
+          <DeveloperProfile />
+        </div>
       </div>
       <Footer />
     </>

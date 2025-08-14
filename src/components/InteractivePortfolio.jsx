@@ -19,7 +19,7 @@ const InteractivePortfolio = () => {
       description:
         "Comprehensive patient care during clinical rotations at Pabna Sadar Hospital, focusing on compassionate nursing care and medical procedures.",
       image:
-        "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=600&h=400&fit=crop",
+        "https://i.ibb.co.com/v6gcB8rV/image-12.jpg",
       technologies: [
         "Patient Care",
         "Medical Assessment",
@@ -44,7 +44,7 @@ const InteractivePortfolio = () => {
       description:
         "Advanced emergency response and first aid training program, including CPR certification and critical care procedures.",
       image:
-        "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=600&h=400&fit=crop",
+        "https://images.unsplash.com/photo-1625258111307-3e929842d9b5?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       technologies: ["CPR", "First Aid", "Emergency Medicine", "Critical Care"],
       achievements: [
         "CPR Certified",
@@ -64,7 +64,7 @@ const InteractivePortfolio = () => {
       description:
         "Led community health awareness campaigns focusing on maternal health, vaccination drives, and health education in rural areas.",
       image:
-        "https://images.unsplash.com/photo-1559757175-0eb30cd8c063?w=600&h=400&fit=crop",
+        "https://images.unsplash.com/photo-1659353888357-75e5858a5bc5?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       technologies: [
         "Health Education",
         "Community Outreach",
@@ -135,7 +135,7 @@ const InteractivePortfolio = () => {
       description:
         "Specialized pediatric nursing care including child development assessment, family education, and pediatric emergency procedures.",
       image:
-        "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=600&h=400&fit=crop",
+        "https://images.unsplash.com/photo-1681505512385-8b9d567a56c0?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       technologies: [
         "Pediatric Care",
         "Child Development",

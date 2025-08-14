@@ -8,7 +8,7 @@ const useScrambleText = (text, isVisible = true, duration = 2000) => {
   useEffect(() => {
     if (!isVisible || !text) return;
 
-    const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()';
+    const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
     let iteration = 0;
 
     clearInterval(intervalRef.current);
@@ -149,7 +149,7 @@ const TimelineSection = () => {
   // Generate scramble effects for timeline items
   const itemScrambles = timelineData.map((item, index) => ({
     title: useScrambleText(item.title, visibleItems[`item-${index}`]),
-    description: useScrambleText(item.description, visibleItems[`item-${index}`], 1500)
+    description: useScrambleText(item.description, visibleItems[`item-${index}`], 200)
   }));
 
   return (
