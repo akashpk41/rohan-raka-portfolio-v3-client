@@ -64,12 +64,12 @@ const ScrollProgressBar = () => {
       `}</style>
 
       {/* Progress Counter next to Rohan Raka */}
-      <div className="fixed top-4 left-44 z-[9998] sm:left-48 md:left-52 lg:top-6 lg:left-56 xl:left-64 2xl:left-72">
-        <div className="bg-gradient-to-r from-purple-600/20 to-pink-600/20 backdrop-blur-lg border border-white/10 rounded-full px-2 py-1 lg:px-3 lg:py-1.5">
+      <div className="fixed top-4 left-44 z-[5000] sm:left-48 md:left-42 md:top-1.5  xl:left-64 2xl:left-72">
+        <div className="bg-gradient-to-r from-purple-600/20 to-pink-600/20 backdrop-blur-lg border border-white/10 rounded-full px-2 py-1 ">
           <div className="flex items-center gap-1 lg:gap-1.5">
             <div className="w-1.5 h-1.5 lg:w-2 lg:h-2 bg-gradient-to-r from-pink-400 to-cyan-400 rounded-full animate-pulse"></div>
-            <span className="text-xs lg:text-sm font-medium bg-gradient-to-r from-pink-300 to-cyan-300 bg-clip-text text-transparent whitespace-nowrap">
-              {scrollProgress.toFixed(0)}%
+            <span className="text-xs md:text-xs font-medium bg-gradient-to-r from-pink-300 to-cyan-300 bg-clip-text text-transparent whitespace-nowrap">
+              {scrollProgress.toFixed(2)}%
             </span>
           </div>
         </div>
@@ -77,7 +77,7 @@ const ScrollProgressBar = () => {
 
       {/* Progress Bar - Fixed positioning for all devices */}
       <div
-        className="fixed left-0 right-0 z-[9997] h-1 md:h-1"
+        className="fixed left-0 right-0 z-[5000] h-1 md:h-1"
         style={{
           top: 'var(--navbar-height, 70px)', // CSS variable for flexibility
           pointerEvents: 'none'

@@ -93,10 +93,10 @@ const carouselImages = [
       {/* Glassmorphism Overlay */}
       <div className="absolute inset-0 bg-gradient-to-br from-black/20 via-purple-900/10 to-black/30 backdrop-blur-sm" />
 
-      <div className="relative z-10 max-w-6xl mx-auto px-4">
+      <div className="relative cursor-pointer z-10 max-w-6xl mx-auto px-4">
 
         {/* Phone Container */}
-        <div className={`flex items-center justify-center transform transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-20'}`}>
+        <div className={`flex cursor-pointer items-center justify-center transform transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-20'}`}>
 
           {/* 3D Phone Mockup */}
           <div className="relative group perspective-1000">
@@ -108,7 +108,7 @@ const carouselImages = [
             <div className="absolute top-8 left-4 w-[320px] h-[650px] bg-black/50 rounded-[50px] blur-2xl transform rotate-2" />
 
             {/* Main Phone Container */}
-            <div className="relative w-[320px] h-[650px] rounded-[50px] bg-gradient-to-br from-gray-800 via-gray-900 to-black p-[4px] shadow-[0_20px_60px_rgba(0,0,0,0.5)] transform transition-all duration-700 hover:scale-105 hover:rotate-y-12 group-hover:shadow-[0_30px_80px_rgba(138,43,226,0.3)]">
+            <div className="relative cursor-grab w-[320px] h-[650px] rounded-[50px] bg-gradient-to-br from-gray-800 via-gray-900 to-black p-[4px] shadow-[0_20px_60px_rgba(0,0,0,0.5)] transform transition-all duration-700 hover:scale-105 hover:rotate-y-12 group-hover:shadow-[0_30px_80px_rgba(138,43,226,0.3)]">
 
               {/* Premium Glass Shine Effect */}
               <div className="absolute inset-0 z-30 pointer-events-none overflow-hidden rounded-[50px]">

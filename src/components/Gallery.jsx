@@ -373,7 +373,7 @@ const Gallery = () => {
 
       {/* Premium Lightbox Modal */}
       {selectedImage && (
-        <div className="fixed inset-0 bg-black/30 backdrop-blur-sm z-50 flex items-center justify-center p-4">
+        <div className="fixed inset-0 bg-black/30 backdrop-blur-sm z-[6000] flex items-center justify-center p-4">
           {/* Close Button */}
           <button
             onClick={closeLightbox}

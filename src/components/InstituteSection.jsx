@@ -32,7 +32,7 @@ const InstituteSection = () => {
   };
 
   return (
-    <section id="institute"  className="relative  py-16 bg-gradient-to-br from-gray-900 via-purple-900 to-gray-900 overflow-hidden">
+    <section id="institute-section"  className="relative  py-16 bg-gradient-to-br from-gray-900 via-purple-900 to-gray-900 overflow-hidden">
       {/* Background Effects - Same as other sections */}
       <div className="absolute inset-0">
         {/* Floating particles */}

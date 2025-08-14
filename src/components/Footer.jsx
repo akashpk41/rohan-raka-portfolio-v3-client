@@ -260,7 +260,7 @@ const Footer = () => {
 
       {/* Premium Developer Modal */}
       {isModalOpen && (
-       <div className="fixed inset-0 z-50 overflow-y-auto bg-black/10 backdrop-blur-sm">
+       <div className="fixed inset-0 z-[5000] overflow-y-auto bg-black/10 backdrop-blur-sm">
   <div className="flex items-center justify-center   py-2">
     <div
       className="relative w-full max-w-md transform transition-all duration-300 scale-100 opacity-100"
