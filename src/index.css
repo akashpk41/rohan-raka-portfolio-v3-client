@@ -1,1 +1,16 @@
 @import "tailwindcss";
+html, body {
+  overflow-x: hidden;
+  font-family: 'Hind Siliguri', 'Saira', sans-serif;
+  font-weight: 400;
+  color: #1f2937;
+}
+.navbar-brand {
+  font-family: 'Dancing Script', cursive;
+  font-weight: 700;
+}
+.hero-title {
+  font-family: 'Archivo Black', sans-serif;
+  font-weight: 600;
+  color: #111;
+}

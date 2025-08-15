@@ -21,6 +21,7 @@ import TimeSection from "./components/TimeSection";
 import ScrollProgressBar from "./components/ScrollProgressBar";
 import DeveloperProfile from "./components/DeveloperProfile";
 import SingleBlogPost from "./components/SingleBlogPost";
+import PremiumInteractiveMap from "./components/PremiumInteractiveMap/PremiumInteractiveMap";
 
 // ScrollToTop component to handle automatic scroll restoration
 const ScrollToTop = () => {
@@ -53,6 +54,7 @@ const HomePage = () => {
       <BlogSection />
       <CollegeSummaryLocation />
       <AppointmentBookingSystem />
+      <PremiumInteractiveMap />
       <QuizSection />
       <MusicPlayer />
 

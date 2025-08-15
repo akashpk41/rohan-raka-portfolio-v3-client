@@ -120,7 +120,7 @@ const Header = () => {
 
                   {/* Main Title */}
                   <div className="space-y-4">
-                    <h1 className="text-4xl md:text-6xl lg:text-8xl font-black leading-none">
+                    <h1 className="text-4xl hero-title md:text-6xl lg:text-8xl font-black leading-none">
                       <span className="text-white">ROHAN </span>
                       <span className="bg-gradient-to-r from-green-400 via-cyan-400 to-purple-400 bg-clip-text text-transparent animate-pulse">
                         RAKA
