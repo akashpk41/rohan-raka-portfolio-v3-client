@@ -116,6 +116,7 @@ const Gallery = () => {
       color: "from-green-500/20 to-teal-500/20",
       delay: 1100,
     },
+
     {
       id: 12,
       src: "https://i.ibb.co.com/LXb0PfqY/image-12.jpg",
@@ -126,6 +127,62 @@ const Gallery = () => {
       color: "from-violet-500/20 to-purple-500/20",
       delay: 1200,
     },
+
+    {
+      id: 13,
+      src: "https://i.ibb.co.com/S7WtdD3K/rohan-raka-cover.jpg",
+      alt: "Ideal Friends",
+      caption:
+        "আমি যদি অন্যদের মতো হই, তাহলে আর আমার নিজের গল্প রইলো কই!🌹",
+      category: "Events",
+      color: "from-amber-500/20 to-yellow-500/20",
+      delay: 1300,
+    },
+
+    {
+      id: 14,
+      src: "https://i.ibb.co.com/cSK8KPq5/class-2.jpg",
+      alt: "Ideal Friends",
+      caption:
+        "সময়ের স্রোতে ভেসে যাবে দিন, কিন্তু স্মৃতিগুলো থাকবে অমলিন 🕊️📸",
+      category: "College",
+      color: "from-cyan-500/20 to-green-500/20",
+      delay: 1400,
+    },
+
+    {
+      id: 15,
+      src: "https://i.ibb.co.com/ZRv0thtr/class-3.jpg",
+      alt: "Ideal Friends",
+      caption:
+        "সবুজে ভরা আমাদের স্মৃতির ক্লাসরুম 🌿📚",
+      category: "College",
+      color: "from-green-500/20 to-yellow-500/20",
+      delay: 1500,
+    },
+
+    {
+      id: 16,
+      src: "https://i.ibb.co.com/x8jbNCYD/class-1.jpg",
+      alt: "Ideal Friends",
+      caption:
+        "একসাথে পথচলা, একসাথে শেখা — আলহামদুলিল্লাহ  Batch  9💚✨",
+      category: "College",
+      color: "from-blue-500/20 to-orange-500/20",
+      delay: 1600,
+    },
+{
+      id: 17,
+      src: "https://i.ibb.co.com/hFcsq8nk/nostalgic-day5s.jpg",
+      alt: "Ideal Friends",
+      caption:
+        "গুগলে সার্চিং চলতেছিল : 'ভাত-মাছ খেয়ে কীভাবে মাত্র ২২ দিনে মোটা হওয়া যায়!😁 (September - 2020)📸",
+      category: "",
+      color: "from-cyan-500/20 to-green-500/20",
+      delay: 1700,
+    },
+
+
   ];
 
   const categories = [
@@ -327,7 +384,7 @@ const Gallery = () => {
 
                   {/* Caption */}
                   <div className="p-4">
-                    <p className="text-gray-300 text-sm leading-relaxed group-hover:text-white transition-colors duration-300">
+                    <p className="text-gray-300 text-base leading-relaxed group-hover:text-white transition-colors duration-300">
                       {image.caption}
                     </p>
                   </div>
@@ -442,8 +499,8 @@ const Gallery = () => {
             />
 
             {/* Caption */}
-            <div className="mt-6 text-center">
-              <p className="text-white text-lg leading-relaxed max-w-2xl mx-auto">
+            <div className="mt-8 text-center">
+              <p className="text-white text-3xl leading-relaxed max-w-2xl mx-auto">
                 {selectedImage.caption}
               </p>
             </div>
