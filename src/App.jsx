@@ -134,7 +134,7 @@ const AppointmentPage = () => {
         <ScrollProgressBar />
         <AppointmentBookingSystem />
         <div className="-mt-20 ">
-          <DeveloperProfile />
+          {/* <DeveloperProfile /> */}
         </div>
       </div>
       <Footer />

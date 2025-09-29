@@ -103,7 +103,7 @@ const ContactForm = () => {
             }`}
           >
             <div className="inline-block px-6 py-3 bg-gradient-to-r from-cyan-500/20 to-purple-500/20 backdrop-blur-sm border border-cyan-500/30 rounded-full mb-6">
-              <span className="text-cyan-400 font-medium flex items-center gap-2">
+              <span className="text-cyan-400 text-2xl font-medium flex items-center gap-2">
                 <svg
                   className="w-5 h-5"
                   fill="none"
@@ -121,7 +121,7 @@ const ContactForm = () => {
               </span>
             </div>
 
-            <h1 className="text-4xl md:text-6xl font-black mb-4">
+            <h1 className="text-5xl md:text-6xl font-black mb-4">
               <span className="text-white">GET IN </span>
               <span className="bg-gradient-to-r from-green-400 via-cyan-400 to-purple-400 bg-clip-text text-transparent">
                 TOUCH
@@ -130,7 +130,7 @@ const ContactForm = () => {
 
             <div className="w-24 h-1 bg-gradient-to-r from-cyan-400 to-purple-400 rounded-full mx-auto mb-6" />
 
-            <p className="text-lg text-gray-300 max-w-2xl mx-auto">
+            <p className="text-xl text-gray-300 max-w-2xl mx-auto">
               I’m always open to new opportunities and exciting projects.
             </p>
           </div>
@@ -147,10 +147,10 @@ const ContactForm = () => {
               <div className="backdrop-blur-2xl bg-white/5 border border-white/10 rounded-3xl p-8 shadow-2xl">
                 {/* Form Header */}
                 <div className="mb-8">
-                  <h2 className="text-2xl font-bold text-white mb-2">
+                  <h2 className="text-3xl font-bold text-white mb-2">
                     Send Message
                   </h2>
-                  <p className="text-gray-400">
+                  <p className="text-gray-400 text-base ">
                     Drop me a message and I’ll get back to you shortly.
                   </p>
                 </div>
@@ -190,7 +190,7 @@ const ContactForm = () => {
                 <div className="space-y-6">
                   {/* Name Field */}
                   <div className="space-y-2">
-                    <label className="text-white font-medium flex items-center gap-2">
+                    <label className="text-white text-xl  font-medium flex items-center gap-2">
                       <svg
                         className="w-4 h-4 text-cyan-400"
                         fill="none"
@@ -213,13 +213,13 @@ const ContactForm = () => {
                       onChange={handleInputChange}
                       placeholder="Enter Your Full Name"
                       required
-                      className="w-full px-4 py-3 bg-white/5 border border-white/20 rounded-xl text-white placeholder-gray-400 focus:bg-white/10 focus:border-cyan-400/50 focus:outline-none transition-all duration-300"
+                      className="w-full px-4 py-3 bg-white/5 border border-white/20 rounded-xl text-white placeholder-cyan-400 focus:bg-white/10 focus:border-cyan-400/50 focus:outline-none transition-all duration-300"
                     />
                   </div>
 
                   {/* Email Field */}
                   <div className="space-y-2">
-                    <label className="text-white font-medium flex items-center gap-2">
+                    <label className="text-white text-xl  font-medium flex items-center gap-2">
                       <svg
                         className="w-4 h-4 text-cyan-400"
                         fill="none"
@@ -242,13 +242,13 @@ const ContactForm = () => {
                       onChange={handleInputChange}
                       placeholder="Enter Your Email"
                       required
-                      className="w-full px-4 py-3 bg-white/5 border border-white/20 rounded-xl text-white placeholder-gray-400 focus:bg-white/10 focus:border-cyan-400/50 focus:outline-none transition-all duration-300"
+                      className="w-full px-4 py-3 bg-white/5 border border-white/20 rounded-xl text-white placeholder-cyan-400 focus:bg-white/10 focus:border-cyan-400/50 focus:outline-none transition-all duration-300"
                     />
                   </div>
 
                   {/* Subject Field */}
                   <div className="space-y-2">
-                    <label className="text-white font-medium flex items-center gap-2">
+                    <label className="text-white text-xl font-medium flex items-center gap-2">
                       <svg
                         className="w-4 h-4 text-cyan-400"
                         fill="none"
@@ -271,13 +271,13 @@ const ContactForm = () => {
                       onChange={handleInputChange}
                       placeholder="Enter The Subject"
                       required
-                      className="w-full px-4 py-3 bg-white/5 border border-white/20 rounded-xl text-white placeholder-gray-400 focus:bg-white/10 focus:border-cyan-400/50 focus:outline-none transition-all duration-300"
+                      className="w-full px-4 py-3 bg-white/5 border border-white/20 rounded-xl text-white placeholder-cyan-400 focus:bg-white/10 focus:border-cyan-400/50 focus:outline-none transition-all duration-300"
                     />
                   </div>
 
                   {/* Message Field */}
                   <div className="space-y-2">
-                    <label className="text-white font-medium flex items-center gap-2">
+                    <label className="text-white text-xl font-medium flex items-center gap-2">
                       <svg
                         className="w-4 h-4 text-cyan-400"
                         fill="none"
@@ -300,7 +300,7 @@ const ContactForm = () => {
                       placeholder="Type your message here..."
                       rows={5}
                       required
-                      className="w-full px-4 py-3 bg-white/5 border border-white/20 rounded-xl text-white placeholder-gray-400 focus:bg-white/10 focus:border-cyan-400/50 focus:outline-none transition-all duration-300 resize-none"
+                      className="w-full px-4 py-3 bg-white/5 border border-white/20 rounded-xl text-white placeholder-cyan-400 focus:bg-white/10 focus:border-cyan-400/50 focus:outline-none transition-all duration-300 resize-none"
                     />
                   </div>
 
@@ -311,7 +311,7 @@ const ContactForm = () => {
                     className="w-full group relative px-8 py-4 bg-gradient-to-r from-green-500 via-cyan-500 to-purple-500 rounded-2xl font-bold text-white shadow-2xl hover:shadow-cyan-500/25 transform hover:scale-105 transition-all duration-300 overflow-hidden disabled:opacity-70 disabled:cursor-not-allowed disabled:hover:scale-100"
                   >
                     <div className="absolute inset-0 bg-gradient-to-r from-purple-500 via-cyan-500 to-green-500 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                    <span className="relative flex items-center justify-center gap-3">
+                    <span className="relative text-xl flex items-center justify-center gap-3">
                       {isSubmitting ? (
                         <>
                           <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />

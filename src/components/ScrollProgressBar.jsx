@@ -68,7 +68,7 @@ const ScrollProgressBar = () => {
         <div className="bg-gradient-to-r from-purple-600/20 to-pink-600/20 backdrop-blur-lg border border-white/10 rounded-full px-2 py-1 ">
           <div className="flex items-center gap-1 lg:gap-1.5">
             <div className="w-1.5 h-1.5 lg:w-2 lg:h-2 bg-gradient-to-r from-pink-400 to-cyan-400 rounded-full animate-pulse"></div>
-            <span className="text-xs md:text-xs font-medium bg-gradient-to-r from-pink-300 to-cyan-300 bg-clip-text text-transparent whitespace-nowrap">
+            <span className="text-sm md:text-xs font-medium bg-gradient-to-r from-pink-300 to-cyan-300 bg-clip-text text-transparent whitespace-nowrap">
               {scrollProgress.toFixed(2)}%
             </span>
           </div>
