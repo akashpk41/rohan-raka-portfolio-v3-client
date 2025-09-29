@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef } from "react";
 
 const MockupPhone = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -11,27 +11,26 @@ const MockupPhone = () => {
     return () => clearTimeout(timer);
   }, []);
 
+  const carouselImages = [
+    { src: "https://i.ibb.co.com/8ndKBwR5/carousel-3.jpg", alt: "Memory 1" },
+    { src: "https://i.ibb.co.com/SXHM3ZCd/carousel-4.jpg", alt: "Memory 2" },
+    { src: "https://i.ibb.co.com/3mNV3kWR/carousel-5.jpg", alt: "Memory 3" },
+    { src: "https://i.ibb.co.com/1tJj4wFv/carousel-6.jpg", alt: "Memory 4" },
+    { src: "https://i.ibb.co.com/5gqvSDML/carousel-7.jpg", alt: "Memory 5" },
+    { src: "https://i.ibb.co.com/B5Z6t6qz/carousel-8.jpg", alt: "Memory 6" },
+    { src: "https://i.ibb.co.com/kgydsr2V/carousel-9.jpg", alt: "Memory 7" },
+    { src: "https://i.ibb.co.com/mVvC2WQ2/carousel-10.jpg", alt: "Memory 8" },
+    { src: "https://i.ibb.co.com/x87r5JYt/carousel-11.jpg", alt: "Memory 9" },
+    { src: "https://i.ibb.co.com/9zT3PFs/carousel-2.jpg", alt: "Memory 10" },
+    { src: "https://i.ibb.co.com/BVNLcT2j/carousel-1.jpg", alt: "Memory 11" },
+    { src: "https://i.ibb.co.com/wF06WJDT/carousel-15.jpg", alt: "Memory 12" },
+    { src: "https://i.ibb.co.com/0ynfPgRZ/carousel-12.jpg", alt: "Memory 13" },
+    { src: "https://i.ibb.co.com/svZPRR6V/carousel-13.jpg", alt: "Memory 14" },
+    { src: "https://i.ibb.co.com/N0zYSYX/carousel-14.jpg", alt: "Memory 15" },
 
-
-
-const carouselImages = [
-  { src: "https://i.ibb.co.com/8ndKBwR5/carousel-3.jpg", alt: "Memory 1" },
-  { src: "https://i.ibb.co.com/SXHM3ZCd/carousel-4.jpg", alt: "Memory 2" },
-  { src: "https://i.ibb.co.com/3mNV3kWR/carousel-5.jpg", alt: "Memory 3" },
-  { src: "https://i.ibb.co.com/1tJj4wFv/carousel-6.jpg", alt: "Memory 4" },
-  { src: "https://i.ibb.co.com/5gqvSDML/carousel-7.jpg", alt: "Memory 5" },
-  { src: "https://i.ibb.co.com/B5Z6t6qz/carousel-8.jpg", alt: "Memory 6" },
-  { src: "https://i.ibb.co.com/kgydsr2V/carousel-9.jpg", alt: "Memory 7" },
-  { src: "https://i.ibb.co.com/mVvC2WQ2/carousel-10.jpg", alt: "Memory 8" },
-  { src: "https://i.ibb.co.com/x87r5JYt/carousel-11.jpg", alt: "Memory 9" },
-  { src: "https://i.ibb.co.com/9zT3PFs/carousel-2.jpg", alt: "Memory 10" },
-  { src: "https://i.ibb.co.com/BVNLcT2j/carousel-1.jpg", alt: "Memory 11" },
-  { src: "https://i.ibb.co.com/wF06WJDT/carousel-15.jpg", alt: "Memory 12" },
-  { src: "https://i.ibb.co.com/0ynfPgRZ/carousel-12.jpg", alt: "Memory 13" },
-  { src: "https://i.ibb.co.com/svZPRR6V/carousel-13.jpg", alt: "Memory 14" },
-  { src: "https://i.ibb.co.com/N0zYSYX/carousel-14.jpg", alt: "Memory 15" },
-  { src: "https://i.ibb.co.com/tPZRcsRd/carousel-16.jpg", alt: "Memory 16" },
-];
+    { src: "https://i.ibb.co.com/dwXn8QwD/korean-style.jpg", alt: "Memory 16" },
+    { src: "https://i.ibb.co.com/tw2DVCxn/movie-poster.jpg", alt: "Memory 17" },
+  ];
 
   // Auto scroll functionality
   useEffect(() => {
@@ -41,10 +40,10 @@ const carouselImages = [
         setCurrentImage(nextIndex);
         scrollRef.current.scrollTo({
           top: nextIndex * 650,
-          behavior: 'smooth'
+          behavior: "smooth",
         });
       }
-    }, 3000);
+    }, 4000);
 
     return () => clearInterval(interval);
   }, [currentImage, isScrolling, carouselImages.length]);
@@ -63,13 +62,22 @@ const carouselImages = [
   };
 
   return (
-    <section id="mockup-phone" className="relative py-20 bg-gradient-to-br from-gray-900 via-purple-900 to-gray-900 overflow-hidden">
+    <section
+      id="mockup-phone"
+      className="relative py-20 bg-gradient-to-br from-gray-900 via-purple-900 to-gray-900 overflow-hidden"
+    >
       {/* Premium Background Effects */}
       <div className="absolute inset-0">
         {/* Large Gradient Orbs */}
         <div className="absolute top-20 left-20 w-96 h-96 bg-gradient-to-r from-blue-500/15 to-purple-500/15 rounded-full blur-3xl animate-pulse" />
-        <div className="absolute bottom-20 right-20 w-80 h-80 bg-gradient-to-r from-purple-500/15 to-pink-500/15 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
-        <div className="absolute top-1/2 left-1/4 w-72 h-72 bg-gradient-to-r from-cyan-500/10 to-blue-500/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '2s' }} />
+        <div
+          className="absolute bottom-20 right-20 w-80 h-80 bg-gradient-to-r from-purple-500/15 to-pink-500/15 rounded-full blur-3xl animate-pulse"
+          style={{ animationDelay: "1s" }}
+        />
+        <div
+          className="absolute top-1/2 left-1/4 w-72 h-72 bg-gradient-to-r from-cyan-500/10 to-blue-500/10 rounded-full blur-3xl animate-pulse"
+          style={{ animationDelay: "2s" }}
+        />
 
         {/* Floating Phone Icons */}
         {[...Array(12)].map((_, i) => (
@@ -80,11 +88,15 @@ const carouselImages = [
               left: `${Math.random() * 100}%`,
               top: `${Math.random() * 100}%`,
               animationDelay: `${Math.random() * 3}s`,
-              animationDuration: `${4 + Math.random() * 3}s`
+              animationDuration: `${4 + Math.random() * 3}s`,
             }}
           >
-            <svg className="w-6 h-6 text-purple-400" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M17 2H7C5.9 2 5 2.9 5 4v16c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zM7 4h10v12H7V4zm10 16H7v-2h10v2z"/>
+            <svg
+              className="w-6 h-6 text-purple-400"
+              fill="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path d="M17 2H7C5.9 2 5 2.9 5 4v16c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zM7 4h10v12H7V4zm10 16H7v-2h10v2z" />
             </svg>
           </div>
         ))}
@@ -94,13 +106,14 @@ const carouselImages = [
       <div className="absolute inset-0 bg-gradient-to-br from-black/20 via-purple-900/10 to-black/30 backdrop-blur-sm" />
 
       <div className="relative cursor-pointer z-10 max-w-6xl mx-auto px-4">
-
         {/* Phone Container */}
-        <div className={`flex cursor-pointer items-center justify-center transform transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-20'}`}>
-
+        <div
+          className={`flex cursor-pointer items-center justify-center transform transition-all duration-1000 ${
+            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-20"
+          }`}
+        >
           {/* 3D Phone Mockup */}
           <div className="relative group perspective-1000">
-
             {/* Massive Glowing Effect */}
             <div className="absolute -inset-8 bg-gradient-to-r from-blue-500/40 via-purple-500/40 to-pink-500/40 rounded-[80px] blur-3xl opacity-60 group-hover:opacity-80 transition-all duration-700 animate-pulse" />
 
@@ -109,7 +122,6 @@ const carouselImages = [
 
             {/* Main Phone Container */}
             <div className="relative cursor-grab w-[320px] h-[650px] rounded-[50px] bg-gradient-to-br from-gray-800 via-gray-900 to-black p-[4px] shadow-[0_20px_60px_rgba(0,0,0,0.5)] transform transition-all duration-700 hover:scale-105 hover:rotate-y-12 group-hover:shadow-[0_30px_80px_rgba(138,43,226,0.3)]">
-
               {/* Premium Glass Shine Effect */}
               <div className="absolute inset-0 z-30 pointer-events-none overflow-hidden rounded-[50px]">
                 <div className="absolute -top-1/2 -left-1/4 w-full h-full bg-gradient-to-br from-white/20 via-white/5 to-transparent rotate-12 blur-xl animate-shine" />
@@ -123,7 +135,6 @@ const carouselImages = [
 
               {/* Inner Screen Bezel */}
               <div className="w-full h-full rounded-[45px] bg-black p-[3px] relative overflow-hidden">
-
                 {/* Dynamic Island */}
                 <div className="absolute top-5 left-1/2 -translate-x-1/2 w-[92px] h-[28px] bg-black/95 rounded-[20px] z-20 backdrop-blur-sm shadow-lg border border-gray-800 flex items-center justify-center">
                   <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse mr-2" />
@@ -137,7 +148,10 @@ const carouselImages = [
                   onScroll={handleScroll}
                 >
                   {carouselImages.map((image, index) => (
-                    <div key={index} className="w-full h-[650px] snap-start relative group/img">
+                    <div
+                      key={index}
+                      className="w-full h-[650px] snap-start relative group/img"
+                    >
                       <img
                         src={image.src}
                         alt={image.alt}
@@ -170,10 +184,10 @@ const carouselImages = [
                   key={i}
                   className="absolute w-2 h-2 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full animate-ping opacity-60"
                   style={{
-                    left: `${10 + (i * 12)}%`,
+                    left: `${10 + i * 12}%`,
                     top: `${20 + ((i * 15) % 60)}%`,
                     animationDelay: `${i * 0.3}s`,
-                    animationDuration: '2s'
+                    animationDuration: "2s",
                   }}
                 />
               ))}
@@ -182,21 +196,29 @@ const carouselImages = [
         </div>
 
         {/* Progress Indicators */}
-        <div className={`flex justify-center mt-8 space-x-2 transform transition-all duration-1000 delay-300 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+        <div
+          className={`flex justify-center mt-8 space-x-2 transform transition-all duration-1000 delay-300 ${
+            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+          }`}
+        >
           {carouselImages.map((_, index) => (
             <div
               key={index}
               className={`w-2 h-2 rounded-full transition-all duration-300 ${
                 index === currentImage
-                  ? 'bg-purple-400 w-8'
-                  : 'bg-gray-600 hover:bg-gray-500'
+                  ? "bg-purple-400 w-8"
+                  : "bg-gray-600 hover:bg-gray-500"
               }`}
             />
           ))}
         </div>
 
         {/* Bottom Message */}
-        <div className={`flex items-center justify-center gap-3 mt-12 transform transition-all duration-1000 delay-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+        <div
+          className={`flex items-center justify-center gap-3 mt-12 transform transition-all duration-1000 delay-500 ${
+            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+          }`}
+        >
           <div className="relative backdrop-blur-xl bg-white/10 border border-white/20 rounded-2xl px-8 py-4 shadow-xl">
             <div className="absolute -top-2 left-1/2 transform -translate-x-1/2">
               <div className="w-4 h-4 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full animate-pulse" />
@@ -221,12 +243,17 @@ const carouselImages = [
 
       <style jsx>{`
         @keyframes shine {
-          0% { transform: translateX(-100%) translateY(-100%) rotate(12deg); }
-          100% { transform: translateX(200%) translateY(200%) rotate(12deg); }
+          0% {
+            transform: translateX(-100%) translateY(-100%) rotate(12deg);
+          }
+          100% {
+            transform: translateX(200%) translateY(200%) rotate(12deg);
+          }
         }
 
         @keyframes float {
-          0%, 100% {
+          0%,
+          100% {
             transform: translateY(0px) rotate(0deg);
             opacity: 0.1;
           }

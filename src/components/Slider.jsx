@@ -110,6 +110,12 @@ const Slider = () => {
       gradient: "from-green-500/30 to-emerald-500/30",
     },
     {
+      id: 111,
+      src: "https://i.ibb.co.com/9kS2r3kf/nostalgic-days.jpg",
+      date: "25-September-2020",
+      gradient: "from-blue-500/30 to-orange-500/30",
+    },
+    {
       id: 3,
       src: "https://i.ibb.co.com/3mNV3kWR/carousel-5.jpg",
       date: "21-February-2025",
@@ -199,9 +205,15 @@ const Slider = () => {
     },
     {
       id: 16,
-      src: "https://i.ibb.co.com/tPZRcsRd/carousel-16.jpg",
-      date: "28-July-2025",
+      src: "https://i.ibb.co.com/dwXn8QwD/korean-style.jpg",
+      date: "19-September-2025",
       gradient: "from-yellow-500/30 to-orange-500/30",
+    },
+    {
+      id: 17,
+      src: "https://i.ibb.co.com/tw2DVCxn/movie-poster.jpg",
+      date: "27-October-2025",
+      gradient: "from-blue-500/30 to-orange-500/30",
     },
   ];
 
