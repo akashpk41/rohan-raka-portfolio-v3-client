@@ -95,7 +95,7 @@ const TimeSection = () => {
                 <div className="w-8 h-8 bg-gradient-to-br from-cyan-400 to-purple-400 rounded-full border-2 border-white/20" />
               )}
               {i % 3 === 1 && (
-                <div className="w-6 h-6 bg-gradient-to-br from-green-400 to-cyan-400 rounded-sm transform rotate-45" />
+                <div className="w-10 h-10 bg-gradient-to-br from-green-400 to-cyan-400 rounded-sm transform rotate-45" />
               )}
               {i % 3 === 2 && (
                 <div className="w-10 h-2 bg-gradient-to-r from-purple-400 to-pink-400 rounded-full transform rotate-12" />
@@ -115,7 +115,7 @@ const TimeSection = () => {
           {/* Header Section */}
           <div className={`text-center mb-16 transform transition-all duration-1000 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-10'}`}>
             <div className="inline-block px-6 py-3 bg-gradient-to-r from-cyan-500/20 to-purple-500/20 backdrop-blur-sm border border-cyan-500/30 rounded-full mb-6">
-              <span className="text-cyan-400 font-medium flex items-center gap-2">
+              <span className="text-cyan-400 text-xl font-medium flex items-center gap-2">
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
@@ -123,7 +123,7 @@ const TimeSection = () => {
               </span>
             </div>
 
-            <h1 className="text-4xl md:text-6xl font-black mb-6">
+            <h1 className="text-6xl md:text-6xl font-black mb-6">
               <span className="text-white">LIVE </span>
               <span className="bg-gradient-to-r from-green-400 via-cyan-400 to-purple-400 bg-clip-text text-transparent">
                 TIME
@@ -133,13 +133,13 @@ const TimeSection = () => {
             <div className="w-24 h-1 bg-gradient-to-r from-cyan-400 to-purple-400 rounded-full mx-auto mb-8" />
 
             {/* Steve Jobs Quote */}
-            <div className="backdrop-blur-xl bg-white/5 border border-white/10 rounded-2xl p-4 max-w-2xl mx-auto shadow-2xl">
-              <blockquote className="text-lg md:text-xl text-gray-300 italic leading-relaxed">
+            <div className="backdrop-blur-xl bg-white/5 border border-white/10 rounded-2xl p-2 max-w-2xl mx-auto shadow-2xl">
+              <blockquote className="text-xl md:text-xl text-gray-300 italic leading-relaxed">
                 <span className="text-4xl text-cyan-400">"</span>
                 Your time is limited, don't waste it.
                 <span className="text-3xl text-cyan-400">"</span>
               </blockquote>
-              <cite className="block mt-2 text-right text-purple-400 font-semibold ">
+              <cite className="block mr-8 text-right text-purple-400 font-semibold ">
                 — Steve Jobs
               </cite>
             </div>
@@ -147,7 +147,7 @@ const TimeSection = () => {
 
           {/* Live Time Display */}
           <div className={`mb-16 transform transition-all duration-1000 delay-200 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-            <div className="backdrop-blur-2xl bg-gradient-to-br from-white/10 to-white/5 border border-white/20 rounded-3xl p-8 shadow-2xl text-center relative overflow-hidden">
+            <div className="backdrop-blur-2xl bg-gradient-to-br from-white/10 to-white/5 border border-white/20 rounded-3xl  py-10 px-2 shadow-2xl text-center relative overflow-hidden">
 
               {/* Animated background glow */}
               <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/10 via-purple-500/10 to-green-500/10 rounded-3xl blur-xl animate-pulse" />
@@ -158,7 +158,7 @@ const TimeSection = () => {
                   <h2 className="text-5xl md:text-7xl font-black bg-gradient-to-r from-cyan-400 via-green-400 to-red-400 bg-clip-text text-transparent mb-2 font-mono">
                     {formatTime(currentTime)}
                   </h2>
-                  <p className="text-xl md:text-2xl text-white font-semibold">
+                  <p className="text-2xl md:text-2xl text-white font-semibold">
                     Today is <span className="text-cyan-400">{getDayName(currentTime)}</span>
                   </p>
                 </div>
@@ -179,7 +179,7 @@ const TimeSection = () => {
           {/* Motivational Quote */}
           <div className={`mb-16 transform transition-all duration-1000 delay-300 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
             <div className="backdrop-blur-xl bg-gradient-to-r from-purple-500/10 to-pink-500/10 border border-purple-500/20 rounded-2xl p-6 text-center shadow-2xl">
-              <p className="text-lg md:text-xl text-purple-300 font-medium">
+              <p className="text-xl md:text-xl text-purple-300 font-medium">
                 This year will pass quickly if you don't work hard toward your goals.
               </p>
             </div>
@@ -190,7 +190,7 @@ const TimeSection = () => {
 
             {/* Countdown Header */}
             <div className="text-center mb-8">
-              <h3 className="text-2xl md:text-3xl font-bold text-white mb-4">
+              <h3 className="text-4xl md:text-3xl font-bold text-white mb-4">
                 Year End Countdown
               </h3>
               <div className="w-16 h-1 bg-gradient-to-r from-green-400 to-cyan-400 rounded-full mx-auto" />
@@ -218,7 +218,7 @@ const TimeSection = () => {
                   bgGradient: 'from-blue-500/10 to-cyan-500/10',
                   borderColor: 'border-blue-500/30',
                   icon: (
-                    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
                   )
@@ -230,7 +230,7 @@ const TimeSection = () => {
                   bgGradient: 'from-green-500/10 to-emerald-500/10',
                   borderColor: 'border-green-500/30',
                   icon: (
-                    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                     </svg>
                   )
@@ -242,7 +242,7 @@ const TimeSection = () => {
                   bgGradient: 'from-purple-500/10 to-violet-500/10',
                   borderColor: 'border-purple-500/30',
                   icon: (
-                    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
                     </svg>
                   )
@@ -254,14 +254,14 @@ const TimeSection = () => {
                   style={{ transitionDelay: `${index * 100}ms` }}
                 >
                   <div className="flex items-center justify-center mb-3">
-                    <div className={`w-12 h-12 bg-gradient-to-r ${item.color} rounded-xl flex items-center justify-center text-white group-hover:scale-110 transition-transform duration-300`}>
+                    <div className={`w-14 h-14 bg-gradient-to-r ${item.color} rounded-xl flex items-center justify-center text-white group-hover:scale-110 transition-transform duration-300`}>
                       {item.icon}
                     </div>
                   </div>
-                  <div className={`text-3xl md:text-4xl font-black bg-gradient-to-r ${item.color} bg-clip-text text-transparent mb-2`}>
+                  <div className={`text-7xl md:text-4xl font-black bg-gradient-to-r ${item.color} bg-clip-text text-transparent mb-2`}>
                     {String(item.value).padStart(2, '0')}
                   </div>
-                  <div className="text-white font-semibold text-sm md:text-base">
+                  <div className="text-white font-semibold text-xl md:text-base">
                     {item.label}
                   </div>
                 </div>
@@ -271,15 +271,15 @@ const TimeSection = () => {
             {/* Year Left Summary */}
             <div className="backdrop-blur-xl bg-gradient-to-br from-white/10 to-white/5 border border-white/20 rounded-2xl p-8 shadow-2xl text-center">
               <div className="flex items-center justify-center gap-3 mb-4">
-                <div className="w-8 h-8 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full flex items-center justify-center">
-                  <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div className="w-10 h-10 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full flex items-center justify-center">
+                  <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
                   </svg>
                 </div>
-                <h4 className="text-xl font-bold text-white">Time Remaining</h4>
+                <h4 className="text-3xl font-bold text-white">Time Remaining</h4>
               </div>
 
-              <p className="text-lg text-gray-300 leading-relaxed">
+              <p className="text-2xl text-gray-300 leading-relaxed">
                 Only <span className="text-cyan-400 font-bold">{timeLeft.days}</span> days left to end <span className="text-purple-400 font-bold">{currentYear}</span> — stay honest, work hard, and success will be yours, <span className="text-green-400 font-semibold">In shaa Allah</span> 🤗
               </p>
             </div>
@@ -287,11 +287,11 @@ const TimeSection = () => {
 
           {/* Inspirational Quote in Bangla */}
           <div className={`transform transition-all duration-1000 delay-600 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-            <div className="backdrop-blur-2xl bg-gradient-to-br from-white/10 to-white/5 border border-white/20 rounded-3xl p-6 shadow-2xl">
+            <div className="backdrop-blur-2xl bg-gradient-to-br from-white/10 to-white/5 border border-white/20 rounded-3xl p-4 shadow-2xl">
 
               {/* Quote Header */}
               <div className="text-center mb-8">
-                <div className="inline-block px-4 py-2 bg-gradient-to-r from-green-500/20 to-cyan-500/20 border border-green-500/30 rounded-full mb-4">
+                <div className="inline-block px-4 py-2 bg-gradient-to-r from-green-500/20 to-cyan-500/20 border text-xl border-green-500/30 rounded-full mb-4">
                   <span className="text-green-400 font-medium flex items-center gap-2">
                     <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
@@ -299,13 +299,13 @@ const TimeSection = () => {
                     Words of Wisdom
                   </span>
                 </div>
-                <h3 className="text-3xl md:text-3xl font-bold bg-gradient-to-r from-yellow-400 via-orange-400 to-red-400 bg-clip-text text-transparent">
+                <h3 className="text-5xl  md:text-3xl font-bold bg-gradient-to-r from-yellow-400 via-orange-400 to-red-400 bg-clip-text text-transparent">
                   জীবনের প্রেরণা
                 </h3>
               </div>
 
               {/* Bangla Quote */}
-              <blockquote className="text-xl md:text-lg text-white leading-relaxed text-center max-w-4xl mx-auto">
+              <blockquote className="text-2xl md:text-lg text-white leading-relaxed text-center max-w-4xl mx-auto">
                 <span className="text-4xl text-cyan-400 block mb-2">"</span>
 
                 <p className="mb-6">
@@ -321,13 +321,13 @@ const TimeSection = () => {
 
               {/* Decorative Elements */}
               <div className="flex items-center justify-center gap-4 mt-8">
-                <div className="w-18 h-0.5 bg-gradient-to-r from-transparent via-cyan-400 to-transparent" />
+                <div className="w-24 h-0.5 bg-gradient-to-r from-transparent via-cyan-400 to-transparent" />
                 <div className="w-14 h-14 bg-gradient-to-r from-cyan-400 to-purple-400 rounded-full flex items-center justify-center">
-                  <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
                   </svg>
                 </div>
-                <div className="w-18 h-0.5 bg-gradient-to-r from-transparent via-purple-400 to-transparent" />
+                <div className="w-24 h-0.5 bg-gradient-to-r from-transparent via-purple-400 to-transparent" />
               </div>
             </div>
           </div>

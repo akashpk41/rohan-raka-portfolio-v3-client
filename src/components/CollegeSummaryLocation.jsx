@@ -55,7 +55,7 @@ const CollegeSummaryLocation = () => {
                 <div className="w-10 h-10 bg-gradient-to-br from-cyan-400 to-purple-400 rounded-xl transform rotate-45" />
               )}
               {i % 4 === 1 && (
-                <div className="w-6 h-6 bg-gradient-to-br from-green-400 to-cyan-400 rounded-full" />
+                <div className="w-8 h-8 bg-gradient-to-br from-green-400 to-cyan-400 rounded-full" />
               )}
               {i % 4 === 2 && (
                 <div className="w-8 h-8 bg-gradient-to-br from-pink-400 to-purple-400 transform rotate-12 rounded-lg" />
@@ -83,7 +83,7 @@ const CollegeSummaryLocation = () => {
             }`}
           >
             <div className="inline-block px-6 py-3 bg-gradient-to-r from-cyan-500/20 to-purple-500/20 backdrop-blur-sm border border-cyan-500/30 rounded-full mb-6">
-              <span className="text-cyan-400 font-medium flex items-center gap-2">
+              <span className="text-cyan-400 text-xl font-medium flex items-center gap-2">
                 <svg
                   className="w-5 h-5"
                   fill="none"
@@ -101,7 +101,7 @@ const CollegeSummaryLocation = () => {
               </span>
             </div>
 
-            <h2 className="text-3xl md:text-6xl font-black mb-4">
+            <h2 className="text-4xl md:text-6xl font-black mb-4">
               <span className="text-white">COLLEGE </span>
               <span className="bg-gradient-to-r from-green-400 via-cyan-400 to-purple-400 bg-clip-text text-transparent">
                 SUMMARY
@@ -129,7 +129,7 @@ const CollegeSummaryLocation = () => {
                 <div className="relative  backdrop-blur-2xl bg-white/5 border border-white/10 rounded-3xl shadow-2xl">
                   <div className="w-full cursor-pointer  bg-gradient-to-br from-gray-800 via-gray-700 to-gray-800 rounded-xl flex items-center justify-center overflow-hidden">
                     <img
-                      src="https://scontent.fdac27-2.fna.fbcdn.net/v/t39.30808-6/484979600_1182302797017271_17774322822121988_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeGJadtWOZaFmwSCwyGRZ7jSz9uownYSurbP26jCdhK6tpGxP-rEbnh4n1WjaGrpTMygXuufb_nHw8u2JPXR22yA&_nc_ohc=koQ1kpn4tyQQ7kNvwGSktRG&_nc_oc=AdnVKvS1vC3yU4dpfzN9xECearYbJjS9B8U2ppcVPWnLpBxY3jeRBb2bPtybWlPpVQo&_nc_zt=23&_nc_ht=scontent.fdac27-2.fna&_nc_gid=7BYYbngPXrYgs4n40EzGzA&oh=00_AfV8-LgvOygqFHv07p8oHtpZKCdKbNph6Rxpn-DIPCkUmw&oe=68A247B3"
+                      src="https://i.ibb.co.com/Mx5KwX7p/484902849-1181587677088783-1855977639421893296-n.jpg"
                       alt="Pabna Ideal Nursing College"
                       className="w-full h-full object-contain rounded-2xl"
                     />
@@ -138,10 +138,10 @@ const CollegeSummaryLocation = () => {
 
                   {/* College Badge */}
                   <div className="mt-4 p-4 text-center">
-                    <h3 className="text-white font-bold text-xl">
+                    <h3 className="text-white font-bold text-2xl">
                       পাবনা আইডিয়াল নার্সিং কলেজ
                     </h3>
-                    <p className="text-cyan-400">
+                    <p className="text-cyan-400 text-lg">
                       Excellence in Healthcare Education
                     </p>
                   </div>
@@ -194,9 +194,9 @@ const CollegeSummaryLocation = () => {
               }`}
             >
               {/* Main Summary Card */}
-              <div className="backdrop-blur-xl bg-white/5 border border-white/10 rounded-3xl p-8 shadow-2xl">
+              <div className="backdrop-blur-xl bg-white/5 border border-white/10 rounded-3xl p-6 shadow-2xl">
                 <div className="space-y-4 text-gray-100 leading-relaxed">
-                  <p className="text-lg mb-6">
+                  <p className="text-xl mb-6">
                     <span className="text-cyan-400 font-semibold">
                       Pabna Ideal Nursing College
                     </span>{" "}
@@ -235,7 +235,7 @@ const CollegeSummaryLocation = () => {
                   {
                     icon: (
                       <svg
-                        className="w-8 h-8"
+                        className="w-10 h-10"
                         fill="none"
                         stroke="currentColor"
                         viewBox="0 0 24 24"
@@ -292,7 +292,7 @@ const CollegeSummaryLocation = () => {
                 ].map((feature, index) => (
                   <div
                     key={feature.title}
-                    className={`backdrop-blur-xl bg-white/5 border border-white/10 rounded-xl p-4 shadow-lg hover:bg-white/10 transition-all duration-300 transform hover:scale-105 ${
+                    className={`backdrop-blur-xl bg-white/5 border border-white/10 rounded-xl p-6 shadow-lg hover:bg-white/10 transition-all duration-300 transform hover:scale-105 ${
                       isLoaded
                         ? "opacity-100 translate-y-0"
                         : "opacity-0 translate-y-10"
@@ -300,14 +300,14 @@ const CollegeSummaryLocation = () => {
                     style={{ transitionDelay: `${(index + 3) * 100}ms` }}
                   >
                     <div className="flex items-center gap-3">
-                      <div className="w-10 h-10 bg-gradient-to-r from-cyan-400 to-purple-400 rounded-lg flex items-center justify-center text-white">
+                      <div className="w-12 h-12 bg-gradient-to-r from-cyan-400 to-purple-400 rounded-lg flex items-center justify-center text-white">
                         {feature.icon}
                       </div>
                       <div>
-                        <h4 className="text-white font-semibold">
+                        <h4 className="text-cyan-400 font-semibold text-2xl">
                           {feature.title}
                         </h4>
-                        <p className="text-gray-200 text-sm">
+                        <p className="text-gray-200 text-lg">
                           {feature.description}
                         </p>
                       </div>
@@ -321,7 +321,7 @@ const CollegeSummaryLocation = () => {
 
           {/* Location Section */}
           <div
-            className={`transform transition-all duration-1000 delay-600 ${
+            className={`transform  transition-all duration-1000 delay-600 ${
               isLoaded
                 ? "opacity-100 translate-y-0"
                 : "opacity-0 translate-y-20"
@@ -329,7 +329,7 @@ const CollegeSummaryLocation = () => {
           >
             {/* Location Header */}
             <div id="location" className="text-center mb-12">
-              <div className="inline-block px-6 py-3 bg-gradient-to-r from-green-500/20 to-cyan-500/20 backdrop-blur-sm border border-green-500/30 rounded-full mb-6">
+              <div className="inline-block px-6 py-3 bg-gradient-to-r from-green-500/20 to-cyan-500/20 backdrop-blur-sm text-2xl border border-green-500/30 rounded-full mb-6">
                 <span className="text-green-400 font-medium flex items-center gap-2">
                   <svg
                     className="w-5 h-5"
@@ -354,7 +354,7 @@ const CollegeSummaryLocation = () => {
                 </span>
               </div>
 
-              <h2  className="text-3xl md:text-5xl font-black mb-4">
+              <h2  className="text-4xl md:text-5xl font-black mb-4">
                 <span className="text-white">COLLEGE </span>
                 <span className="bg-gradient-to-r from-green-400 via-cyan-400 to-purple-400 bg-clip-text text-transparent">
                   LOCATION
@@ -385,9 +385,9 @@ const CollegeSummaryLocation = () => {
               <div className="grid p-4 md:grid-cols-3 gap-6">
                 {/* Address Card */}
                 <a href="https://www.facebook.com/pabnaidealnc" target="_blank"  className="backdrop-blur-xl bg-gradient-to-br from-green-500/10 to-cyan-500/10 border border-green-500/20 rounded-xl p-6 text-center group hover:from-green-500/20 hover:to-cyan-500/20 transition-all duration-300">
-                  <div className="w-12 h-12 bg-gradient-to-r from-green-400 to-cyan-400 rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                  <div className="w-14 h-14 bg-gradient-to-r from-green-400 to-cyan-400 rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
                     <svg
-                      className="w-6 h-6 text-white"
+                      className="w-8 h-8 text-white"
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"
@@ -400,20 +400,20 @@ const CollegeSummaryLocation = () => {
                       />
                     </svg>
                   </div>
-                  <h3 className="text-white font-bold mb-2">Visit Us</h3>
-                  <p className="text-green-400 font-semibold">
+                  <h3 className="text-white text-3xl font-bold mb-2">Visit Us</h3>
+                  <p className="text-green-400 text-xl font-semibold">
                     Pabna Ideal Nursing College
                   </p>
-                  <p className="text-gray-200 text-sm">
+                  <p className="text-gray-200 text-base">
                     Hospital Road, Pabna Sadar
                   </p>
                 </a>
 
                 {/* Contact Card */}
                 <div className="backdrop-blur-xl  bg-gradient-to-br from-cyan-500/10 to-purple-500/10 border border-cyan-500/20 rounded-xl p-6 text-center group hover:from-cyan-500/20 hover:to-purple-500/20 transition-all duration-300">
-                  <div className="w-12 h-12 bg-gradient-to-r from-cyan-400 to-purple-400 rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                  <div className="w-14 h-14 bg-gradient-to-r from-cyan-400 to-purple-400 rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
                     <svg
-                      className="w-6 h-6 text-white"
+                      className="w-10 h-10 text-white"
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"
@@ -426,18 +426,18 @@ const CollegeSummaryLocation = () => {
                       />
                     </svg>
                   </div>
-                  <h3 className="text-white font-bold mb-2">Call Us</h3>
-                  <p className="text-cyan-400 font-semibold">
+                  <h3 className="text-white text-3xl font-bold mb-2">Call Us</h3>
+                  <p className="text-cyan-400 text-xl font-semibold">
                     +880 1799-818188
                   </p>
-                  <p className="text-gray-200 text-sm">Available 24/7</p>
+                  <p className="text-gray-200 text-base">Available 24/7</p>
                 </div>
 
                 {/* Direction Card */}
                 <a href="#location" className="backdrop-blur-xl bg-gradient-to-br from-purple-500/10 to-pink-500/10 border border-purple-500/20 rounded-xl p-6 text-center group hover:from-purple-500/20 hover:to-pink-500/20 transition-all duration-300">
-                  <div className="w-12 h-12 bg-gradient-to-r from-purple-400 to-pink-400 rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                  <div className="w-14 h-14 bg-gradient-to-r from-purple-400 to-pink-400 rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
                     <svg
-                      className="w-6 h-6 text-white"
+                      className="w-10 h-10 text-white"
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"
@@ -450,11 +450,11 @@ const CollegeSummaryLocation = () => {
                       />
                     </svg>
                   </div>
-                  <h3 className="text-white font-bold mb-2">Directions</h3>
-                  <button className="text-purple-400 font-semibold hover:text-purple-300 transition-colors">
+                  <h3 className="text-white text-3xl font-bold mb-2">Directions</h3>
+                  <button className="text-purple-400 font-semibold text-xl hover:text-purple-300 transition-colors">
                     Get Directions
                   </button>
-                  <p className="text-gray-200 text-sm">Via Google Maps</p>
+                  <p className="text-gray-200 text-base">Via Google Maps</p>
                 </a>
               </div>
             </div>
