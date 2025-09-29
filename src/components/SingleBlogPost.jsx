@@ -213,69 +213,96 @@ const SingleBlogPost = () => {
                 Blogs
               </Link>
               <span>›</span>
-              <span className="text-cyan-400">{mainBlogPost.category}</span>
+              <span className="text-cyan-400 text-lg">
+                {mainBlogPost.category}
+              </span>
             </nav>
           </div>
 
           {/* Article Header */}
           <div className="text-center  mb-12">
             <div className="inline-block px-4 py-2 bg-gradient-to-r from-purple-500/20 to-pink-500/20 backdrop-blur-sm border border-purple-500/30 rounded-full mb-6">
-              <span className="text-purple-400 font-medium">
+              <span className="text-purple-400 text-lg font-medium">
                 {mainBlogPost.category}
               </span>
             </div>
 
-            <h1 className="text-3xl md:text-5xl lg:text-6xl font-black text-white mb-6 leading-tight">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-black text-white mb-6 leading-tight">
               {mainBlogPost.title}
             </h1>
 
-            <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
+            <p className="text-2xl text-gray-300 mb-8 max-w-3xl mx-auto">
               {mainBlogPost.excerpt}
             </p>
-{/* Author & Post Info */}
-<div className="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-8 mb-8 text-center">
+            {/* Author & Post Info */}
+            <div className="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-8 mb-8 text-center">
+              {/* Author Info */}
+              <div className="flex items-center gap-3">
+                <div className="w-12 h-12 bg-gradient-to-r from-cyan-400 to-purple-400 rounded-full flex items-center justify-center">
+                  <span className="text-white text-lg font-bold">R</span>
+                </div>
+                <div>
+                  <p className="text-cyan-400 text-3xl font-semibold">
+                    {mainBlogPost.author}
+                  </p>
+                  <p className="text-gray-300  text-base">Professional Nurse</p>
+                </div>
+              </div>
 
-  {/* Author Info */}
-  <div className="flex items-center gap-3">
-    <div className="w-12 h-12 bg-gradient-to-r from-cyan-400 to-purple-400 rounded-full flex items-center justify-center">
-      <span className="text-white text-lg font-bold">R</span>
-    </div>
-    <div>
-      <p className="text-white font-semibold">
-        {mainBlogPost.author}
-      </p>
-      <p className="text-gray-400 text-sm">Professional Nurse</p>
-    </div>
-  </div>
+              {/* Post Details */}
+              <div className="flex flex-wrap items-center justify-center gap-4 text-xl md:gap-6 text-gray-300">
+                <div className="flex items-center gap-2">
+                  <svg
+                    className="w-5 h-5"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+                    />
+                  </svg>
+                  <span>{mainBlogPost.date}</span>
+                </div>
 
-  {/* Post Details */}
-  <div className="flex flex-wrap items-center justify-center gap-4 md:gap-6 text-gray-300">
-    <div className="flex items-center gap-2">
-      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
-          d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-      </svg>
-      <span>{mainBlogPost.date}</span>
-    </div>
+                <div className="flex items-center gap-2">
+                  <svg
+                    className="w-5 h-5"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+                    />
+                  </svg>
+                  <span>{mainBlogPost.readTime}</span>
+                </div>
 
-    <div className="flex items-center gap-2">
-      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
-          d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-      </svg>
-      <span>{mainBlogPost.readTime}</span>
-    </div>
-
-    <div className="flex items-center gap-2">
-      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
-          d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-      </svg>
-      <span>{mainBlogPost.views} views</span>
-    </div>
-  </div>
-</div>
-
+                <div className="flex items-center gap-2">
+                  <svg
+                    className="w-5 h-5"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
+                    />
+                  </svg>
+                  <span>{mainBlogPost.views} views</span>
+                </div>
+              </div>
+            </div>
 
             {/* Stats Row */}
             <div className="flex items-center justify-center gap-6 mb-8">
@@ -382,9 +409,7 @@ const SingleBlogPost = () => {
                   <h3 className="text-xl font-bold text-white mb-2">
                     Share This Post
                   </h3>
-                  <p className="text-gray-300">
-                      Spread knowledge with others
-                  </p>
+                  <p className="text-gray-300">Spread knowledge with others</p>
                 </div>
                 <div className="flex items-center gap-3">
                   {["facebook", "twitter", "linkedin", "whatsapp"].map(
@@ -417,7 +442,7 @@ const SingleBlogPost = () => {
           isLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-20"
         }`}
       >
-        <div className="max-w-7xl mx-auto px-6">
+        <div className="max-w-7xl mx-auto px-2">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-black text-white mb-4">
               Read More Blogs
@@ -543,9 +568,9 @@ const SingleBlogPost = () => {
           }
         }
 
-     //    .prose > * {
-     //      animation: fadeInUp 0.6s ease-out forwards;
-     //    }
+        //    .prose > * {
+        //      animation: fadeInUp 0.6s ease-out forwards;
+        //    }
 
         .prose > *:nth-child(1) {
           animation-delay: 0.1s;

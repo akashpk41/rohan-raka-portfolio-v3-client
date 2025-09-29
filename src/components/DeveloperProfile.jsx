@@ -75,16 +75,16 @@ const DeveloperProfile = () => {
                 </div>
 
                 {/* Name & Title */}
-                <h2 className="text-4xl font-bold text-gray-800 mb-1">
+                <h2 className="text-5xl font-bold text-gray-800 mb-1">
                   Akash PK
                 </h2>
-                <div className="flex items-center justify-center gap-2 text-cyan-600 text-lg font-semibold mb-2">
+                <div className="flex items-center justify-center gap-2 text-cyan-600 text-2xl font-semibold mb-2">
                   <FaCode className="animate-pulse" />
                   <span>MERN Stack Developer</span>
                 </div>
 
                 {/* Experience Badge */}
-                <div className="inline-flex items-center gap-1 px-3 py-1 bg-gradient-to-r from-cyan-500/20 to-purple-500/20 backdrop-blur-sm border border-cyan-500/30 rounded-full text-sm font-medium text-gray-700">
+                <div className="inline-flex items-center gap-1 px-3 py-1 bg-gradient-to-r from-cyan-500/20 to-purple-500/20 backdrop-blur-sm border border-cyan-500/30 rounded-full text-lg font-medium text-gray-700">
                   <FaRocket className="text-purple-500" />
                   <span>Since 2021</span>
                 </div>
@@ -92,7 +92,7 @@ const DeveloperProfile = () => {
 
               {/* Description */}
               <div className="mb-4 space-y-3">
-                <p className="text-gray-600 text-sm leading-relaxed">
+                <p className="text-gray-600 text-base leading-relaxed">
                   Professional MERN stack developer building full-stack web
                   applications with
                   <span className="font-semibold text-gray-800">
@@ -103,7 +103,7 @@ const DeveloperProfile = () => {
                 </p>
 
                 <div className="p-4 bg-gradient-to-r from-purple-500/10 to-cyan-500/10 rounded-2xl border border-purple-500/20">
-                  <p className="text-purple-700 text-sm font-medium flex items-center justify-center gap-2">
+                  <p className="text-purple-700 text-base font-medium flex items-center justify-center gap-2">
                     <FaRocket className=" text-purple-500 animate-pulse" />
                     Working towards launching a software startup — very soon,
                     InshaAllah.
@@ -113,7 +113,7 @@ const DeveloperProfile = () => {
 
               {/* Social Links */}
               <div className="mb-6">
-                <p className="text-gray-500 text-xs mb-3">Connect with me</p>
+                <p className="text-gray-500 text-base mb-3">Connect with me</p>
                 <div className="flex justify-center gap-3">
                   {akashSocialLinks.map((social, index) => {
                     const Icon = social.icon;
@@ -126,7 +126,7 @@ const DeveloperProfile = () => {
                         className={`p-3 backdrop-blur-xl bg-white/30 hover:bg-white/50 border border-white/30 rounded-xl ${social.color} transition-all duration-300 transform hover:scale-110 hover:shadow-lg`}
                         style={{ transitionDelay: `${index * 50}ms` }}
                       >
-                        <Icon className="text-lg" />
+                        <Icon className="text-3xl" />
                       </a>
                     );
                   })}

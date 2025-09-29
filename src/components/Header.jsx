@@ -113,14 +113,14 @@ const Header = () => {
                 <div className="mt-4 pb-2 text-center">
                   {/* Greeting */}
                   <div className="space-y-2">
-                    <h2 className="text-2xl md:text-3xl font-light text-blue-400">
+                    <h2 className="text-4xl mb-2 md:text-3xl font-light text-blue-400">
                       Hi! I am
                     </h2>
                   </div>
 
                   {/* Main Title */}
                   <div className="space-y-4">
-                    <h1 className="text-4xl hero-title md:text-6xl lg:text-8xl font-black leading-none">
+                    <h1 className="text-5xl hero-title md:text-6xl lg:text-8xl font-black leading-none">
                       <span className="text-white">ROHAN </span>
                       <span className="bg-gradient-to-r from-green-400 via-cyan-400 to-purple-400 bg-clip-text text-transparent animate-pulse">
                         RAKA
@@ -148,7 +148,7 @@ const Header = () => {
             >
               {/* Greeting */}
               <div className="space-y-2">
-                <div className=" text-center md:hidden mx-auto px-4 py-2 bg-gradient-to-r from-cyan-500/20 to-purple-500/20 backdrop-blur-sm border border-cyan-500/30 rounded-full">
+                <div className=" text-center text-lg md:hidden mx-auto px-4 py-2 bg-gradient-to-r from-cyan-500/20 to-purple-500/20 backdrop-blur-sm border border-cyan-500/30 rounded-full">
                   <span className="text-cyan-400 font-medium">
                     ✨ Welcome to my portfolio
                   </span>
@@ -173,7 +173,7 @@ const Header = () => {
 
               {/* Description */}
               <div className="backdrop-blur-xl bg-white/5 border border-white/10 rounded-2xl p-6 shadow-2xl">
-                <p className="text-base md:text-lg text-white leading-relaxed">
+                <p className="text-lg md:text-lg text-white leading-relaxed">
                   I'm studying at{" "}
                   <span className="text-cyan-400 font-semibold">
                     Pabna Ideal Nursing College
@@ -316,7 +316,7 @@ const Header = () => {
         }`}
       >
         <div className="flex flex-col items-center space-y-3 backdrop-blur-xl bg-white/5 border border-white/10 rounded-2xl p-4 shadow-xl">
-          <p className="text-sm font-medium text-gray-300">Scroll to explore</p>
+          <p className="text-base font-medium text-gray-300">Scroll to explore</p>
           <div className="w-6 h-12 border-2 border-white/40 rounded-full flex justify-center relative">
             <div className="w-1.5 h-4 bg-gradient-to-b from-cyan-400 to-purple-400 rounded-full mt-2 animate-pulse shadow-lg" />
           </div>

@@ -53,18 +53,18 @@ const HomePage = () => {
       <Slider />
       <BlogSection />
       <CollegeSummaryLocation />
-      <AppointmentBookingSystem />
-      <PremiumInteractiveMap />
-      <QuizSection />
-      <MusicPlayer />
-
+      {/* <AppointmentBookingSystem /> */}
+      {/* <PremiumInteractiveMap /> */}
       <TimeSection />
+      <QuizSection />
+      {/* <MusicPlayer /> */}
+
       {/* Make sure this section has the correct ID for navbar scrolling */}
       <div id="contact-section">
         <ContactForm />
       </div>
 
-      <InteractivePortfolio />
+      {/* <InteractivePortfolio /> */}
 
       <MockupPhone />
       <Footer />

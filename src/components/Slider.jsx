@@ -246,7 +246,7 @@ const Slider = () => {
       {/* Glassmorphism Overlay */}
       <div className="absolute inset-0 bg-gradient-to-br from-black/20 via-purple-900/10 to-black/30 backdrop-blur-sm" />
 
-      <div className="relative z-10 max-w-6xl mx-auto px-4">
+      <div className="relative z-10 max-w-6xl mx-auto px-2">
         {/* Section Title */}
         <div
           className={`text-center mb-16 transform transition-all duration-1000 ${
@@ -266,7 +266,7 @@ const Slider = () => {
                 </svg>
               </div>
             </div>
-            <h2 className="text-3xl md:text-6xl font-black bg-gradient-to-r from-white via-green-200 to-cyan-200 bg-clip-text text-transparent">
+            <h2 className="text-4xl md:text-6xl font-black bg-gradient-to-r from-white via-green-200 to-cyan-200 bg-clip-text text-transparent">
               More Memories
             </h2>
           </div>
@@ -293,7 +293,7 @@ const Slider = () => {
               <div className="swiper-wrapper">
                 {sliderImages.map((image, index) => (
                   <div key={image.id} className="swiper-slide relative">
-                    <div className="relative h-96 md:h-[500px] overflow-hidden">
+                    <div className="relative h-[500px] md:h-[500px] overflow-hidden">
                       <img
                         src={image.src}
                         alt={`Memory ${index + 1}`}
@@ -316,7 +316,8 @@ const Slider = () => {
                             >
                               <path d="M19 3H5C3.9 3 3 3.9 3 5v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM19 7h-2V5h2v2zM15 7h-2V5h2v2zM11 7H9V5h2v2zM7 7H5V5h2v2zM5 9h14v10H5V9z" />
                             </svg>
-                            <span className="text-white font-bold text-lg tracking-wide">
+
+                            <span className="text-white font-bold text-base tracking-wide">
                               {image.date}
                             </span>
                           </div>
@@ -337,7 +338,7 @@ const Slider = () => {
               </div>
 
               {/* Premium Navigation Buttons */}
-              <div className="swiper-button-prev !w-12 !h-12 !mt-0 !top-1/2 !-translate-y-1/2 !left-4 !text-white backdrop-blur-xl !bg-white/20 !border !border-white/30 !rounded-full hover:!bg-white/30 transition-all duration-300 hover:scale-110 shadow-lg">
+              <div className="swiper-button-prev !w-12 !h-12 !mt-0 !top-1/2 !-translate-y-1/2 !left-2 !text-white backdrop-blur-xl !bg-white/20 !border !border-white/30 !rounded-full hover:!bg-white/30 transition-all duration-300 hover:scale-110 shadow-lg">
                 <svg
                   className="w-6 h-6"
                   fill="none"
@@ -352,7 +353,7 @@ const Slider = () => {
                   />
                 </svg>
               </div>
-              <div className="swiper-button-next !w-12 !h-12 !mt-0 !top-1/2 !-translate-y-1/2 !right-4 !text-white backdrop-blur-xl !bg-white/20 !border !border-white/30 !rounded-full hover:!bg-white/30 transition-all duration-300 hover:scale-110 shadow-lg">
+              <div className="swiper-button-next !w-12 !h-12 !mt-0 !top-1/2 !-translate-y-1/2 !right-2 !text-white backdrop-blur-xl !bg-white/20 !border !border-white/30 !rounded-full hover:!bg-white/30 transition-all duration-300 hover:scale-110 shadow-lg">
                 <svg
                   className="w-6 h-6"
                   fill="none"

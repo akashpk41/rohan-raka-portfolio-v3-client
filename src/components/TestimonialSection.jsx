@@ -219,7 +219,8 @@ const TestimonialSection = () => {
       name: "Prabhas",
       role: "Tea Stall Friend",
       avatar: "https://i.ibb.co.com/845Db0m5/prabhas.jpg",
-      message: "প্রতিদিন সন্ধ্যায় ব্যাপারীর দোকানে আড্ডা না দিলে তো দিনই শেষ হতো না!",
+      message:
+        "প্রতিদিন সন্ধ্যায় ব্যাপারীর দোকানে আড্ডা না দিলে তো দিনই শেষ হতো না!",
       position: "start",
       color: {
         bubble: "from-lime-500/20 to-green-500/20",
@@ -256,7 +257,8 @@ const TestimonialSection = () => {
     <>
       <style jsx>{`
         @keyframes floatBubble {
-          0%, 100% {
+          0%,
+          100% {
             transform: translateY(0px) rotate(0deg);
           }
           50% {
@@ -265,7 +267,8 @@ const TestimonialSection = () => {
         }
 
         @keyframes avatarPulse {
-          0%, 100% {
+          0%,
+          100% {
             opacity: 0.4;
             transform: scale(1);
           }
@@ -276,7 +279,8 @@ const TestimonialSection = () => {
         }
 
         @keyframes avatarGlow {
-          0%, 100% {
+          0%,
+          100% {
             opacity: 0.6;
             transform: scale(1.05);
           }
@@ -287,7 +291,9 @@ const TestimonialSection = () => {
         }
 
         @keyframes avatarBlink {
-          0%, 80%, 100% {
+          0%,
+          80%,
+          100% {
             opacity: 0.8;
           }
           90% {
@@ -305,7 +311,8 @@ const TestimonialSection = () => {
         }
 
         @keyframes onlineStatus {
-          0%, 100% {
+          0%,
+          100% {
             opacity: 0.7;
             transform: scale(1);
           }
@@ -316,7 +323,8 @@ const TestimonialSection = () => {
         }
 
         @keyframes heartbeat {
-          0%, 100% {
+          0%,
+          100% {
             transform: scale(1);
           }
           50% {
@@ -325,7 +333,8 @@ const TestimonialSection = () => {
         }
 
         @keyframes twinkle {
-          0%, 100% {
+          0%,
+          100% {
             opacity: 0;
             transform: scale(0);
           }
@@ -336,7 +345,8 @@ const TestimonialSection = () => {
         }
 
         @keyframes glowPulse {
-          0%, 100% {
+          0%,
+          100% {
             opacity: 0.5;
           }
           50% {
@@ -345,7 +355,8 @@ const TestimonialSection = () => {
         }
 
         @keyframes bounceGentle {
-          0%, 100% {
+          0%,
+          100% {
             transform: translateY(0px);
           }
           50% {
@@ -408,7 +419,9 @@ const TestimonialSection = () => {
           {/* Section Title */}
           <div
             className={`text-center mb-16 transform transition-all duration-1000 ${
-              isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+              isVisible
+                ? "opacity-100 translate-y-0"
+                : "opacity-0 translate-y-10"
             }`}
           >
             <h2 className="text-3xl md:text-5xl font-black bg-gradient-to-r from-white via-cyan-200 to-purple-200 bg-clip-text text-transparent mb-6">
@@ -418,7 +431,7 @@ const TestimonialSection = () => {
 
             {/* Subtitle */}
             <div className="max-w-2xl mx-auto">
-              <p className="text-lg text-gray-300 leading-relaxed">
+              <p className="text-xl text-gray-300 leading-relaxed">
                 "ভাইদের ভাই, এলাকার ভদ্র ছেলে! এক কথায় সবার আদরের! তাই আমাকে
                 নিয়ে সবারই কিছু না কিছু মন্তব্য আছে, তার মাঝে কিছু্‌,,"
               </p>
@@ -431,7 +444,9 @@ const TestimonialSection = () => {
               <div
                 key={testimonial.id}
                 className={`flex ${
-                  testimonial.position === "end" ? "justify-end" : "justify-start"
+                  testimonial.position === "end"
+                    ? "justify-end"
+                    : "justify-start"
                 } transform transition-all duration-1000 ${
                   isVisible
                     ? "opacity-100 translate-y-0"
@@ -456,8 +471,8 @@ const TestimonialSection = () => {
                       style={{
                         animation: `avatarPulse 3s ease-in-out infinite`,
                         background: `linear-gradient(45deg, ${testimonial.color.glowVars["--glow-from"]}, ${testimonial.color.glowVars["--glow-to"]})`,
-                        filter: 'blur(20px)',
-                        opacity: 0.4
+                        filter: "blur(20px)",
+                        opacity: 0.4,
                       }}
                     />
 
@@ -467,8 +482,8 @@ const TestimonialSection = () => {
                       style={{
                         animation: `avatarGlow 3s ease-in-out infinite`,
                         background: `linear-gradient(45deg, ${testimonial.color.glowVars["--glow-from"]}, ${testimonial.color.glowVars["--glow-to"]})`,
-                        filter: 'blur(12px)',
-                        opacity: 0.6
+                        filter: "blur(12px)",
+                        opacity: 0.6,
                       }}
                     />
 
@@ -478,7 +493,7 @@ const TestimonialSection = () => {
                       style={{
                         animation: `avatarBlink 1s ease-in-out infinite`,
                         background: `linear-gradient(45deg, ${testimonial.color.glowVars["--glow-from"]}, ${testimonial.color.glowVars["--glow-to"]})`,
-                        filter: 'blur(8px)'
+                        filter: "blur(8px)",
                       }}
                     />
 
@@ -488,8 +503,9 @@ const TestimonialSection = () => {
                         className="absolute -inset-2 rounded-full"
                         style={{
                           animation: `onlineStatus 2s ease-in-out infinite`,
-                          background: 'linear-gradient(45deg, #10b981, #34d399)',
-                          filter: 'blur(4px)'
+                          background:
+                            "linear-gradient(45deg, #10b981, #34d399)",
+                          filter: "blur(4px)",
                         }}
                       />
                     )}
@@ -507,7 +523,7 @@ const TestimonialSection = () => {
                           className="absolute -inset-1 rounded-full p-0.5"
                           style={{
                             background: `linear-gradient(45deg, ${testimonial.color.glowVars["--glow-from"]}, ${testimonial.color.glowVars["--glow-to"]})`,
-                            animation: `avatarRotate 4s linear infinite`
+                            animation: `avatarRotate 4s linear infinite`,
                           }}
                         >
                           <div className="w-full h-full bg-gray-900 rounded-full" />
@@ -528,7 +544,9 @@ const TestimonialSection = () => {
                       {testimonial.online && (
                         <div
                           className="absolute -bottom-1 -right-1 z-10 w-5 h-5 bg-green-400 border-2 border-gray-900 rounded-full"
-                          style={{ animation: `heartbeat 2.5s ease-in-out infinite` }}
+                          style={{
+                            animation: `heartbeat 2.5s ease-in-out infinite`,
+                          }}
                         >
                           <div className="absolute inset-1 bg-green-300 rounded-full animate-pulse" />
                         </div>
@@ -543,7 +561,9 @@ const TestimonialSection = () => {
                             style={{
                               left: `${10 + i * 25}%`,
                               top: `${5 + ((i * 30) % 80)}%`,
-                              animation: `twinkle ${2 + Math.random() * 2}s ease-in-out infinite`,
+                              animation: `twinkle ${
+                                2 + Math.random() * 2
+                              }s ease-in-out infinite`,
                               animationDelay: `${i * 0.5}s`,
                             }}
                           />
@@ -555,7 +575,9 @@ const TestimonialSection = () => {
                   {/* Chat Content */}
                   <div
                     className={`flex flex-col ${
-                      testimonial.position === "end" ? "items-end" : "items-start"
+                      testimonial.position === "end"
+                        ? "items-end"
+                        : "items-start"
                     }`}
                   >
                     {/* Header */}
@@ -566,7 +588,7 @@ const TestimonialSection = () => {
                           : ""
                       }`}
                     >
-                      <span className="font-semibold text-white text-base md:text-xl">
+                      <span className="  font-semibold text-white text-lg md:text-xl">
                         {testimonial.name}
                       </span>
                       <span
@@ -578,7 +600,7 @@ const TestimonialSection = () => {
                         {testimonial.role}
                       </span>
                       {testimonial.time && (
-                        <span className="text-xs text-gray-200">
+                        <span className="text-base text-gray-200">
                           {testimonial.time}
                         </span>
                       )}
@@ -591,7 +613,7 @@ const TestimonialSection = () => {
                         className="absolute -inset-2 rounded-3xl blur-xl opacity-50 group-hover:opacity-60 transition-all duration-5000"
                         style={{
                           background: `linear-gradient(45deg, ${testimonial.color.glowVars["--glow-from"]}, ${testimonial.color.glowVars["--glow-to"]})`,
-                          animation: 'glowPulse 4s ease-in-out infinite'
+                          animation: "glowPulse 4s ease-in-out infinite",
                         }}
                       />
 
@@ -600,7 +622,7 @@ const TestimonialSection = () => {
                         className={`relative backdrop-blur-2xl bg-gradient-to-br ${testimonial.color.bubble} border ${testimonial.color.border} rounded-3xl px-6 py-4 shadow-2xl transform transition-all duration-500 group-hover:scale-105 cursor-pointer shadow-xl`}
                       >
                         {/* Message Text */}
-                        <p className="text-gray-200 text-base leading-relaxed group-hover:text-gray-100 transition-colors duration-300">
+                        <p className="text-gray-200 text-xl leading-relaxed group-hover:text-gray-100 transition-colors duration-300">
                           {testimonial.message}
                         </p>
 
@@ -654,25 +676,27 @@ const TestimonialSection = () => {
           {/* Closing Message */}
           <div
             className={`text-center mt-16 transform transition-all duration-1000 delay-1000 ${
-              isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+              isVisible
+                ? "opacity-100 translate-y-0"
+                : "opacity-0 translate-y-10"
             }`}
           >
             <div className="relative backdrop-blur-xl bg-gradient-to-br from-white/10 to-white/5 border border-white/20 rounded-3xl px-6 pb-6 pt-12 shadow-2xl">
               <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
                 <div
                   className="w-14 h-14 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center"
-                  style={{ animation: 'bounceGentle 2s ease-in-out infinite' }}
+                  style={{ animation: "bounceGentle 2s ease-in-out infinite" }}
                 >
                   <span className="text-white text-2xl">💬</span>
                 </div>
               </div>
 
-              <p className="text-lg text-gray-100 leading-relaxed max-w-2xl mx-auto">
+              <p className="text-xl text-gray-100 leading-relaxed max-w-2xl mx-auto">
                 "সবার মতামত তো আর এক লেখায় শেষ করা যাবে না! তবুও কিছু কথা চুপি
-                চুপি শেয়ার করলাম। আসলে আপনাদের জানিয়ে দিয়েও কোনো লাভ নেই—আপনারা
-                তো আগেই অনেক কিছু জানেন! 😉"
+                চুপি শেয়ার করলাম। আসলে আপনাদের জানিয়ে দিয়েও কোনো লাভ
+                নেই—আপনারা তো আগেই অনেক কিছু জানেন! 😉"
               </p>
-              <p className="text-cyan-400 font-semibold mt-4">
+              <p className="text-cyan-400 text-xl font-semibold mt-4">
                 ধন্যবাদ, এতক্ষণ মনোযোগ দিয়ে পড়ার জন্য!😊
               </p>
             </div>

@@ -174,7 +174,7 @@ const InstituteSection = () => {
                     onClick={() => toggleAccordion(item.id)}
                     className="w-full cursor-pointer px-6 py-5 text-left flex items-center justify-between hover:bg-white/5 transition-all duration-300 group"
                   >
-                    <h3 className="text-lg md:text-xl font-bold text-green-400 group-hover:text-green-300 transition-colors pr-4">
+                    <h3 className="text-xl md:text-xl font-bold text-green-400 group-hover:text-green-300 transition-colors pr-4">
                       {item.title}
                     </h3>
                     <div className={`w-6 h-6 flex-shrink-0 transform transition-transform duration-300 ${activeAccordion === item.id ? 'rotate-180' : ''}`}>
@@ -188,7 +188,7 @@ const InstituteSection = () => {
                   <div className={`overflow-hidden transition-all duration-500 ease-in-out ${activeAccordion === item.id ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}`}>
                     <div className="px-6 pb-6">
                       <div className="w-full h-px bg-gradient-to-r from-transparent via-white/20 to-transparent mb-4" />
-                      <p className="text-white text-base md:text-lg leading-relaxed">
+                      <p className="text-white text-lg md:text-lg leading-relaxed">
                         {item.content}
                       </p>
                     </div>

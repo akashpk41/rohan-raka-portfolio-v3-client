@@ -289,7 +289,7 @@ const MusicPlayer = () => {
   const VolumeIcon = getVolumeIcon();
 
   return (
-    <section className="relative py-16 px-4 bg-gradient-to-br from-gray-900 via-purple-900 to-gray-900 overflow-hidden">
+    <section className="relative py-16 px-4  bg-gradient-to-br from-gray-900 via-purple-900 to-gray-900 overflow-hidden">
       {/* Premium Background Effects */}
       <div className="absolute inset-0">
         {/* Large Gradient Orbs */}

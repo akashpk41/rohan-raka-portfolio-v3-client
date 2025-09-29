@@ -222,7 +222,7 @@ const TimelineSection = () => {
             </h2>
           </div>
           <div className="w-40 h-1 bg-gradient-to-r from-orange-500 via-pink-500 to-purple-500 rounded-full mx-auto mb-4" />
-          <p className="text-xl text-gray-300 max-w-2xl mx-auto">
+          <p className="text-2xl text-gray-300 max-w-2xl mx-auto">
             {subtitleScramble}
           </p>
         </div>
@@ -263,7 +263,7 @@ const TimelineSection = () => {
 
                       {/* Year Badge */}
                       <div className={`inline-block px-4 py-2 bg-gradient-to-r ${item.color.primary} rounded-full mb-4 shadow-lg`}>
-                        <span className="text-white font-bold text-sm">{item.year}</span>
+                        <span className="text-white font-bold text-base">{item.year}</span>
                       </div>
 
                       {/* Title */}
@@ -328,7 +328,7 @@ const TimelineSection = () => {
             {timelineData.map((item, index) => (
               <div
                 key={`mobile-${index}`}
-                className={`md:hidden relative flex items-start space-x-6 transform transition-all duration-1000 ${
+                className={`md:hidden relative flex items-start space-x-2 transform transition-all duration-1000 ${
                   isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-20'
                 }`}
                 style={{ transitionDelay: `${item.delay}ms` }}
@@ -340,7 +340,7 @@ const TimelineSection = () => {
                   <div className={`relative w-16 h-16 bg-gradient-to-r ${item.color.primary} rounded-full flex items-center justify-center shadow-2xl border-4 border-gray-900 transform transition-all duration-300 ${
                     hoveredItem === index ? 'scale-110 rotate-12' : ''
                   }`}>
-                    <span className="text-2xl filter drop-shadow-lg">{item.icon}</span>
+                    <span className="text-3xl filter drop-shadow-lg">{item.icon}</span>
 
                     {/* Pulsing Ring */}
                     <div className={`absolute inset-0 rounded-full bg-gradient-to-r ${item.color.primary} animate-ping opacity-30`} />
@@ -358,16 +358,16 @@ const TimelineSection = () => {
 
                       {/* Year Badge */}
                       <div className={`inline-block px-4 py-2 bg-gradient-to-r ${item.color.primary} rounded-full mb-4 shadow-lg`}>
-                        <span className="text-white font-bold text-sm">{item.year}</span>
+                        <span className="text-white font-bold text-base">{item.year}</span>
                       </div>
 
                       {/* Title */}
                       <h3 className="text-xl font-bold text-white mb-3 leading-tight">
-                      <span className="text-base filter drop-shadow-lg">{item.icon}</span>  {itemScrambles[index].title}
+                      <span className="text-xl filter drop-shadow-lg">{item.icon}</span>  {itemScrambles[index].title}
                       </h3>
 
                       {/* Description */}
-                      <p className="text-gray-200 text-base leading-relaxed group-hover:text-gray-200 transition-colors duration-300">
+                      <p className="text-gray-200 text-lg leading-relaxed group-hover:text-gray-200 transition-colors duration-300">
                         {itemScrambles[index].description}
                       </p>
                     </div>

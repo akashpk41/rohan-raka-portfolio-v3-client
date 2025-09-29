@@ -14,6 +14,7 @@ import {
 } from "react-icons/fa";
 import { MdEmail, MdLocationOn, MdPhone } from "react-icons/md";
 import { BiWorld } from "react-icons/bi";
+import DeveloperProfile from "./DeveloperProfile";
 
 const Footer = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -131,7 +132,7 @@ const Footer = () => {
                       </span>{" "}
                       <span>— All rights Reserved</span>
                     </h3>
-                    <p className="text-gray-300 text-sm leading-relaxed">
+                    <p className="text-gray-300 text-base leading-relaxed">
                       Professional Nurse & Healthcare Advocate
                       <br />
                       <span className="text-cyan-400">
@@ -168,7 +169,7 @@ const Footer = () => {
                         <div key={link}>
                           <a
                             href={`#${link.toLowerCase()}`}
-                            className="text-gray-300 hover:text-cyan-400 transition-colors duration-300 text-sm block transform hover:translate-x-1"
+                            className="text-gray-300 hover:text-cyan-400 transition-colors duration-300 text-base block transform hover:translate-x-1"
                             style={{ transitionDelay: `${index * 100}ms` }}
                           >
                             {link}
@@ -210,46 +211,48 @@ const Footer = () => {
               <div className="w-full h-px bg-gradient-to-r from-transparent via-cyan-500/50 to-transparent mb-8" />
 
               {/* Bottom Section */}
-              <div className="flex flex-col  items-center justify-center gap-8">
+              <div className="flex flex-col  items-center justify-center gap-2">
                 {/* Developer Credit */}
-                <div className="flex flex-col items-center gap-4">
+                <div className="flex flex-col items-center gap-0">
                   <p className=" text-xl md:text-4xl text-gray-300">
                     Developed by{" "}
                     <FaHeart className="text-red-600 inline animate-pulse mx-1" />{" "}
 
                     <button
                       onClick={openModal}
-                      className="ml-1 cursor-pointer font-semibold text-cyan-400 hover:text-cyan-300 underline hover:no-underline transition-all duration-300"
+                      className="ml-1 cursor-pointer font-semibold text-cyan-400 hover:text-cyan-300 underline decoration-wavy hover:no-underline transition-all duration-300"
                     >
                       Akash PK
                     </button>
                   </p>
 
-                  <button
-                    onClick={openModal}
-                    className="group cursor-pointer flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-cyan-500/20 to-purple-500/20 backdrop-blur-xl border border-cyan-500/30 rounded-xl text-white font-semibold hover:from-cyan-500 hover:to-purple-500 hover:border-transparent transition-all duration-300 transform hover:scale-105"
-                  >
-                    <FaInfoCircle className="animate-spin  " />
-                    <span className="text-3xl">More Info</span>
-                  </button>
+
+<div className="-mx-6 -mt-8 ">
+
+<DeveloperProfile />
+
+
+</div>
+
+
                 </div>
 
                 {/* Old Version */}
                 <a
                   href="https://rohan-raka.github.io/my-portfolio/"
                   target="_blank"
-                  className="group flex cursor-pointer items-center gap-2 px-4 py-2 backdrop-blur-xl  border border-white/20 rounded-xl  text-white bg-white/10 transition-all duration-300 transform hover:scale-105"
+                  className="group flex cursor-pointer items-center gap-2 px-4 my-5 py-2 backdrop-blur-xl  border border-white/20 rounded-xl  text-white bg-white/10 transition-all duration-300 transform hover:scale-105"
                 >
-                  <span className="text-sm">Visit Old Version 1.0</span>
+                  <span className="text-base">Visit Old Version 1.0</span>
                   <FaArrowDown className="group-hover:-translate-y-1 transition-transform" />
                 </a>
 
                 {/* Go to Top */}
                 <button
                   onClick={scrollToTop}
-                  className="group flex cursor-pointer items-center gap-2 px-4 py-2 backdrop-blur-xl bg-white/5 border border-white/20 rounded-xl text-gray-300 hover:text-white hover:bg-white/10 transition-all duration-300 transform hover:scale-105"
+                  className="group flex cursor-pointer items-center gap-2 px-4  py-2 backdrop-blur-xl bg-white/5 border border-white/20 rounded-xl text-gray-300 hover:text-white hover:bg-white/10 transition-all duration-300 transform hover:scale-105"
                 >
-                  <span className="text-sm">Go To Top</span>
+                  <span className="text-base">Go To Top</span>
                   <FaArrowUp className="group-hover:-translate-y-1 transition-transform" />
                 </button>
               </div>
@@ -320,7 +323,7 @@ const Footer = () => {
                   </div>
 
                   {/* Experience Badge */}
-                  <div className="inline-flex items-center gap-1 px-3 py-1 bg-gradient-to-r from-cyan-500/20 to-purple-500/20 backdrop-blur-sm border border-cyan-500/30 rounded-full text-sm font-medium text-gray-700">
+                  <div className="inline-flex items-center gap-1 px-3 py-1 bg-gradient-to-r from-cyan-500/20 to-purple-500/20 backdrop-blur-sm border border-cyan-500/30 rounded-full text-base font-medium text-gray-700">
                     <FaRocket className="text-purple-500" />
                     <span>Since 2021</span>
                   </div>
@@ -328,7 +331,7 @@ const Footer = () => {
 
                 {/* Description */}
                 <div className="mb-4 space-y-3">
-                  <p className="text-gray-600 text-sm leading-relaxed">
+                  <p className="text-gray-600 text-base leading-relaxed">
                     Professional MERN stack developer building full-stack web
                     applications with
                     <span className="font-semibold text-gray-800">
@@ -339,7 +342,7 @@ const Footer = () => {
                   </p>
 
                   <div className="p-4 bg-gradient-to-r from-purple-500/10 to-cyan-500/10 rounded-2xl border border-purple-500/20">
-                    <p className="text-purple-700 text-sm font-medium flex items-center justify-center gap-2">
+                    <p className="text-purple-700 text-base font-medium flex items-center justify-center gap-2">
                       <FaRocket className=" text-purple-500 animate-pulse" />
                       Working towards launching a software startup — very soon,
                       InshaAllah.

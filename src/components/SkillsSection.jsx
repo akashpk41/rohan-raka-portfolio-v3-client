@@ -131,10 +131,10 @@ const SkillsSection = () => {
               {/* Card Background with 3D Effect */}
               <div className="relative">
                 {/* Glowing border effect */}
-                <div className={`absolute -inset-1 bg-gradient-to-r ${skill.gradient} rounded-3xl blur-xl opacity-70 group-hover:opacity-60 transition-all duration-500  `} />
+                <div className={`absolute -inset-1 bg-gradient-to-r ${skill.gradient} rounded-3xl blur-xl opacity-90 group-hover:opacity-60 transition-all duration-500  `} />
 
                 {/* Main Card */}
-                <div className={`cursor-pointer mt-4 relative backdrop-blur-2xl bg-gradient-to-br ${skill.bgGradient} border border-white/20 rounded-3xl p-8 shadow-2xl transform transition-all duration-500 group-hover:scale-105 group-hover:-translate-y-2 ${hoveredCard === skill.id ? 'shadow-2xl shadow-purple-500/25' : ''}`}>
+                <div className={`cursor-pointer mt-4 relative backdrop-blur-2xl bg-gradient-to-br ${skill.bgGradient} border border-white/20 rounded-3xl p-6 shadow-2xl transform transition-all duration-500 group-hover:scale-105 group-hover:-translate-y-2 ${hoveredCard === skill.id ? 'shadow-2xl shadow-purple-500/25' : ''}`}>
 
                   {/* Floating Icon */}
                   <div className="absolute -top-6 -right-2">
@@ -145,16 +145,16 @@ const SkillsSection = () => {
 
                   {/* Badge */}
                   <div className={`inline-block px-4 py-2 bg-gradient-to-r ${skill.gradient} rounded-full mb-4 shadow-lg`}>
-                    <span className="text-white font-bold text-sm">{skill.badge}</span>
+                    <span className="text-white font-bold text-base">{skill.badge}</span>
                   </div>
 
                   {/* Title */}
-                  <h3 className="text-xl font-bold text-white mb-4 group-hover:text-cyan-200 transition-colors duration-300">
+                  <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-cyan-200 transition-colors duration-300">
                     {skill.title}
                   </h3>
 
                   {/* Description */}
-                  <p className="text-gray-200 text-base leading-relaxed group-hover:text-gray-200 transition-colors duration-300">
+                  <p className="text-gray-200 text-lg leading-relaxed group-hover:text-gray-200 transition-colors duration-300">
                     {skill.description}
                   </p>
 
