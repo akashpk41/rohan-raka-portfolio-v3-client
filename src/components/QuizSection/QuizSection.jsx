@@ -327,7 +327,7 @@ const QuizSection = () => {
             </h2>
           </div>
           <div className="w-40 h-1 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 rounded-full mx-auto mb-6" />
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-2xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
             Challenge your medical knowledge with our gamified quiz system designed for healthcare professionals
           </p>
         </div>
@@ -349,14 +349,14 @@ const QuizSection = () => {
                   }`}
                 >
                   <div className="text-center space-y-4">
-                    <div className="text-4xl mb-3">{category.icon}</div>
-                    <h3 className={`font-bold text-xl ${selectedCategory === key ? 'text-white' : 'text-gray-300'}`}>
+                    <div className="text-6xl mb-3">{category.icon}</div>
+                    <h3 className={`font-bold text-3xl ${selectedCategory === key ? 'text-cyan-400' : 'text-gray-300'}`}>
                       {category.name}
                     </h3>
-                    <p className="text-gray-300 text-base">
+                    <p className="text-gray-300 text-xl">
                       {category.description}
                     </p>
-                    <div className={`inline-block px-4 py-2 rounded-full text-sm font-semibold ${
+                    <div className={`inline-block px-4 py-2 rounded-full text-xl font-semibold ${
                       selectedCategory === key
                         ? `bg-gradient-to-r ${category.color} text-white`
                         : 'bg-white/10 text-gray-300'
@@ -444,10 +444,10 @@ const QuizSection = () => {
                       {currentQuestions[currentQuestion]?.question}
                     </h3>
                     <div className="flex items-center gap-3 mt-3">
-                      <span className={`px-3 py-1 bg-gradient-to-r ${currentCategoryData.color} text-white text-sm rounded-full font-medium`}>
+                      <span className={`px-3 py-1 bg-gradient-to-r ${currentCategoryData.color} text-white text-lg rounded-full font-medium`}>
                         {currentQuestions[currentQuestion]?.difficulty}
                       </span>
-                      <span className="text-gray-400 text-sm">
+                      <span className="text-gray-400 text-lg">
                         {currentQuestions[currentQuestion]?.points} points
                       </span>
                     </div>
